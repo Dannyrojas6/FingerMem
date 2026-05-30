@@ -139,48 +139,66 @@ export default function Practice() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* 句子练习主区域 - 极简居中设计（按 spec 隐藏头部 + 深色容器） */}
+      <div className="mb-6">
+        <Link to="/" className="text-sm text-gray-500 hover:text-gray-700">
+          ← 返回场景列表
+        </Link>
+      </div>
+
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-xl font-semibold text-gray-900">{sceneName}</h2>
+          <span className="text-sm text-gray-500">
+            第 {sentenceIndex + 1} / {totalSentences} 句
+          </span>
+        </div>
+        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-blue-600 transition-all duration-300"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      </div>
+
+      {/* 句子练习主区域 - 极简居中设计 */}
       <div
-        className="flex flex-col items-center justify-center min-h-[240px] cursor-text"
+        className="flex flex-col items-center justify-center min-h-[60vh] cursor-text"
         onClick={() => inputRef.current?.focus()}
       >
-        {/* Subtle container per locked design */}
-        <div className="bg-[#1f1f1f] rounded-[10px] p-6 w-full max-w-2xl">
-          {/* 大句子 - 12px + 轻微字距 */}
-          <div className="text-[12px] leading-relaxed font-mono tracking-[0.5px] select-none text-center mb-5 text-[#f4f4f5]">
-            {chars.map((targetChar, i) => {
-              const typedChar = userInput[i]
-              const isCursorPosition = i === cursorPosition && cursorPosition < effectiveLength
+        {/* 大句子 - 居中 + 加大字号 */}
+        <div className="text-4xl md:text-5xl leading-relaxed font-mono tracking-wide select-none text-center mb-6">
+          {chars.map((targetChar, i) => {
+            const typedChar = userInput[i]
+            const isCursorPosition = i === cursorPosition && cursorPosition < effectiveLength
 
-              let displayChar = targetChar
-              if (targetChar === ' ') {
-                displayChar = '·'
+            let displayChar = targetChar
+            if (targetChar === ' ') {
+              displayChar = '·'
+            }
+
+            let className = 'text-gray-400'
+
+            if (typedChar !== undefined) {
+              if (typedChar === targetChar) {
+                className = 'text-green-600'
+              } else {
+                className = 'text-red-600'
               }
+            }
 
-              let className = 'text-[#f4f4f5]'
-
-              if (typedChar !== undefined) {
-                if (typedChar === targetChar) {
-                  className = 'text-green-600'
-                } else {
-                  className = 'text-red-600'
-                }
-              }
-
-              return (
-                <span
-                  key={i}
-                  className={`${className} ${isCursorPosition ? 'border-b-[3px] border-blue-500' : ''}`}
-                >
-                  {displayChar}
-                </span>
-              )
-            })}
-          </div>
-
-          {/* 中文翻译 - 10px */}
-          <div className="text-[10px] text-[#a1a1aa] text-center">{sentence.zh}</div>
+            return (
+              <span
+                key={i}
+                className={`${className} ${isCursorPosition ? 'border-b-[3px] border-blue-500' : ''}`}
+              >
+                {displayChar}
+              </span>
+            )
+          })}
         </div>
+
+        {/* 中文翻译 */}
+        <div className="text-2xl text-gray-600 text-center mb-8">{sentence.zh}</div>
 
         {/* 隐藏输入框 */}
         <input
@@ -193,7 +211,7 @@ export default function Practice() {
         />
       </div>
 
-      {/* 完成状态 - 最后一句使用轻量弹窗（按 spec 锁定样式） */}
+      {/* 完成状态 - 最后一句使用轻量弹窗 */}
       {isCompleted && sentenceIndex + 1 >= totalSentences && showCompletionModal && (
         <>
           {/* 背景遮罩（中等强度）+ 轻微变暗主内容 */}
@@ -205,24 +223,24 @@ export default function Practice() {
           {/* 小型居中弹窗 */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <div
-              className="bg-[#1f1f1f] rounded-xl shadow-md p-6 w-full max-w-[360px] text-center"
+              className="bg-white border border-gray-200 rounded-xl shadow-md p-6 w-full max-w-[360px] text-center"
               onClick={e => e.stopPropagation()}
             >
-              <div className="text-[15px] font-semibold mb-4 flex items-center justify-center gap-2 text-[#f4f4f5]">
-                {sceneName}完成！ <span className="text-lg">🏆</span>
+              <div className="text-xl font-semibold mb-4 flex items-center justify-center gap-2">
+                恭喜完成！ <span className="text-2xl">🎉</span>
               </div>
 
               <div className="flex gap-3 justify-center">
                 <Link
                   to="/"
-                  className="flex-1 px-4 py-1.5 bg-[#1f1f1f] border border-[#444] rounded-[12px] hover:bg-[#252525] text-sm font-medium text-center text-[#f4f4f5]"
+                  className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 text-sm font-medium text-center"
                   onClick={() => setShowCompletionModal(false)}
                 >
                   返回列表
                 </Link>
                 <Link
                   to={`/practice/${sceneId}/0`}
-                  className="flex-1 px-4 py-1.5 bg-[#f5f5f5] text-[#161616] rounded-[12px] hover:bg-[#e5e5e5] text-sm font-medium text-center"
+                  className="flex-1 px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium text-center"
                   onClick={() => setShowCompletionModal(false)}
                 >
                   继续训练

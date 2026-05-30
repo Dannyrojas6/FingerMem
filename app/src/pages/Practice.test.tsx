@@ -56,7 +56,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const text = container.textContent || ''
     expect(text.replace(/·/g, ' ')).toContain('I want to go home now.')
     expect(screen.getByText('我现在想回家。')).toBeInTheDocument()
-    // 头部已按 spec 隐藏，不再断言进度文字
+    expect(screen.getByText(/第 1 \/ 10 句/)).toBeInTheDocument()
   })
 
   it('正确输入字符时应对应字符显示为绿色', async () => {
@@ -68,7 +68,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     await user.type(input, 'I want')
 
     // 找到句子区域内的 span（排除其他区域的 span）
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
     const spans = Array.from(sentenceArea.querySelectorAll('span'))
 
     // 前几个正确输入的字符应该是绿色
@@ -84,7 +84,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
     await user.type(input, 'I xant') // 故意打错 "want" 为 "xant"
 
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
     const spans = Array.from(sentenceArea.querySelectorAll('span'))
 
     // 'x' 位置应该是红色（索引2对应 'w' 的位置）
@@ -99,7 +99,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
     await user.type(input, 'Ix ') // 故意打错 + 空格
 
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
     const spans = Array.from(sentenceArea.querySelectorAll('span'))
 
     // 空格错误位置应该显示红色 ·
@@ -182,8 +182,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
     await waitFor(
       () => {
-        expect(screen.getByText(/完成！/)).toBeInTheDocument()
-    expect(screen.getByText(/🏆/)).toBeInTheDocument()
+        expect(screen.getByText(/恭喜完成/)).toBeInTheDocument()
         expect(screen.getByText('返回列表')).toBeInTheDocument()
         expect(screen.getByText('继续训练')).toBeInTheDocument()
       },
@@ -231,7 +230,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const { container } = renderPractice('daily-life', 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
 
     await user.type(input, 'I want')
 
@@ -248,7 +247,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const { container } = renderPractice('daily-life', 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
 
     // 先打错
     await user.type(input, 'I xant')
@@ -269,7 +268,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const { container } = renderPractice('daily-life', 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
 
     await user.type(input, 'I w')
 
@@ -320,7 +319,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const { container } = renderPractice('daily-life', 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
 
     const cleanSentence = firstSentence.en.replace(/[.,!?;:"']$/, '')
     const overType = cleanSentence + 'xxx'
@@ -442,7 +441,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const { container } = renderPractice('daily-life', 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
-    const sentenceArea = container.querySelector('.text-\\[12px\\]')!
+    const sentenceArea = container.querySelector('.text-4xl')!
 
     // 打很多错的
     await user.type(input, 'wrongwrongwrong')
