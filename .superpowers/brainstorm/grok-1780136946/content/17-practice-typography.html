@@ -1,0 +1,92 @@
+<h2>Practice 界面 · 句子与翻译排版细节</h2>
+<p class="subtitle">当前已锁定：深灰背景 #161616 + 完全隐藏头部 + 浅容器 + 舒适垂直节奏。现在来专门讨论句子和中文翻译的排版细节。</p>
+
+<div class="options">
+
+  <!-- A: 当前状态 -->
+  <div class="option" data-choice="current" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; padding:20px 12px; border-radius:6px;">
+      <div style="background:#1f1f1f; border-radius:10px; padding:24px 18px; max-width:420px; margin:0 auto;">
+        <div style="font-size:11px; color:#f4f4f5; font-family:monospace; text-align:center;">I want to go home now.</div>
+        <div style="height:24px;"></div>
+        <div style="font-size:10px; color:#a1a1aa; text-align:center;">我现在想回家。</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 当前状态（参考）</h3>
+      <p>英文 11px / 中文 10px，普通间距，翻译颜色较浅</p>
+    </div>
+  </div>
+
+  <!-- B: 英文加大 + 更强存在感 -->
+  <div class="option" data-choice="en-strong" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; padding:20px 12px; border-radius:6px;">
+      <div style="background:#1f1f1f; border-radius:10px; padding:24px 18px; max-width:420px; margin:0 auto;">
+        <div style="font-size:13px; color:#f4f4f5; font-family:monospace; text-align:center; line-height:1.4;">I want to go home now.</div>
+        <div style="height:20px;"></div>
+        <div style="font-size:10px; color:#a1a1aa; text-align:center;">我现在想回家。</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 英文加大（更强存在感）</h3>
+      <p>英文提升到 13px，翻译保持 10px，间距稍收</p>
+    </div>
+  </div>
+
+  <!-- C: 翻译再弱化 -->
+  <div class="option" data-choice="zh-weaker" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; padding:20px 12px; border-radius:6px;">
+      <div style="background:#1f1f1f; border-radius:10px; padding:24px 18px; max-width:420px; margin:0 auto;">
+        <div style="font-size:11px; color:#f4f4f5; font-family:monospace; text-align:center;">I want to go home now.</div>
+        <div style="height:28px;"></div>
+        <div style="font-size:9px; color:#666; text-align:center;">我现在想回家。</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 翻译进一步弱化</h3>
+      <p>翻译缩小到 9px，颜色更浅，间距拉大，让焦点更集中在英文上</p>
+    </div>
+  </div>
+
+  <!-- D: 翻译更重要一些 -->
+  <div class="option" data-choice="zh-stronger" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; padding:20px 12px; border-radius:6px;">
+      <div style="background:#1f1f1f; border-radius:10px; padding:24px 18px; max-width:420px; margin:0 auto;">
+        <div style="font-size:11px; color:#f4f4f5; font-family:monospace; text-align:center;">I want to go home now.</div>
+        <div style="height:16px;"></div>
+        <div style="font-size:11px; color:#c4c4c4; text-align:center;">我现在想回家。</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>D. 翻译提升存在感</h3>
+      <p>翻译和英文字号接近（11px），颜色稍浅但仍有存在感，间距适中</p>
+    </div>
+  </div>
+
+  <!-- E: 英文更优雅（加 tracking） -->
+  <div class="option" data-choice="en-elegant" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; padding:20px 12px; border-radius:6px;">
+      <div style="background:#1f1f1f; border-radius:10px; padding:24px 18px; max-width:420px; margin:0 auto;">
+        <div style="font-size:12px; color:#f4f4f5; font-family:monospace; text-align:center; letter-spacing:0.5px;">I want to go home now.</div>
+        <div style="height:22px;"></div>
+        <div style="font-size:10px; color:#a1a1aa; text-align:center;">我现在想回家。</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>E. 英文更优雅（加字距）</h3>
+      <p>英文 12px + 轻微字距，翻译 10px，整体感觉更精致一点</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:12px;">
+  <p><strong>这一轮重点讨论：</strong></p>
+  <ul>
+    <li>英文句子应该有多“强”？</li>
+    <li>中文翻译应该多弱？还是可以稍微强一些？</li>
+    <li>两者之间的距离和对比关系怎么最舒服？</li>
+    <li>是否需要轻微的字距或其它细节处理？</li>
+  </ul>
+  <p class="subtitle">请点击你目前感觉最好的 1-2 个方案，并告诉我具体理由（比如“英文可以再大一点”、“翻译再弱一点更好”、“E 的字距感觉不错”等）。</p>
+</div>

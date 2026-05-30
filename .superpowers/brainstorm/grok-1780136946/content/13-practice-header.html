@@ -1,0 +1,79 @@
+<h2>Practice 界面 · 头部信息处理（第二轮）</h2>
+<p class="subtitle">你之前反馈：头部（场景名 + 进度条）放这里感觉怪怪的。上次你倾向极简方向（B），但还不是很满意。我们再深入探索几种更干净的处理方式。</p>
+
+<div class="options">
+  <!-- A: 当前方案 -->
+  <div class="option" data-choice="current" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; border:1px solid #333; padding:10px; border-radius:6px; min-height:110px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; font-size:11px;">
+        <span style="color:#a1a1aa;">健康医疗</span>
+        <span style="color:#666;">3/10</span>
+      </div>
+      <div style="height:5px; background:#333; border-radius:999px; overflow:hidden; margin-bottom:8px;">
+        <div style="height:100%; width:30%; background:#3b82f6;"></div>
+      </div>
+      <div style="font-size:11px; color:#f4f4f5; font-family:monospace; margin-top:6px;">I want to go home now.</div>
+    </div>
+    <div class="card-body">
+      <h3>A. 当前方案（参考）</h3>
+      <p>场景名 + 进度条在上方</p>
+    </div>
+  </div>
+
+  <!-- B: 上次你选的极简 -->
+  <div class="option" data-choice="minimal" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; border:1px solid #333; padding:10px; border-radius:6px; min-height:110px;">
+      <div style="height:3px; background:#3b82f6; margin:-4px -4px 8px -4px; border-radius:0 0 3px 3px;"></div>
+      <div style="font-size:10px; color:#666; margin-bottom:6px;">3/10</div>
+      <div style="font-size:11px; color:#f4f4f5; font-family:monospace;">I want to go home now.</div>
+    </div>
+    <div class="card-body">
+      <h3>B. 极简顶部进度（上次你倾向）</h3>
+      <p>只留细进度条 + 极小数字，不显示场景名</p>
+    </div>
+  </div>
+
+  <!-- C: 更干净的顶部细线 -->
+  <div class="option" data-choice="line" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; border:1px solid #333; padding:10px; border-radius:6px; min-height:110px;">
+      <div style="height:2px; background:#3b82f6; margin:-4px -4px 10px -4px;"></div>
+      <div style="font-size:11px; color:#f4f4f5; font-family:monospace; margin-top:4px;">I want to go home now.</div>
+    </div>
+    <div class="card-body">
+      <h3>C. 极致干净顶部线</h3>
+      <p>只剩一条极细的蓝色进度线，完全不显示任何文字</p>
+    </div>
+  </div>
+
+  <!-- D: 场景名很小 + 进度在右上 -->
+  <div class="option" data-choice="small-name" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; border:1px solid #333; padding:10px; border-radius:6px; min-height:110px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+        <span style="font-size:9px; color:#666;">健康医疗</span>
+        <span style="font-size:9px; color:#666;">3/10</span>
+      </div>
+      <div style="height:3px; background:#3b82f6; border-radius:999px; margin-bottom:8px;"></div>
+      <div style="font-size:11px; color:#f4f4f5; font-family:monospace;">I want to go home now.</div>
+    </div>
+    <div class="card-body">
+      <h3>D. 场景名极小化</h3>
+      <p>场景名做得很小，进度放在右上角，降低存在感</p>
+    </div>
+  </div>
+
+  <!-- E: 完全隐藏头部信息 -->
+  <div class="option" data-choice="hidden" onclick="toggleSelect(this)">
+    <div class="mockup" style="background:#161616; border:1px solid #333; padding:10px; border-radius:6px; min-height:110px;">
+      <div style="font-size:11px; color:#f4f4f5; font-family:monospace; margin-top:4px;">I want to go home now.</div>
+    </div>
+    <div class="card-body">
+      <h3>E. 完全隐藏头部</h3>
+      <p>练习过程中不显示任何场景名和进度信息（最极简）</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:12px;">
+  <p><strong>你的原始反馈：</strong> “头部这个进度条其实设计的还可以，但是总感觉放这怪怪的，场景名称在这显示也不太好看”</p>
+  <p class="subtitle">请点击你目前感觉最舒服的方案（可以多选），然后告诉我为什么喜欢，或者哪里还是不对。</p>
+</div>
