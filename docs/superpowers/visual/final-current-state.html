@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final - 当前实际状态（最终验证版）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-[#161616] min-h-screen text-[#f4f4f5]">
+  <div class="min-h-screen bg-[#161616] text-[#f4f4f5]">
+    <!-- 深色 App 壳层 -->
+    <header class="border-b border-[#2a2a2a] bg-[#1f1f1f]">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <h1 class="text-2xl font-semibold text-[#f4f4f5]">基础英语 850 · 打字练习</h1>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-8">
+      
+      <!-- 说明 -->
+      <div class="mb-8 p-4 bg-[#1f1f1f] rounded-lg border border-[#333] text-sm">
+        <strong>当前实际状态说明：</strong><br>
+        • App 全局深色壳已应用（#161616 背景 + 深色头部）<br>
+        • SceneList / SceneDetail 已按 spec 改成暗色卡片<br>
+        • Practice（打字页）按用户要求保持原样（未改动内部样式）
+      </div>
+
+      <!-- 场景列表（已暗色） -->
+      <div class="mb-12">
+        <h2 class="text-xl font-medium text-[#f4f4f5] mb-6">基础英语 850 · 请选择一个场景</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-[#1f1f1f] p-4 rounded-[10px] border border-[#2a2a2a]">
+            <div class="text-[16px] font-semibold text-[#f4f4f5]">日常对话</div>
+            <div class="text-[13px] text-[#888] mt-2">10 个句子 · 点击开始练习</div>
+          </div>
+          <div class="bg-[#1f1f1f] p-4 rounded-[10px] border border-[#2a2a2a]">
+            <div class="text-[16px] font-semibold text-[#f4f4f5]">健康医疗</div>
+            <div class="text-[13px] text-[#888] mt-2">10 个句子 · 点击开始练习</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景详情（已暗色垂直卡片） -->
+      <div class="mb-12">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <div class="text-[15px] font-semibold text-[#f4f4f5]">日常对话</div>
+            <div class="text-[13px] text-[#888]">10 个句子</div>
+          </div>
+          <div class="px-5 py-2 bg-[#f5f5f5] text-[#161616] text-sm rounded-[12px]">连续练习本场景</div>
+        </div>
+        <div class="h-px bg-[#2a2a2a] mb-4"></div>
+
+        <div class="flex flex-col gap-[10px]">
+          <div class="bg-[#252525] rounded-[10px] p-4 flex justify-between items-center">
+            <div>
+              <div class="text-[13px] text-[#f4f4f5]">Hello, how are you?</div>
+              <div class="text-[12px] text-[#a1a1aa]">你好，你怎么样？</div>
+            </div>
+            <div class="bg-[#232323] text-[#f4f4f5] text-[13px] px-3 py-1 rounded-[8px]">练习</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 打字页（已回滚，保持原内部样式） -->
+      <div>
+        <div class="text-sm text-[#888] mb-2">Practice 页面（已按用户要求回滚，保持修改前状态）</div>
+        <div class="max-w-3xl mx-auto border border-[#444] p-4 rounded">
+          <div class="text-4xl text-center mb-4 text-gray-300">I want to go home now.</div>
+          <div class="text-2xl text-center text-gray-500">我现在想回家。</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="fixed top-0 left-0 right-0 bg-red-900/90 border-b border-red-700 text-red-200 text-sm py-1 px-4 text-center z-50">
+    <strong>Final Current State</strong> — 最终实际交付状态（列表页暗色 + 打字页未改）
+  </div>
+</body>
+</html>
