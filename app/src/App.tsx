@@ -6,10 +6,10 @@ import ErrorBoundary from './components/ErrorBoundary'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="border-b bg-white">
+    <div className="min-h-screen bg-[#161616] text-[#f4f4f5]">
+      <header className="border-b border-[#2a2a2a] bg-[#1f1f1f]">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-semibold text-gray-900">基础英语 850 · 打字练习</h1>
+          <h1 className="text-2xl font-semibold text-[#f4f4f5]">基础英语 850 · 打字练习</h1>
         </div>
       </header>
 
