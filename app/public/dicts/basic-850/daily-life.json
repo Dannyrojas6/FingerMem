@@ -1,0 +1,15 @@
+{
+  "name": "日常对话",
+  "sentences": [
+    { "en": "I want to go home now.", "zh": "我现在想回家。" },
+    { "en": "Can you help me with this?", "zh": "你能帮我做这个吗？" },
+    { "en": "Where do you live?", "zh": "你住在哪里？" },
+    { "en": "I do not know the answer.", "zh": "我不知道答案。" },
+    { "en": "Please open the door for me.", "zh": "请为我开门。" },
+    { "en": "How are you today?", "zh": "你今天怎么样？" },
+    { "en": "I need some water to drink.", "zh": "我需要喝一些水。" },
+    { "en": "She is my good friend.", "zh": "她是我的好朋友。" },
+    { "en": "We will meet at the station.", "zh": "我们将在车站见面。" },
+    { "en": "Thank you very much for your help.", "zh": "非常感谢你的帮助。" }
+  ]
+}

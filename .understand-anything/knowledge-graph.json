@@ -1,0 +1,1261 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "basic-eng-850",
+    "languages": [
+      "css",
+      "html",
+      "javascript",
+      "json",
+      "markdown",
+      "text",
+      "typescript"
+    ],
+    "frameworks": [
+      "React",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    "description": "一个基于 C.K. Ogden 基础英语 850 词构建的打字练习 React 应用，支持 10 个日常场景的句子练习，帮助学习者通过互动方式掌握核心词汇。",
+    "analyzedAt": "2026-05-30T00:21:18.451Z",
+    "gitCommitHash": "no-git"
+  },
+  "nodes": [
+    {
+      "id": "file:app/src/App.tsx",
+      "type": "file",
+      "name": "App.tsx",
+      "filePath": "app/src/App.tsx",
+      "summary": "应用根组件，配置 React Router 路由，定义场景列表、场景详情和打字练习三个主要路由入口。",
+      "tags": [
+        "react-component",
+        "routing",
+        "根组件"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/src/main.tsx",
+      "type": "file",
+      "name": "main.tsx",
+      "filePath": "app/src/main.tsx",
+      "summary": "React 应用启动入口，创建根节点并使用 StrictMode 和 BrowserRouter 包裹 App 组件。",
+      "tags": [
+        "entry-point",
+        "react-bootstrap",
+        "渲染入口"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/src/pages/SceneList.tsx",
+      "type": "file",
+      "name": "SceneList.tsx",
+      "filePath": "app/src/pages/SceneList.tsx",
+      "summary": "场景选择页面，展示 10 个基于基础英语 850 词的日常练习场景卡片，支持直接导航到连续打字练习。",
+      "tags": [
+        "react-component",
+        "页面组件",
+        "navigation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/src/pages/Practice.tsx",
+      "type": "file",
+      "name": "Practice.tsx",
+      "filePath": "app/src/pages/Practice.tsx",
+      "summary": "核心打字练习组件，实现严格的前缀匹配状态机、逐字符视觉反馈（绿/红高亮）、防空格误触的完成判断、自动跳转下一句及最终完成界面。MVP 阶段的关键交互逻辑集中于此。",
+      "tags": [
+        "react-component",
+        "打字练习",
+        "状态机",
+        "核心逻辑"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用隐藏的受控 input 配合手动渲染 span 字符数组实现所见即所得打字效果；effectiveTarget 去除末尾标点，getMatchedPrefixLength 确保进度基于正确前缀而非输入长度。"
+    },
+    {
+      "id": "function:app/src/App.tsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "app/src/App.tsx",
+      "lineRange": [
+        6,
+        29
+      ],
+      "summary": "根组件函数，渲染应用头部标题和路由容器，声明三个路径的 Route 映射。",
+      "tags": [
+        "react-component",
+        "路由容器"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/src/pages/SceneList.tsx:SceneList",
+      "type": "function",
+      "name": "SceneList",
+      "filePath": "app/src/pages/SceneList.tsx",
+      "lineRange": [
+        17,
+        44
+      ],
+      "summary": "场景列表组件，硬编码 10 个场景数据并渲染可点击卡片，每个卡片链接至对应场景的练习起始索引。",
+      "tags": [
+        "react-component",
+        "列表渲染",
+        "navigation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/src/pages/Practice.tsx:Practice",
+      "type": "function",
+      "name": "Practice",
+      "filePath": "app/src/pages/Practice.tsx",
+      "lineRange": [
+        5,
+        267
+      ],
+      "summary": "打字练习主函数组件，集成数据加载、输入状态管理、匹配算法、可视化渲染、完成跳转与结束界面等全部练习流程。",
+      "tags": [
+        "react-component",
+        "打字练习",
+        "状态机",
+        "核心逻辑"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:app/.gitignore",
+      "type": "config",
+      "name": ".gitignore",
+      "filePath": "app/.gitignore",
+      "summary": "Vite React 项目的 Git 忽略规则文件，排除日志、node_modules、dist 构建产物及各类编辑器目录和文件，避免将依赖和中间产物提交到仓库。",
+      "tags": [
+        "git配置",
+        "忽略规则",
+        "构建产物"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "app/index.html",
+      "summary": "React 应用的 HTML 入口模板，定义 root 容器、视口设置，并通过 Vite 加载 src/main.tsx 模块，标题为“基础英语850 - 打字练习”，引用 favicon.svg。",
+      "tags": [
+        "入口点",
+        "html模板",
+        "react入口"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "app/package.json",
+      "summary": "项目依赖与脚本配置，定义 dev/build/preview 命令均基于 Vite，集成 React 19、React Router 7 及 Tailwind CSS、PostCSS、TypeScript 工具链。",
+      "tags": [
+        "依赖配置",
+        "脚本配置",
+        "npm配置",
+        "vite"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app/postcss.config.js",
+      "type": "config",
+      "name": "postcss.config.js",
+      "filePath": "app/postcss.config.js",
+      "summary": "PostCSS 配置文件，启用 Tailwind CSS 和 Autoprefixer 插件，负责将 Tailwind 指令转换为生产 CSS。",
+      "tags": [
+        "postcss配置",
+        "css处理",
+        "tailwind"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app/tailwind.config.js",
+      "type": "config",
+      "name": "tailwind.config.js",
+      "filePath": "app/tailwind.config.js",
+      "summary": "Tailwind CSS 配置，内容扫描覆盖 index.html 和 src 目录下的所有 JS/TS/JSX/TSX 文件，支持按需生成样式类。",
+      "tags": [
+        "tailwind配置",
+        "样式配置",
+        "内容扫描"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app/tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "app/tsconfig.json",
+      "summary": "TypeScript 编译器主配置，针对 ES2020、React JSX、bundler 解析模式，开启严格 lint 规则，并通过 project references 关联 node 配置。",
+      "tags": [
+        "typescript配置",
+        "编译器配置",
+        "严格模式",
+        "react-jsx"
+      ],
+      "complexity": "simple",
+      "languageNotes": "使用 project references 将 Node 环境配置分离，适配 Vite 开发中的类型检查需求。"
+    },
+    {
+      "id": "config:app/tsconfig.node.json",
+      "type": "config",
+      "name": "tsconfig.node.json",
+      "filePath": "app/tsconfig.node.json",
+      "summary": "Node 环境专用的 TypeScript 配置，启用 composite 模式，包含 vite.config.ts 以提供类型支持。",
+      "tags": [
+        "typescript配置",
+        "node配置",
+        "vite类型检查"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app/vite.config.ts",
+      "type": "config",
+      "name": "vite.config.ts",
+      "filePath": "app/vite.config.ts",
+      "summary": "Vite 构建配置，仅注册 React 插件。默认行为下 public 目录的静态资源（包括 dicts/basic-850/ 下的 10 个场景词典 JSON）会被直接提供给应用使用。",
+      "tags": [
+        "vite配置",
+        "构建工具",
+        "react插件"
+      ],
+      "complexity": "simple",
+      "languageNotes": "最小化配置；Vite 自动 serve public/ 下的基础英语 850 词典数据，支持打字练习应用的静态加载。"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/daily-life.json",
+      "type": "file",
+      "name": "daily-life.json",
+      "filePath": "app/public/dicts/basic-850/daily-life.json",
+      "summary": "「日常对话」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/daily-life.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/family.json",
+      "type": "file",
+      "name": "family.json",
+      "filePath": "app/public/dicts/basic-850/family.json",
+      "summary": "「家庭生活」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/family.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/health.json",
+      "type": "file",
+      "name": "health.json",
+      "filePath": "app/public/dicts/basic-850/health.json",
+      "summary": "「健康医疗」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/health.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/place.json",
+      "type": "file",
+      "name": "place.json",
+      "filePath": "app/public/dicts/basic-850/place.json",
+      "summary": "「地点与方向」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/place.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/restaurant.json",
+      "type": "file",
+      "name": "restaurant.json",
+      "filePath": "app/public/dicts/basic-850/restaurant.json",
+      "summary": "「餐厅点餐」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/restaurant.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/shopping.json",
+      "type": "file",
+      "name": "shopping.json",
+      "filePath": "app/public/dicts/basic-850/shopping.json",
+      "summary": "「购物」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/shopping.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/time.json",
+      "type": "file",
+      "name": "time.json",
+      "filePath": "app/public/dicts/basic-850/time.json",
+      "summary": "「时间与日期」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/time.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/travel.json",
+      "type": "file",
+      "name": "travel.json",
+      "filePath": "app/public/dicts/basic-850/travel.json",
+      "summary": "「旅行」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/travel.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/weather.json",
+      "type": "file",
+      "name": "weather.json",
+      "filePath": "app/public/dicts/basic-850/weather.json",
+      "summary": "「天气」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/weather.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/public/dicts/basic-850/work.json",
+      "type": "file",
+      "name": "work.json",
+      "filePath": "app/public/dicts/basic-850/work.json",
+      "summary": "「工作场合」场景的练习句子数据，包含10个中英双语练习句子，用于打字练习应用。该文件是应用 public 目录下运行时提供的副本，真实来源为项目根 dicts/basic-850/work.json。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/daily-life.json",
+      "type": "file",
+      "name": "daily-life.json",
+      "filePath": "dicts/basic-850/daily-life.json",
+      "summary": "「日常对话」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/family.json",
+      "type": "file",
+      "name": "family.json",
+      "filePath": "dicts/basic-850/family.json",
+      "summary": "「家庭生活」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/health.json",
+      "type": "file",
+      "name": "health.json",
+      "filePath": "dicts/basic-850/health.json",
+      "summary": "「健康医疗」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/place.json",
+      "type": "file",
+      "name": "place.json",
+      "filePath": "dicts/basic-850/place.json",
+      "summary": "「地点与方向」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/restaurant.json",
+      "type": "file",
+      "name": "restaurant.json",
+      "filePath": "dicts/basic-850/restaurant.json",
+      "summary": "「餐厅点餐」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/shopping.json",
+      "type": "file",
+      "name": "shopping.json",
+      "filePath": "dicts/basic-850/shopping.json",
+      "summary": "「购物」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/time.json",
+      "type": "file",
+      "name": "time.json",
+      "filePath": "dicts/basic-850/time.json",
+      "summary": "「时间与日期」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/travel.json",
+      "type": "file",
+      "name": "travel.json",
+      "filePath": "dicts/basic-850/travel.json",
+      "summary": "「旅行」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/weather.json",
+      "type": "file",
+      "name": "weather.json",
+      "filePath": "dicts/basic-850/weather.json",
+      "summary": "「天气」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dicts/basic-850/work.json",
+      "type": "file",
+      "name": "work.json",
+      "filePath": "dicts/basic-850/work.json",
+      "summary": "「工作场合」场景的权威数据源，包含10条基于基础英语850词的中英双语练习句子，是打字练习应用中该场景的规范真实来源。",
+      "tags": [
+        "data",
+        "practice-sentences",
+        "json-data",
+        "bilingual-sentences",
+        "source-of-truth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/src/pages/SceneDetail.tsx",
+      "type": "file",
+      "name": "SceneDetail.tsx",
+      "filePath": "app/src/pages/SceneDetail.tsx",
+      "summary": "场景详情页面组件，从 public 目录通过 fetch 动态加载指定场景的 JSON 句子数据，渲染双语句子列表，并为每个句子提供“开始练习”导航链接至打字练习页。处理加载、错误和空状态。",
+      "tags": [
+        "react-component",
+        "页面组件",
+        "数据获取",
+        "导航"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "使用 React Router useParams 获取路由参数 sceneId，通过 fetch 加载 /dicts/basic-850/${sceneId}.json，内部定义 SceneData 接口匹配返回结构。"
+    },
+    {
+      "id": "function:app/src/pages/SceneDetail.tsx:SceneDetail",
+      "type": "function",
+      "name": "SceneDetail",
+      "filePath": "app/src/pages/SceneDetail.tsx",
+      "lineRange": [
+        10,
+        104
+      ],
+      "summary": "场景详情主函数组件，负责状态管理（loading、error、scene）、数据获取副作用、条件渲染及句子列表映射，集成 Link 组件实现练习入口导航。",
+      "tags": [
+        "react-component",
+        "数据加载",
+        "路由参数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/src/style.css",
+      "type": "file",
+      "name": "style.css",
+      "filePath": "app/src/style.css",
+      "summary": "全局样式入口文件，引入 Tailwind CSS 的 base、components、utilities 三层指令，并为 body 元素设置系统原生字体栈。",
+      "tags": [
+        "stylesheet",
+        "tailwind",
+        "全局样式"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/src/types/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "app/src/types/index.ts",
+      "summary": "应用核心 TypeScript 类型定义文件，导出 Sentence（中英双语句子）、Scene（场景含句子数组）和 Dictionary（词典含场景数组）三个接口，规范了所有练习数据的结构。",
+      "tags": [
+        "type-definition",
+        "data-model",
+        "typescript-interface"
+      ],
+      "complexity": "simple",
+      "languageNotes": "采用 interface 而非 type alias，精确描述嵌套数组结构，为 JSON 场景文件和组件 props 提供完整类型保障。"
+    },
+    {
+      "id": "document:English-基础850词.md",
+      "type": "document",
+      "name": "English-基础850词.md",
+      "filePath": "English-基础850词.md",
+      "summary": "C.K. Ogden 1930 年基础英语 850 词的权威来源文档，采用 frontmatter 元数据 + 分类 Markdown 列表，完整收录 Operations（100 操作词）、Things（600 事物词，分一般与可图示）、Qualities（150 性质词，含反义）三大类别，是本项目 10 个场景 JSON 练习句子的词汇根本依据。",
+      "tags": [
+        "documentation",
+        "词汇表",
+        "权威来源",
+        "bilingual",
+        "source-of-truth"
+      ],
+      "complexity": "simple",
+      "languageNotes": "文档结构清晰，前置 YAML 提供标题、标签、创建时间与摘要；词表按 Ogden 经典分类法组织，每类词目以逗号分隔，便于提取与验证。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/src/App.tsx",
+      "target": "file:app/src/pages/SceneList.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/src/App.tsx",
+      "target": "file:app/src/pages/SceneDetail.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/src/App.tsx",
+      "target": "file:app/src/pages/Practice.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/src/main.tsx",
+      "target": "file:app/src/style.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/src/main.tsx",
+      "target": "file:app/src/App.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/src/App.tsx",
+      "target": "function:app/src/App.tsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/src/App.tsx",
+      "target": "function:app/src/App.tsx:App",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/src/pages/SceneList.tsx",
+      "target": "function:app/src/pages/SceneList.tsx:SceneList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/src/pages/SceneList.tsx",
+      "target": "function:app/src/pages/SceneList.tsx:SceneList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/src/pages/Practice.tsx",
+      "target": "function:app/src/pages/Practice.tsx:Practice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/src/pages/Practice.tsx",
+      "target": "function:app/src/pages/Practice.tsx:Practice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:app/tsconfig.json",
+      "target": "config:app/tsconfig.node.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:app/tsconfig.node.json",
+      "target": "config:app/vite.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:app/package.json",
+      "target": "config:app/vite.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:app/vite.config.ts",
+      "target": "file:app/index.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "config:app/tailwind.config.js",
+      "target": "file:app/index.html",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:app/postcss.config.js",
+      "target": "config:app/tailwind.config.js",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:app/.gitignore",
+      "target": "config:app/package.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/daily-life.json",
+      "target": "file:dicts/basic-850/daily-life.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/family.json",
+      "target": "file:dicts/basic-850/family.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/health.json",
+      "target": "file:dicts/basic-850/health.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/place.json",
+      "target": "file:dicts/basic-850/place.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/restaurant.json",
+      "target": "file:dicts/basic-850/restaurant.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/shopping.json",
+      "target": "file:dicts/basic-850/shopping.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/time.json",
+      "target": "file:dicts/basic-850/time.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/travel.json",
+      "target": "file:dicts/basic-850/travel.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/weather.json",
+      "target": "file:dicts/basic-850/weather.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/public/dicts/basic-850/work.json",
+      "target": "file:dicts/basic-850/work.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/daily-life.json",
+      "target": "file:app/public/dicts/basic-850/daily-life.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/family.json",
+      "target": "file:app/public/dicts/basic-850/family.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/health.json",
+      "target": "file:app/public/dicts/basic-850/health.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/place.json",
+      "target": "file:app/public/dicts/basic-850/place.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/restaurant.json",
+      "target": "file:app/public/dicts/basic-850/restaurant.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/shopping.json",
+      "target": "file:app/public/dicts/basic-850/shopping.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/time.json",
+      "target": "file:app/public/dicts/basic-850/time.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/travel.json",
+      "target": "file:app/public/dicts/basic-850/travel.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/weather.json",
+      "target": "file:app/public/dicts/basic-850/weather.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/work.json",
+      "target": "file:app/public/dicts/basic-850/work.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/daily-life.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/family.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/health.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/place.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/restaurant.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/shopping.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/time.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/travel.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/weather.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:dicts/basic-850/work.json",
+      "target": "document:English-基础850词.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:app/src/pages/SceneDetail.tsx",
+      "target": "file:app/src/types/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/src/pages/SceneDetail.tsx",
+      "target": "function:app/src/pages/SceneDetail.tsx:SceneDetail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/src/pages/SceneDetail.tsx",
+      "target": "function:app/src/pages/SceneDetail.tsx:SceneDetail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/daily-life.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/family.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/health.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/place.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/restaurant.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/shopping.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/time.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/travel.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/weather.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:app/public/dicts/basic-850/work.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/daily-life.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/family.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/health.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/place.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/restaurant.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/shopping.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/time.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/travel.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/weather.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:English-基础850词.md",
+      "target": "file:dicts/basic-850/work.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:documentation",
+      "name": "文档层",
+      "description": "C.K. Ogden 基础英语 850 词的权威 Markdown 词汇来源文档，采用分类列表组织 Operations、Things、Qualities 三大类，是 10 个场景练习句子的词表根本依据。",
+      "nodeIds": [
+        "document:English-基础850词.md"
+      ]
+    },
+    {
+      "id": "layer:data-source",
+      "name": "数据源层",
+      "description": "根目录 dicts/basic-850/ 下 10 个场景的规范 JSON 数据文件，作为各日常场景（日常对话、家庭生活、健康医疗等）的真实来源（source-of-truth），提供中英双语打字练习句子。",
+      "nodeIds": [
+        "file:dicts/basic-850/daily-life.json",
+        "file:dicts/basic-850/family.json",
+        "file:dicts/basic-850/health.json",
+        "file:dicts/basic-850/place.json",
+        "file:dicts/basic-850/restaurant.json",
+        "file:dicts/basic-850/shopping.json",
+        "file:dicts/basic-850/time.json",
+        "file:dicts/basic-850/travel.json",
+        "file:dicts/basic-850/weather.json",
+        "file:dicts/basic-850/work.json"
+      ]
+    },
+    {
+      "id": "layer:static-data",
+      "name": "静态数据层",
+      "description": "应用 public/dicts/basic-850/ 中存放的 10 个场景 JSON 副本，由 Vite 构建时直接静态托管，供运行时 fetch 加载到打字练习界面，实现内容交付与源码分离。",
+      "nodeIds": [
+        "file:app/public/dicts/basic-850/daily-life.json",
+        "file:app/public/dicts/basic-850/family.json",
+        "file:app/public/dicts/basic-850/health.json",
+        "file:app/public/dicts/basic-850/place.json",
+        "file:app/public/dicts/basic-850/restaurant.json",
+        "file:app/public/dicts/basic-850/shopping.json",
+        "file:app/public/dicts/basic-850/time.json",
+        "file:app/public/dicts/basic-850/travel.json",
+        "file:app/public/dicts/basic-850/weather.json",
+        "file:app/public/dicts/basic-850/work.json"
+      ]
+    },
+    {
+      "id": "layer:ui-logic",
+      "name": "UI 与逻辑层",
+      "description": "React 应用的核心界面与交互逻辑，包括根组件、路由配置、场景列表/详情/练习页面、严格前缀匹配打字状态机与视觉反馈、TypeScript 数据类型定义、全局样式及 HTML 入口模板。",
+      "nodeIds": [
+        "file:app/src/App.tsx",
+        "file:app/src/main.tsx",
+        "file:app/src/pages/SceneList.tsx",
+        "file:app/src/pages/SceneDetail.tsx",
+        "file:app/src/pages/Practice.tsx",
+        "file:app/src/types/index.ts",
+        "file:app/src/style.css",
+        "file:app/index.html"
+      ]
+    },
+    {
+      "id": "layer:build-config",
+      "name": "构建配置层",
+      "description": "Vite 构建配置、TypeScript 编译器设置（主配置与 Node 环境）、Tailwind CSS 与 PostCSS 样式处理、npm 依赖与脚本、Git 忽略规则等支撑应用开发与打包的全部配置。",
+      "nodeIds": [
+        "config:app/vite.config.ts",
+        "config:app/tsconfig.json",
+        "config:app/tsconfig.node.json",
+        "config:app/tailwind.config.js",
+        "config:app/postcss.config.js",
+        "config:app/package.json",
+        "config:app/.gitignore"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "权威词汇来源：基础英语 850 词",
+      "description": "项目从 C.K. Ogden 1930 年的经典 850 词表开始。该 Markdown 文档按 Operations（操作词 100 个）、Things（事物词 600 个）和 Qualities（性质词 150 个）三大类组织，是所有练习句子的词汇根本依据和唯一权威来源。理解这个文档，就能明白为什么选择这 10 个日常场景，以及句子设计如何严格限制在 850 词范围内。",
+      "nodeIds": [
+        "document:English-基础850词.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "场景数据源：规范真实来源",
+      "description": "在 dicts/basic-850/ 目录下，10 个 JSON 文件是各场景的 source-of-truth 数据。它们为“日常对话”“家庭生活”“健康医疗”等场景各准备了 10 条中英双语练习句子，严格基于 850 词表编写。这些文件是内容创作的唯一规范，后续所有交付都应以此为准。",
+      "nodeIds": [
+        "file:dicts/basic-850/daily-life.json",
+        "file:dicts/basic-850/family.json",
+        "file:dicts/basic-850/health.json",
+        "file:dicts/basic-850/place.json"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "静态数据交付：public 副本与重复",
+      "description": "Vite 构建时会把 app/public/dicts/basic-850/ 下的 10 个 JSON 完整副本直接托管为静态资源，供运行时 fetch 加载。结果是同一套句子数据在项目中出现了两次（根目录 dicts/ 与 public/ 副本），这是典型的“源码 vs 交付”分离策略，但也带来了同步维护负担。从脚本分析可见，每个场景源文件与 public 文件之间存在双向 related 边，清晰揭示了这一重复模式。",
+      "nodeIds": [
+        "file:app/public/dicts/basic-850/daily-life.json",
+        "file:app/public/dicts/basic-850/family.json",
+        "file:app/public/dicts/basic-850/health.json",
+        "file:app/public/dicts/basic-850/place.json"
+      ],
+      "languageLesson": "Vite 会自动将 public/ 目录内容原样暴露为静态资源，无需额外配置即可被浏览器 fetch 获取。这是一种零配置的内容交付方式，但要求开发者手动维护 source 与 public 副本的一致性。"
+    },
+    {
+      "order": 4,
+      "title": "React 应用入口与路由架构",
+      "description": "从 main.tsx 开始，应用使用 React StrictMode + BrowserRouter 启动，根组件 App.tsx 通过 React Router 定义了三个核心路由：场景列表、场景详情和打字练习。整个 UI 层围绕这三条路由展开，形成了清晰的“浏览 → 选择句子 → 练习”用户旅程。",
+      "nodeIds": [
+        "file:app/src/main.tsx",
+        "file:app/src/App.tsx",
+        "file:app/index.html"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "场景浏览：列表与详情页",
+      "description": "SceneList.tsx 以卡片形式硬编码展示全部 10 个场景，点击后进入 SceneDetail.tsx。该页面通过 useParams 获取 sceneId，并用 fetch 从 /dicts/basic-850/${sceneId}.json 动态加载句子数据，同时渲染中英对照列表和“开始练习”入口。类型定义文件 types/index.ts 为 Sentence、Scene、Dictionary 提供了严格的 TypeScript 接口，保障了数据流的一致性。",
+      "nodeIds": [
+        "file:app/src/pages/SceneList.tsx",
+        "file:app/src/pages/SceneDetail.tsx",
+        "file:app/src/types/index.ts"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "核心引擎：Practice 打字练习状态机",
+      "description": "Practice.tsx 是整个应用最复杂、最有教育价值的组件。它实现了严格的前缀匹配状态机、逐字符绿/红视觉反馈、防误触空格的完成判断、自动跳转下一句以及练习结束界面。所有练习逻辑（数据加载、输入处理、匹配算法、渲染）都集中在这里，是 MVP 阶段的核心价值所在。",
+      "nodeIds": [
+        "file:app/src/pages/Practice.tsx"
+      ],
+      "languageLesson": "组件采用“隐藏的受控 <input> + 手动渲染字符 span 数组”的经典技巧实现所见即所得打字效果：用户实际在透明 input 中输入，UI 则根据有效前缀长度（getMatchedPrefixLength）高亮已匹配字符。这种模式既保留了原生输入能力，又能完全控制视觉反馈，同时通过去除末尾标点后的 effectiveTarget 确保完成判断的严格性。"
+    },
+    {
+      "order": 7,
+      "title": "构建配置与工具链",
+      "description": "构建层由 Vite（极简配置）、TypeScript（严格模式 + project references）、Tailwind + PostCSS 以及 npm 脚本组成。vite.config.ts 几乎为空，依靠 Vite 默认行为直接服务 public/ 下的 850 词典数据；package.json 定义了 dev/build/preview 流程；tsconfig 系列文件则分离了应用与 Node 环境类型检查需求。",
+      "nodeIds": [
+        "config:app/vite.config.ts",
+        "config:app/package.json",
+        "config:app/tsconfig.json",
+        "config:app/tsconfig.node.json",
+        "config:app/tailwind.config.js"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "MVP 现状与架构观察",
+      "description": "通过图分析可见，项目目前处于典型 MVP 状态：核心打字交互已实现，数据与 UI 分离清晰，但存在明显的数据重复（10 对 source/public JSON）、硬编码场景列表、以及缺乏自动化同步机制。UI 路由集群与数据来源集群高度内聚，说明功能边界清晰；下一步可考虑将 dicts/ 作为唯一数据源，通过构建脚本或 Vite 插件自动同步到 public/，或引入更完善的 CMS 工作流。",
+      "nodeIds": [
+        "file:app/src/App.tsx",
+        "file:app/src/pages/Practice.tsx",
+        "document:English-基础850词.md",
+        "file:dicts/basic-850/daily-life.json",
+        "file:app/public/dicts/basic-850/daily-life.json"
+      ]
+    }
+  ]
+}

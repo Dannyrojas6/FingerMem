@@ -1,0 +1,15 @@
+{
+  "name": "家庭生活",
+  "sentences": [
+    { "en": "My mother is cooking dinner.", "zh": "我妈妈正在做晚饭。" },
+    { "en": "The children are playing in the garden.", "zh": "孩子们正在花园里玩。" },
+    { "en": "I love my family very much.", "zh": "我非常爱我的家人。" },
+    { "en": "My father works in a big company.", "zh": "我父亲在一家大公司工作。" },
+    { "en": "We usually eat together in the evening.", "zh": "我们通常晚上一起吃饭。" },
+    { "en": "Please call your brother for me.", "zh": "请帮我叫一下你哥哥。" },
+    { "en": "The baby is sleeping in the bed.", "zh": "婴儿正在床上睡觉。" },
+    { "en": "I want to visit my grandparents this weekend.", "zh": "这个周末我想去看望我的祖父母。" },
+    { "en": "My sister is older than me.", "zh": "我姐姐比我大。" },
+    { "en": "We had a good time at home.", "zh": "我们在家里过得很愉快。" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "购物",
+  "sentences": [
+    { "en": "How much is this shirt?", "zh": "这件衬衫多少钱？" },
+    { "en": "I want to buy a new bag.", "zh": "我想买一个新包。" },
+    { "en": "Do you have this in a larger size?", "zh": "这个有大一点的尺寸吗？" },
+    { "en": "I will take this one please.", "zh": "我就要这个了。" },
+    { "en": "Where can I find the shoes?", "zh": "我在哪里可以找到鞋子？" },
+    { "en": "This is too expensive for me.", "zh": "这对我来说太贵了。" },
+    { "en": "Can I pay with cash?", "zh": "我可以用现金支付吗？" },
+    { "en": "I need a bag for these things.", "zh": "我需要一个袋子装这些东西。" },
+    { "en": "Is there a discount today?", "zh": "今天有折扣吗？" },
+    { "en": "I like the color of this coat.", "zh": "我喜欢这件外套的颜色。" }
+  ]
+}

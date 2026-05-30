@@ -1,0 +1,15 @@
+{
+  "name": "餐厅点餐",
+  "sentences": [
+    { "en": "I would like a cup of coffee.", "zh": "我想要一杯咖啡。" },
+    { "en": "What do you have for lunch today?", "zh": "今天午餐有什么？" },
+    { "en": "Can I have the menu please?", "zh": "请给我菜单好吗？" },
+    { "en": "This food is very good.", "zh": "这食物非常好吃。" },
+    { "en": "I am hungry and want to eat.", "zh": "我饿了，想吃东西。" },
+    { "en": "Please bring me some water.", "zh": "请给我一些水。" },
+    { "en": "How much does this cost?", "zh": "这个多少钱？" },
+    { "en": "I do not eat meat.", "zh": "我不吃肉。" },
+    { "en": "The soup is too hot.", "zh": "汤太烫了。" },
+    { "en": "Thank you for the good service.", "zh": "谢谢你们良好的服务。" }
+  ]
+}

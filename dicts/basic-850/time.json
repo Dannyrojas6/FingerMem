@@ -1,0 +1,15 @@
+{
+  "name": "时间与日期",
+  "sentences": [
+    { "en": "What time is it now?", "zh": "现在几点了？" },
+    { "en": "I will come back at five o'clock.", "zh": "我五点钟回来。" },
+    { "en": "Today is Monday.", "zh": "今天是星期一。" },
+    { "en": "The meeting starts at nine.", "zh": "会议九点开始。" },
+    { "en": "We have a holiday next week.", "zh": "我们下周放假。" },
+    { "en": "Please come here on time.", "zh": "请准时来这里。" },
+    { "en": "It is already late at night.", "zh": "已经很晚了。" },
+    { "en": "I get up at seven every morning.", "zh": "我每天早上七点起床。" },
+    { "en": "The year has twelve months.", "zh": "一年有十二个月。" },
+    { "en": "Time passes very quickly.", "zh": "时间过得很快。" }
+  ]
+}

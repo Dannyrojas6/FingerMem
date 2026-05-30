@@ -1,0 +1,520 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "no-git",
+  "generatedAt": "2026-05-30T00:21:30.023Z",
+  "files": {
+    "English-基础850词.md": {
+      "filePath": "English-基础850词.md",
+      "contentHash": "f4fc5d7a07fa81d1fb406371751348822ada2c61251cb1ff1b9b8619c1c27329",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "app/.gitignore": {
+      "filePath": "app/.gitignore",
+      "contentHash": "fe718e7babb14f3cbad2d97f08889b9ce5215ed3fe0e43b2b8cfbfb3b9b844e8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": false
+    },
+    "app/index.html": {
+      "filePath": "app/index.html",
+      "contentHash": "7e6943b6d866470c04b510d6f9709db770a543cb979ff0f27b97ab35cb722ad9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "app/package.json": {
+      "filePath": "app/package.json",
+      "contentHash": "9aa68b4da471974b76dfcf6de99c2348394d0085f0c35451ac0e63ff231621b5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "app/postcss.config.js": {
+      "filePath": "app/postcss.config.js",
+      "contentHash": "010e8774c76996e28b1f2290d690b3b64f56f2fbe26c747b4419ee0110d0a002",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/daily-life.json": {
+      "filePath": "app/public/dicts/basic-850/daily-life.json",
+      "contentHash": "e1b9667f7706d0987d141a3a3691c2681bf43f9d00524fdc40b8ca7ddac875f2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/family.json": {
+      "filePath": "app/public/dicts/basic-850/family.json",
+      "contentHash": "f6f08c09927fd2c22014fa08c4c7874a669b597cea8043491ef79535da05ed89",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/health.json": {
+      "filePath": "app/public/dicts/basic-850/health.json",
+      "contentHash": "d5c5eec7610736533231b84bfcd5dc61497cbe55180d05a0cfd2326b5d9bdb89",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/place.json": {
+      "filePath": "app/public/dicts/basic-850/place.json",
+      "contentHash": "8e71624c6704b5fa3872fb04f8ba18eb1717599e8ccfbd5b4d4b53971504f96f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/restaurant.json": {
+      "filePath": "app/public/dicts/basic-850/restaurant.json",
+      "contentHash": "3de964491d2ff6d0fad8f86e82adb7a42ffaf5236bd1848a2c18dd99c7f57263",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/shopping.json": {
+      "filePath": "app/public/dicts/basic-850/shopping.json",
+      "contentHash": "091e50a82bc35c3331126dc34b613e7aa0dd413ae4eac828c5a3c56d1dfd31b2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/time.json": {
+      "filePath": "app/public/dicts/basic-850/time.json",
+      "contentHash": "755ce91b5d818d3f7dde3d0ab50988ec32ba62e283dcca82ff7e1d178fdd09a7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/travel.json": {
+      "filePath": "app/public/dicts/basic-850/travel.json",
+      "contentHash": "0584e340e8d85036c360e22c39fa6fcd52394bfc2f0bfd9bf66491b0d0862b53",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/weather.json": {
+      "filePath": "app/public/dicts/basic-850/weather.json",
+      "contentHash": "f54c80cc90924f0a053fca1764a077fe857adec394881bcf0ac5e455843fd7fa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/public/dicts/basic-850/work.json": {
+      "filePath": "app/public/dicts/basic-850/work.json",
+      "contentHash": "222a92c01ef86a4dfccf9911214153bb4ef556fbf11a0c91e0c3d2026826b3d9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/src/App.tsx": {
+      "filePath": "app/src/App.tsx",
+      "contentHash": "27969f9a772bdc5742d096d96880b8fa09b09f149c1e7b7d321209dd111093ec",
+      "functions": [
+        {
+          "name": "App",
+          "params": [],
+          "exported": false,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "Routes",
+            "Route"
+          ]
+        },
+        {
+          "source": "./pages/SceneList",
+          "specifiers": [
+            "SceneList"
+          ]
+        },
+        {
+          "source": "./pages/SceneDetail",
+          "specifiers": [
+            "SceneDetail"
+          ]
+        },
+        {
+          "source": "./pages/Practice",
+          "specifiers": [
+            "Practice"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "app/src/main.tsx": {
+      "filePath": "app/src/main.tsx",
+      "contentHash": "5e71e3a70e9eec4dd67194ec426751b589809eb16fdd054995d6c9cba0c13fa5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "StrictMode"
+          ]
+        },
+        {
+          "source": "react-dom/client",
+          "specifiers": [
+            "createRoot"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "BrowserRouter"
+          ]
+        },
+        {
+          "source": "./style.css",
+          "specifiers": []
+        },
+        {
+          "source": "./App.tsx",
+          "specifiers": [
+            "App"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "app/src/pages/Practice.tsx": {
+      "filePath": "app/src/pages/Practice.tsx",
+      "contentHash": "678ac39d1343dfd038e028edb224b3db9885440dd1abda86e0bfb6529cf85f7e",
+      "functions": [
+        {
+          "name": "Practice",
+          "params": [],
+          "exported": true,
+          "lineCount": 263
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useParams",
+            "Link",
+            "useNavigate"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState",
+            "useRef"
+          ]
+        },
+        {
+          "source": "../types",
+          "specifiers": [
+            "Sentence"
+          ]
+        }
+      ],
+      "exports": [
+        "Practice"
+      ],
+      "totalLines": 268,
+      "hasStructuralAnalysis": true
+    },
+    "app/src/pages/SceneDetail.tsx": {
+      "filePath": "app/src/pages/SceneDetail.tsx",
+      "contentHash": "6e614d5759257b86bdc56b57b81049c5f785aef5c5eb4d29eab92e56899c88e3",
+      "functions": [
+        {
+          "name": "SceneDetail",
+          "params": [],
+          "exported": true,
+          "lineCount": 95
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useParams",
+            "Link"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "../types",
+          "specifiers": [
+            "Sentence"
+          ]
+        }
+      ],
+      "exports": [
+        "SceneDetail"
+      ],
+      "totalLines": 106,
+      "hasStructuralAnalysis": true
+    },
+    "app/src/pages/SceneList.tsx": {
+      "filePath": "app/src/pages/SceneList.tsx",
+      "contentHash": "6b9891e7cca4cf17d9d421815533439d96b49dfd14667f0b9fc29e807e58d98f",
+      "functions": [
+        {
+          "name": "SceneList",
+          "params": [],
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "Link"
+          ]
+        }
+      ],
+      "exports": [
+        "SceneList"
+      ],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "app/src/style.css": {
+      "filePath": "app/src/style.css",
+      "contentHash": "6e9e39e3255109dc471d9843b4e76442f463ffb4ebe1792b638e3bf885737621",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
+    },
+    "app/src/types/index.ts": {
+      "filePath": "app/src/types/index.ts",
+      "contentHash": "e58f257bc836638659e47e6bc39e8f5eb782d384a91975e54815dff8cc5e5475",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "app/tailwind.config.js": {
+      "filePath": "app/tailwind.config.js",
+      "contentHash": "3dd3712212acbc67849a13a9f1401527495e09a1a12e1c417fac6b4ecf1fe6d4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "app/tsconfig.json": {
+      "filePath": "app/tsconfig.json",
+      "contentHash": "19024629d192c879210c8a115dae59b34ab2894fd37261fddaaf5eb7f0cff2d1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "app/tsconfig.node.json": {
+      "filePath": "app/tsconfig.node.json",
+      "contentHash": "6847175da5ab8079db6583b92c209f79a8ae39d35f3b0876ddfb0717b752d4c8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "app/vite.config.ts": {
+      "filePath": "app/vite.config.ts",
+      "contentHash": "588bb0d89e4ff533360eab8f49de233db1fc85ef74037eaca8306a8f78226a63",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vite",
+          "specifiers": [
+            "defineConfig"
+          ]
+        },
+        {
+          "source": "@vitejs/plugin-react",
+          "specifiers": [
+            "react"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/daily-life.json": {
+      "filePath": "dicts/basic-850/daily-life.json",
+      "contentHash": "e1b9667f7706d0987d141a3a3691c2681bf43f9d00524fdc40b8ca7ddac875f2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/family.json": {
+      "filePath": "dicts/basic-850/family.json",
+      "contentHash": "f6f08c09927fd2c22014fa08c4c7874a669b597cea8043491ef79535da05ed89",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/health.json": {
+      "filePath": "dicts/basic-850/health.json",
+      "contentHash": "d5c5eec7610736533231b84bfcd5dc61497cbe55180d05a0cfd2326b5d9bdb89",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/place.json": {
+      "filePath": "dicts/basic-850/place.json",
+      "contentHash": "8e71624c6704b5fa3872fb04f8ba18eb1717599e8ccfbd5b4d4b53971504f96f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/restaurant.json": {
+      "filePath": "dicts/basic-850/restaurant.json",
+      "contentHash": "3de964491d2ff6d0fad8f86e82adb7a42ffaf5236bd1848a2c18dd99c7f57263",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/shopping.json": {
+      "filePath": "dicts/basic-850/shopping.json",
+      "contentHash": "091e50a82bc35c3331126dc34b613e7aa0dd413ae4eac828c5a3c56d1dfd31b2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/time.json": {
+      "filePath": "dicts/basic-850/time.json",
+      "contentHash": "755ce91b5d818d3f7dde3d0ab50988ec32ba62e283dcca82ff7e1d178fdd09a7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/travel.json": {
+      "filePath": "dicts/basic-850/travel.json",
+      "contentHash": "0584e340e8d85036c360e22c39fa6fcd52394bfc2f0bfd9bf66491b0d0862b53",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/weather.json": {
+      "filePath": "dicts/basic-850/weather.json",
+      "contentHash": "f54c80cc90924f0a053fca1764a077fe857adec394881bcf0ac5e455843fd7fa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "dicts/basic-850/work.json": {
+      "filePath": "dicts/basic-850/work.json",
+      "contentHash": "222a92c01ef86a4dfccf9911214153bb4ef556fbf11a0c91e0c3d2026826b3d9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    }
+  }
+}
