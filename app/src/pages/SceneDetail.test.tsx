@@ -18,10 +18,9 @@ describe('SceneDetail 组件', () => {
     renderSceneDetail('daily-life')
 
     expect(screen.getByText('日常对话')).toBeInTheDocument()
-    // 应该有连续练习入口或单个句子练习按钮
-    const hasPracticeEntry =
-      screen.queryByText('开始连续练习本场景 →') || screen.queryAllByText('开始练习').length > 0
-    expect(hasPracticeEntry).toBeTruthy()
+    // 应该有“连续练习本场景”按钮和单个句子“练习”按钮
+    expect(screen.getByText('连续练习本场景')).toBeInTheDocument()
+    expect(screen.getAllByText('练习').length).toBeGreaterThan(0)
   })
 
   it('无效场景会显示错误提示', () => {
