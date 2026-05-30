@@ -53,8 +53,8 @@ describe('SceneList 组件', () => {
   it('每个卡片都应该显示句子数量', () => {
     renderSceneList()
 
-    // 所有卡片都应该显示 "10 个句子"
-    const sentenceCounts = screen.getAllByText('10 个句子 · 点击开始连续练习')
+    // 所有卡片都应该显示 "10 个句子 · 点击开始练习"
+    const sentenceCounts = screen.getAllByText('10 个句子 · 点击开始练习')
     expect(sentenceCounts).toHaveLength(10)
   })
 
