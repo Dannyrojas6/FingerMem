@@ -8,8 +8,9 @@
 
 - `AI_DAILY_WORKFLOW.md` — AI 辅助开发的日常工作流（EOD / SOD）
 - `English-基础850词.md` — 官方 850 词表
-- `dicts/basic-850/` — 10 个场景的练习句子（数据源）
-- `app/` — Vite + React + TypeScript + Tailwind 应用
+- `dicts/basic-850/` — **唯一数据源**（10 个场景练习句子，编辑后需运行同步脚本）
+- `scripts/sync-dicts.js` — 数据同步脚本（将 `dicts/basic-850/` 同步到应用内）
+- `app/` — Vite + React + TypeScript + Tailwind 应用（通过 `import.meta.glob` 消费数据）
 
 ## 快速开始
 
