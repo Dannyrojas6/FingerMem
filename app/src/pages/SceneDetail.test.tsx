@@ -20,16 +20,15 @@ describe('SceneDetail 组件', () => {
     const firstScene = scenes[0]
     renderSceneDetail(firstScene.id)
 
-    expect(screen.getByText(firstScene.name)).toBeInTheDocument()
-    // 应该有“连续练习本场景”按钮和至少一个“练习”按钮
-    expect(screen.getByText('连续练习本场景')).toBeInTheDocument()
-    expect(screen.getAllByText('练习').length).toBeGreaterThan(0)
+    expect(screen.getByTestId('scene-name')).toHaveTextContent(firstScene.name)
+    expect(screen.getByTestId('start-practice-button')).toBeInTheDocument()
+    expect(screen.getAllByTestId('sentence-item').length).toBeGreaterThan(0)
   })
 
   it('无效场景会显示错误提示', () => {
     renderSceneDetail('non-existent-scene')
 
-    expect(screen.getByText('未找到该场景的练习内容')).toBeInTheDocument()
-    expect(screen.getByText('返回场景列表')).toBeInTheDocument()
+    expect(screen.getByTestId('error-message')).toHaveTextContent('未找到该场景的练习内容')
+    expect(screen.getByTestId('back-to-list-link')).toBeInTheDocument()
   })
 })
