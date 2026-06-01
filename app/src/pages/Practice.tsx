@@ -3,17 +3,48 @@ import { useEffect, useState, useRef } from 'react'
 import { getScene } from '../data/scenes'
 import { cleanTarget, getMatchedPrefixLength, isSentenceCompleted } from '../utils/typing'
 import ErrorMessage from '../components/ErrorMessage'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogPopup,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from '@/components/ui/dialog'
 
 export default function Practice() {
   const { sceneId, index } = useParams<{ sceneId: string; index: string }>()
   const sentenceIndex = parseInt(index || '0', 10)
   const navigate = useNavigate()
   const inputRef = useRef<HTMLInputElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
 
   // 直接在句子上的打字状态
   const [userInput, setUserInput] = useState('')
   const [isCompleted, setIsCompleted] = useState(false)
   const [showCompletionModal, setShowCompletionModal] = useState(false)
+
+  // 光标闪烁控制：新句子默认静态下划线。只有用户长时间静止不动后才开始闪烁提示。
+  const [isIdle, setIsIdle] = useState(false)
+  const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const IDLE_BLINK_DELAY = 1500
+
+  // 每当有输入或新句子出现时，重置计时器（保持静态），静止够久后才触发闪烁
+  const resetIdleTimer = () => {
+    setIsIdle(false)
+    if (idleTimerRef.current) {
+      clearTimeout(idleTimerRef.current)
+    }
+    idleTimerRef.current = setTimeout(() => {
+      setIsIdle(true)
+    }, IDLE_BLINK_DELAY)
+  }
+
+  // 实时 CPM（每分钟正确字符数）计算 —— 仅用于底部极简控制台
+  // 使用 10 秒滚动窗口，只统计正确输入的字符
+  const correctTimestampsRef = useRef<number[]>([])
+  const SPEED_WINDOW_MS = 10_000
+  const [displayCPM, setDisplayCPM] = useState("—")
 
   // 使用共享的纯函数（便于测试）
 
@@ -81,10 +112,30 @@ export default function Practice() {
     setUserInput('')
     setIsCompleted(false)
     setShowCompletionModal(false)
+
+    // 新句子出现时默认静态（不闪烁），并开始计时。
+    // 只有用户静止不动达到上限时间后，才会开始闪烁提示。
+    resetIdleTimer()
+
+    // 重置速度统计
+    correctTimestampsRef.current = []
+    setDisplayCPM("—")
   }, [sceneId, sentenceIndex])
+
+  // 清理 idle 定时器（组件卸载时）
+  useEffect(() => {
+    return () => {
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current)
+      }
+    }
+  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!sentence) return
+
+    // 任何输入都重置空闲计时 → 保持静态，并把开始闪烁的时间往后推
+    resetIdleTimer()
 
     let value = e.target.value
 
@@ -93,7 +144,32 @@ export default function Practice() {
       value = value.slice(0, effectiveLength)
     }
 
+    // === 实时CPM统计（仅正确字符） ===
+    const prevMatched = getMatchedPrefixLength(userInput, effectiveTarget)
     setUserInput(value)
+
+    const newMatched = getMatchedPrefixLength(value, effectiveTarget)
+    const now = Date.now()
+
+    if (newMatched > prevMatched) {
+      const added = newMatched - prevMatched
+      for (let i = 0; i < added; i++) {
+        correctTimestampsRef.current.push(now)
+      }
+    }
+
+    // 清理超过窗口的旧记录
+    const cutoff = now - SPEED_WINDOW_MS
+    correctTimestampsRef.current = correctTimestampsRef.current.filter(t => t > cutoff)
+
+    // 计算当前CPM
+    const count = correctTimestampsRef.current.length
+    if (count >= 3) {
+      const cpm = Math.round((count / (SPEED_WINDOW_MS / 1000)) * 60)
+      setDisplayCPM(String(cpm))
+    } else {
+      setDisplayCPM("—")
+    }
 
     // 使用共享的完成判断逻辑（防空格作弊）
     const isNowCompleted = isSentenceCompleted(value, effectiveTarget)
@@ -118,8 +194,39 @@ export default function Practice() {
     if (e.key === 'Escape') {
       setUserInput('')
       setIsCompleted(false)
+      // Escape 清空后保持静态，并重新计时（静止够久才会开始闪烁）
+      resetIdleTimer()
+
+      // 重置速度统计
+      correctTimestampsRef.current = []
+      setDisplayCPM("—")
     }
   }
+
+  // 完成弹窗键盘快捷键支持
+  // Enter / 空格 → 重新练习（主操作）
+  // Escape → 返回场景选择
+  useEffect(() => {
+    if (!showCompletionModal) return
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        navigate(`/practice/${sceneId}/0`)
+        setShowCompletionModal(false)
+      } else if (e.key === 'Escape') {
+        e.preventDefault()
+        navigate('/')
+        setShowCompletionModal(false)
+      }
+    }
+
+    // 使用 capture 优先拦截，避免被 Dialog 默认的 Escape 关闭行为干扰
+    window.addEventListener('keydown', handleKeyDown, { capture: true })
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown, { capture: true })
+    }
+  }, [showCompletionModal, sceneId, navigate])
 
   if (error || !sentence) {
     return <ErrorMessage message={error || '无法加载练习内容'} />
@@ -133,40 +240,19 @@ export default function Practice() {
   // 光标位置永远不超过有效内容长度（不跳到末尾标点上）
   const cursorPosition = Math.min(userInput.length, effectiveLength)
 
-  // 进度用“已正确匹配的前缀长度”来算，更符合实际完成度
-  const matchedForProgress = getMatchedPrefixLength(userInput, effectiveTarget)
-  const progress = Math.min(Math.floor((matchedForProgress / effectiveLength) * 100), 100)
+  // 注意：上方视觉进度条已移除，进度仅通过底部控制台文字显示
+  // 此处保留 matchedForProgress 计算供速度统计使用（见 handleInputChange）
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="mb-6">
-        <Link to="/" className="text-sm text-gray-500 hover:text-gray-700">
-          ← 返回场景列表
-        </Link>
-      </div>
-
-      <div className="mb-4">
-        <div className="flex justify-between items-center mb-2">
-          <h2 className="text-xl font-semibold text-gray-900">{sceneName}</h2>
-          <span className="text-sm text-gray-500">
-            第 {sentenceIndex + 1} / {totalSentences} 句
-          </span>
-        </div>
-        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-blue-600 transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-      </div>
-
-      {/* 句子练习主区域 - 极简居中设计 */}
+    <div className="mx-auto max-w-[720px] px-6">
+      {/* 句子核心区域 —— 保持在中央偏下的位置（专注最佳位置）
+          再往下移一点，中英文和底部信息整体下移 */}
       <div
-        className="flex flex-col items-center justify-center min-h-[60vh] cursor-text"
+        className="flex min-h-[55vh] flex-col items-center justify-center cursor-text pt-16 pb-2"
         onClick={() => inputRef.current?.focus()}
       >
-        {/* 大句子 - 居中 + 加大字号 */}
-        <div className="text-4xl md:text-5xl leading-relaxed font-mono tracking-wide select-none text-center mb-6">
+        {/* 句子主体 */}
+        <div className="font-mono text-[42px] leading-[1.35] tracking-[0.3px] text-center select-none md:text-[48px] md:leading-[1.32]">
           {chars.map((targetChar, i) => {
             const typedChar = userInput[i]
             const isCursorPosition = i === cursorPosition && cursorPosition < effectiveLength
@@ -176,20 +262,20 @@ export default function Practice() {
               displayChar = '·'
             }
 
-            let className = 'text-gray-400'
+            let className = 'text-foreground/40'
 
             if (typedChar !== undefined) {
               if (typedChar === targetChar) {
-                className = 'text-green-600'
+                className = 'text-emerald-400/90'
               } else {
-                className = 'text-red-600'
+                className = 'text-rose-400/90'
               }
             }
 
             return (
               <span
                 key={i}
-                className={`${className} ${isCursorPosition ? 'border-b-[3px] border-blue-500' : ''}`}
+                className={`${className} ${isCursorPosition ? 'border-b-[2.5px] border-foreground/75' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
               >
                 {displayChar}
               </span>
@@ -198,7 +284,9 @@ export default function Practice() {
         </div>
 
         {/* 中文翻译 */}
-        <div className="text-2xl text-gray-600 text-center mb-8">{sentence.zh}</div>
+        <div className="mt-10 text-[20px] text-muted-foreground/70 tracking-[0.05px] text-center leading-snug">
+          {sentence.zh}
+        </div>
 
         {/* 隐藏输入框 */}
         <input
@@ -211,45 +299,51 @@ export default function Practice() {
         />
       </div>
 
-      {/* 完成状态 - 最后一句使用轻量弹窗 */}
-      {isCompleted && sentenceIndex + 1 >= totalSentences && showCompletionModal && (
-        <>
-          {/* 背景遮罩（中等强度）+ 轻微变暗主内容 */}
-          <div
-            className="fixed inset-0 bg-black/40 z-40"
-            onClick={() => setShowCompletionModal(false)}
-          />
+      {/* 底部极简控制台读数条（Option A 极致克制风格）
+          与上方中英文一起再往下移一点 */}
+      <div className="relative mt-10 flex items-center justify-between pb-6 text-[14px] tracking-[0.4px] text-muted-foreground/70 font-mono tabular-nums">
+        <div className="flex-1 truncate">{sceneName}</div>
 
-          {/* 小型居中弹窗 */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div
-              className="bg-white border border-gray-200 rounded-xl shadow-md p-6 w-full max-w-[360px] text-center"
-              onClick={e => e.stopPropagation()}
+        {/* 进度放在正中间，不受左右内容长度影响 */}
+        <div className="absolute left-1/2 -translate-x-1/2 tabular-nums">
+          {sentenceIndex + 1} / {totalSentences}
+        </div>
+
+        <div className="w-[72px] text-right tabular-nums">{displayCPM} CPM</div>
+      </div>
+
+
+      {/* 完成确认 —— 玻璃质感，低调克制 */}
+      <Dialog open={showCompletionModal} onOpenChange={setShowCompletionModal}>
+        <DialogPopup 
+          className="max-w-[380px] bg-[#1a1a1a]/70 backdrop-blur-xl border-white/10 p-8 text-center"
+          initialFocus={titleRef}
+        >
+          <DialogHeader className="mb-2">
+            <DialogTitle ref={titleRef} className="text-[18px] font-medium tracking-[0.2px]">
+              练习完成
+            </DialogTitle>
+          </DialogHeader>
+
+          <DialogFooter className="mt-7 gap-3">
+            <Button
+              render={<Link to={`/practice/${sceneId}/0`} />}
+              onClick={() => setShowCompletionModal(false)}
+              className="flex-1 text-[13px]"
             >
-              <div className="text-xl font-semibold mb-4 flex items-center justify-center gap-2">
-                恭喜完成！ <span className="text-2xl">🎉</span>
-              </div>
-
-              <div className="flex gap-3 justify-center">
-                <Link
-                  to="/"
-                  className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 text-sm font-medium text-center"
-                  onClick={() => setShowCompletionModal(false)}
-                >
-                  返回列表
-                </Link>
-                <Link
-                  to={`/practice/${sceneId}/0`}
-                  className="flex-1 px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium text-center"
-                  onClick={() => setShowCompletionModal(false)}
-                >
-                  继续训练
-                </Link>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+              重新练习
+            </Button>
+            <Button
+              variant="ghost"
+              render={<Link to="/" />}
+              onClick={() => setShowCompletionModal(false)}
+              className="flex-1 text-[13px] text-muted-foreground hover:text-foreground border border-white/10 hover:bg-white/5"
+            >
+              返回
+            </Button>
+          </DialogFooter>
+        </DialogPopup>
+      </Dialog>
     </div>
   )
 }

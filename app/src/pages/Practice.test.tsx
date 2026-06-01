@@ -263,21 +263,26 @@ describe('Practice 组件 - 核心打字交互', () => {
     expect(spans[3]).toHaveClass('text-green-600')
   })
 
-  it('当前光标位置应有蓝色下划线', async () => {
+  it('新句子默认静态下划线（不闪烁），只有长时间未输入后才开始闪烁', async () => {
     const user = userEvent.setup()
     const { container } = renderPractice('daily-life', 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const sentenceArea = container.querySelector('.text-4xl')!
+    const sentenceArea = container.querySelector('[class*="cursor-text"]')!
 
+    // 新句子出现时 → 默认静态下划线（无闪烁类），因为一眼就能看出还没开始输入
+    let spans = Array.from(sentenceArea.querySelectorAll('span'))
+    let cursorSpan = spans.find(s => s.classList.contains('border-b-[2.5px]'))
+    expect(cursorSpan).toBeTruthy()
+    expect(cursorSpan?.classList.contains('typing-cursor')).toBe(false)
+
+    // 输入过程中 → 继续保持静态
     await user.type(input, 'I w')
 
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
-    // 光标应该在第 4 个字符（'w' 之后）
-    const cursorSpan = spans.find(
-      s => s.classList.contains('border-b-[3px]') && s.classList.contains('border-blue-500')
-    )
+    spans = Array.from(sentenceArea.querySelectorAll('span'))
+    cursorSpan = spans.find(s => s.classList.contains('border-b-[2.5px]'))
     expect(cursorSpan).toBeTruthy()
+    expect(cursorSpan?.classList.contains('typing-cursor')).toBe(false)
   })
 
   it('完成非最后一句后应自动显示下一句的内容', async () => {
