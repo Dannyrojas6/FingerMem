@@ -1,0 +1,15 @@
+{
+  "name": "看东西",
+  "sentences": [
+    { "en": "I look at my book.", "zh": "我看着我的书。" },
+    { "en": "I see a bird in the tree.", "zh": "我看到树上有一只鸟。" },
+    { "en": "I look out of the window.", "zh": "我向窗外看。" },
+    { "en": "The picture is beautiful.", "zh": "这张画很漂亮。" },
+    { "en": "I look at the sky.", "zh": "我看着天空。" },
+    { "en": "I see the sun.", "zh": "我看到太阳。" },
+    { "en": "I see the children play.", "zh": "我看着孩子们玩。" },
+    { "en": "I look at the clock.", "zh": "我看钟。" },
+    { "en": "There are many things to see.", "zh": "有很多东西可以看。" },
+    { "en": "I like to look at the sea.", "zh": "我喜欢看海。" }
+  ]
+}

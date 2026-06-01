@@ -10,7 +10,7 @@ export interface Scene extends SceneData {
 }
 
 // 使用 Vite 的 import.meta.glob 在构建时静态收集所有场景数据
-const sceneModules = import.meta.glob('./dicts/basic-850/*.json', {
+const sceneModules = import.meta.glob('./dicts/basic-english-850-words/*.json', {
   eager: true,
   import: 'default',
 }) as Record<string, SceneData>
@@ -46,6 +46,6 @@ export const scenes: Scene[] = Object.entries(sceneModules)
 
 // 根据 sceneId 获取单个场景数据
 export function getScene(id: string): SceneData | undefined {
-  const key = `./dicts/basic-850/${id}.json`
+  const key = `./dicts/basic-english-850-words/${id}.json`
   return sceneModules[key]
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * 同步脚本：将 dicts/basic-850/ 作为唯一数据源，复制到 app/src/data/dicts/basic-850/
+ * 同步脚本：将 dicts/basic-english-850-words/ 作为当前激活词典数据源，复制到 app/src/data/dicts/basic-english-850-words/
  * 
  * 使用方式：
  *   - 在项目根目录运行：node scripts/sync-dicts.js
@@ -14,8 +14,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
-const SOURCE_DIR = path.join(ROOT_DIR, 'dicts', 'basic-850');
-const TARGET_DIR = path.join(ROOT_DIR, 'app', 'src', 'data', 'dicts', 'basic-850');
+const SOURCE_DIR = path.join(ROOT_DIR, 'dicts', 'basic-english-850-words');
+const TARGET_DIR = path.join(ROOT_DIR, 'app', 'src', 'data', 'dicts', 'basic-english-850-words');
 
 function log(message) {
   console.log(`[sync-dicts] ${message}`);

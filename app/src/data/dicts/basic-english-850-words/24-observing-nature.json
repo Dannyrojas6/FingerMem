@@ -1,0 +1,15 @@
+{
+  "name": "观察自然",
+  "sentences": [
+    { "en": "I see many trees in the garden.", "zh": "我在花园里看到很多树。" },
+    { "en": "The birds fly in the sky.", "zh": "鸟在天上飞。" },
+    { "en": "The river is long and wide.", "zh": "这条河又长又宽。" },
+    { "en": "Flowers grow in the field.", "zh": "田野里长着花。" },
+    { "en": "I watch the leaves fall from the tree.", "zh": "我看着树叶从树上掉下来。" },
+    { "en": "The mountain is high and far away.", "zh": "那座山又高又远。" },
+    { "en": "The sun goes down in the evening.", "zh": "太阳在傍晚落下。" },
+    { "en": "I like to look at the stars at night.", "zh": "我喜欢晚上看星星。" },
+    { "en": "The grass is green after the rain.", "zh": "雨后草是绿的。" },
+    { "en": "Animals live in the forest.", "zh": "动物生活在森林里。" }
+  ]
+}

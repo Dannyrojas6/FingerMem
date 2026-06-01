@@ -1,0 +1,15 @@
+{
+  "name": "在家里",
+  "sentences": [
+    { "en": "I am in the room.", "zh": "我在房间里。" },
+    { "en": "I walk in the house.", "zh": "我在家里走动。" },
+    { "en": "I take the book from the table.", "zh": "我从桌子拿书。" },
+    { "en": "I take the cup into the kitchen.", "zh": "我把杯子带到厨房。" },
+    { "en": "The chair is near the table.", "zh": "椅子在桌子旁边。" },
+    { "en": "I open the window.", "zh": "我打开窗户。" },
+    { "en": "I look around the room.", "zh": "我环顾房间。" },
+    { "en": "I clean the room.", "zh": "我把房间收拾干净。" },
+    { "en": "I rest in the room.", "zh": "我在房间里休息。" },
+    { "en": "I go from room to room.", "zh": "我从一个房间走到另一个房间。" }
+  ]
+}

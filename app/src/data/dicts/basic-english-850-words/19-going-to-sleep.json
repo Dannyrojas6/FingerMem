@@ -1,0 +1,15 @@
+{
+  "name": "睡觉",
+  "sentences": [
+    { "en": "My body is tired.", "zh": "我身体很累。" },
+    { "en": "I go to bed.", "zh": "我上床睡觉。" },
+    { "en": "I put out the light.", "zh": "我关掉灯。" },
+    { "en": "I lie down.", "zh": "我躺下来。" },
+    { "en": "I close my eyes.", "zh": "我闭上眼睛。" },
+    { "en": "I want to sleep.", "zh": "我想睡觉。" },
+    { "en": "The room is dark.", "zh": "房间里很暗。" },
+    { "en": "I sleep well.", "zh": "我睡得很好。" },
+    { "en": "I wake up in the morning.", "zh": "我早上醒来。" },
+    { "en": "I am rested.", "zh": "我休息好了。" }
+  ]
+}

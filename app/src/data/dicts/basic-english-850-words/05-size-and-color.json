@@ -1,0 +1,15 @@
+{
+  "name": "大小和颜色",
+  "sentences": [
+    { "en": "The box is small.", "zh": "盒子很小。" },
+    { "en": "The table is big.", "zh": "桌子很大。" },
+    { "en": "My hand is small.", "zh": "我的手很小。" },
+    { "en": "The book is red.", "zh": "书是红色的。" },
+    { "en": "I have a black coat.", "zh": "我有一件黑色的外套。" },
+    { "en": "The flower is yellow.", "zh": "花是黄色的。" },
+    { "en": "The cup is small.", "zh": "杯子很小。" },
+    { "en": "My hair is long.", "zh": "我的头发很长。" },
+    { "en": "The box is not big.", "zh": "盒子不大。" },
+    { "en": "I see a white bird.", "zh": "我看到一只白色的鸟。" }
+  ]
+}

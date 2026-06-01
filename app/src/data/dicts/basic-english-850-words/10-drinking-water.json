@@ -1,0 +1,15 @@
+{
+  "name": "喝水",
+  "sentences": [
+    { "en": "I am thirsty.", "zh": "我渴了。" },
+    { "en": "I get a cup.", "zh": "我拿一个杯子。" },
+    { "en": "I put water into the cup.", "zh": "我在杯子里倒水。" },
+    { "en": "I drink it.", "zh": "我喝下去。" },
+    { "en": "The water is cold.", "zh": "水是冷的。" },
+    { "en": "I drink slowly.", "zh": "我慢慢喝。" },
+    { "en": "I am refreshed now.", "zh": "我现在感觉精神多了。" },
+    { "en": "I leave the cup there.", "zh": "我把杯子留在那里。" },
+    { "en": "The water helps a lot.", "zh": "水帮了我大忙。" },
+    { "en": "I am not thirsty now.", "zh": "我现在不渴了。" }
+  ]
+}

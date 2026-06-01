@@ -1,0 +1,15 @@
+{
+  "name": "表达想法",
+  "sentences": [
+    { "en": "This book seems good to me.", "zh": "我觉得这本书很好。" },
+    { "en": "It seems he is a kind man.", "zh": "他好像是一个好人。" },
+    { "en": "I see it will rain tomorrow.", "zh": "我看明天会下雨。" },
+    { "en": "The weather seems too hot to her.", "zh": "在她看来天气太热了。" },
+    { "en": "This does not seem right to me.", "zh": "我不认为这是对的。" },
+    { "en": "It is better for us to stay here.", "zh": "我们待在这里更好。" },
+    { "en": "He sees the mountain as beautiful.", "zh": "他觉得这座山很美。" },
+    { "en": "We should rest now.", "zh": "我们现在应该休息。" },
+    { "en": "They see the food as not good.", "zh": "他们认为食物不好。" },
+    { "en": "It is important to be kind.", "zh": "善良是很重要的。" }
+  ]
+}

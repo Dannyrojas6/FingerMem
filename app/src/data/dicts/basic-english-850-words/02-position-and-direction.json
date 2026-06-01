@@ -1,0 +1,15 @@
+{
+  "name": "位置和方向",
+  "sentences": [
+    { "en": "The book is on the table.", "zh": "书在桌子上。" },
+    { "en": "I am in the room.", "zh": "我在房间里。" },
+    { "en": "The chair is under the table.", "zh": "椅子在桌子下面。" },
+    { "en": "Come here.", "zh": "来这里。" },
+    { "en": "Go there.", "zh": "去那里。" },
+    { "en": "The door is open.", "zh": "门是开着的。" },
+    { "en": "Put the cup on the table.", "zh": "把杯子放在桌子上。" },
+    { "en": "The box is near the door.", "zh": "盒子在门附近。" },
+    { "en": "I am here.", "zh": "我在这里。" },
+    { "en": "The bed is in the room.", "zh": "床在房间里。" }
+  ]
+}

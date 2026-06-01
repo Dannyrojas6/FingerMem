@@ -1,0 +1,15 @@
+{
+  "name": "出门",
+  "sentences": [
+    { "en": "I put on my coat.", "zh": "我穿上外套。" },
+    { "en": "I take the key.", "zh": "我拿钥匙。" },
+    { "en": "I open the door.", "zh": "我打开门。" },
+    { "en": "I go out of the house.", "zh": "我走出房子。" },
+    { "en": "The door is shut behind me.", "zh": "门在我身后关上了。" },
+    { "en": "I walk out.", "zh": "我走出去。" },
+    { "en": "I have the key in my hand.", "zh": "钥匙在我手里。" },
+    { "en": "I go down the road.", "zh": "我沿着路走。" },
+    { "en": "I am outside now.", "zh": "我现在在外面了。" },
+    { "en": "I walk along the road.", "zh": "我沿着路走。" }
+  ]
+}

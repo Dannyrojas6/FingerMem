@@ -1,0 +1,15 @@
+{
+  "name": "和人说话",
+  "sentences": [
+    { "en": "I talk with my friend.", "zh": "我和朋友说话。" },
+    { "en": "I say good morning.", "zh": "我说早上好。" },
+    { "en": "He says something to me.", "zh": "他对我说了些什么。" },
+    { "en": "I ask a question.", "zh": "我问了一个问题。" },
+    { "en": "Please tell me.", "zh": "请告诉我。" },
+    { "en": "I answer the question.", "zh": "我回答了问题。" },
+    { "en": "We talk together.", "zh": "我们一起聊天。" },
+    { "en": "I say yes.", "zh": "我说好的。" },
+    { "en": "I say no.", "zh": "我说不是。" },
+    { "en": "We talk for a long time.", "zh": "我们聊了很久。" }
+  ]
+}
