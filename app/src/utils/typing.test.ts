@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { cleanTarget, getMatchedPrefixLength, isSentenceCompleted } from './typing'
+import { cleanTarget, getMatchedPrefixLength, isSentenceCompleted, isInputComplete } from './typing'
 
 describe('cleanTarget', () => {
   it('应该移除末尾的常见标点', () => {
@@ -38,25 +38,60 @@ describe('getMatchedPrefixLength', () => {
   })
 })
 
-describe('isSentenceCompleted', () => {
+describe('isSentenceCompleted (deprecated wrapper)', () => {
   const target = 'Hello world'
 
-  it('完全匹配且最后字符不是空格时返回 true', () => {
+  it('returns true for exact match after normalization', () => {
     expect(isSentenceCompleted('Hello world', target)).toBe(true)
-    expect(isSentenceCompleted('Hello world.', target)).toBe(false) // 标点未清理的情况（实际使用中会先 clean）
+    expect(isSentenceCompleted('Hello world.', target)).toBe(true) // punctuation is cleaned via cleanTarget (normalized match)
   })
 
-  it('最后输入是空格时返回 false（防作弊）', () => {
-    expect(isSentenceCompleted('Hello world ', target)).toBe(false)
-    expect(isSentenceCompleted('Hello world  ', target)).toBe(false)
+  it('returns true even if input ends with spaces (no more anti-cheat rule)', () => {
+    expect(isSentenceCompleted('Hello world ', target)).toBe(true)
+    expect(isSentenceCompleted('Hello world  ', target)).toBe(true)
   })
 
-  it('内容不完全匹配时返回 false', () => {
+  it('returns false for incomplete input', () => {
     expect(isSentenceCompleted('Hello worl', target)).toBe(false)
-    expect(isSentenceCompleted('Hello world!', target)).toBe(false) // 标点不同
+  })
+})
+
+describe('isInputComplete (new primary API)', () => {
+  const target = 'Hello world'
+
+  it('D1/D4: does not auto-complete or synthesize characters', () => {
+    expect(isInputComplete('Hello world ', target)).toBe(true) // trailing space is trimmed
+    expect(isInputComplete('Hello world  ', target)).toBe(true)
   })
 
-  it('空输入时返回 false', () => {
-    expect(isSentenceCompleted('', target)).toBe(false)
+  it('D2: correction on the final character works', () => {
+    expect(isInputComplete('Hello worl', target)).toBe(false)
+    expect(isInputComplete('Hello world', target)).toBe(true)
+  })
+
+  it('D3: multiple trailing spaces are handled predictably', () => {
+    expect(isInputComplete('Hello world   ', target)).toBe(true)
+  })
+
+  it('respects cleanTarget for trailing punctuation', () => {
+    expect(isInputComplete('Hello world.', target)).toBe(true)
+  })
+
+  describe('Regression: historical bugs', () => {
+    const target = 'Thank you very much for your help'
+
+    it('Bug 1: rapid trailing spaces must not cause auto-completion or unwanted auto-advance', () => {
+      // Simulate user rapidly pressing space at the end
+      expect(isInputComplete('Thank you very much for your help ', target)).toBe(true)
+      expect(isInputComplete('Thank you very much for your help  ', target)).toBe(true)
+      // The engine should never "fill in" missing characters on its own
+    })
+
+    it('Bug 2: error on last character + delete + correct retype must allow completion', () => {
+      const almost = 'Thank you very much for your hel'
+      expect(isInputComplete(almost + 'p', target)).toBe(true)  // correct retype
+      expect(isInputComplete(almost + 'x', target)).toBe(false)
+      expect(isInputComplete(almost + 'p', target)).toBe(true)  // still works after error path
+    })
   })
 })
