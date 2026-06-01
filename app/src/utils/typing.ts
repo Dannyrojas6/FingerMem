@@ -1,6 +1,9 @@
 /**
- * 打字练习核心工具函数
- * 这些函数是纯函数，便于单元测试
+ * Typing exercise core utility functions.
+ * These are pure functions to make them easy to test.
+ *
+ * Philosophy (Phase 1): Completion is a simple normalized exact match.
+ * We do not use "anti-cheat" rules. The goal is reliable, natural behavior for learning.
  */
 
 /**
@@ -27,14 +30,25 @@ export function getMatchedPrefixLength(input: string, target: string): number {
 }
 
 /**
- * 判断是否完成当前句子（严格防作弊规则）
- * 必须同时满足：
- * 1. 去掉末尾空格后内容完全等于目标（去除标点后的）
- * 2. 最后输入的字符不能是空格（防止狂按空格把长度顶上去）
+ * Returns whether the user's input (after normalization) exactly matches the target.
+ *
+ * This is the single source of truth for sentence completion in Phase 1.
+ *
+ * Normalization rules (kept minimal for predictability):
+ * - Trim trailing whitespace
+ * - Remove one trailing punctuation mark (via cleanTarget)
+ */
+export function isInputComplete(input: string, target: string): boolean {
+  const normalizedInput = cleanTarget(input.trimEnd());
+  return normalizedInput === target;
+}
+
+/**
+ * @deprecated Use `isInputComplete` instead.
+ * This function previously contained "strict anti-cheat" logic that has been removed.
+ * It now delegates to the new simple completion rule.
  */
 export function isSentenceCompleted(value: string, effectiveTarget: string): boolean {
-  const trimmedValue = value.trimEnd()
-  const lastTypedChar = value.length > 0 ? value[value.length - 1] : ''
-
-  return trimmedValue === effectiveTarget && lastTypedChar !== ' '
+  // Temporary bridge during migration. Will be removed after all callers are updated.
+  return isInputComplete(value, effectiveTarget);
 }
