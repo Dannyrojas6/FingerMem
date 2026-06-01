@@ -54,3 +54,7 @@ app/src/data/dicts/active/
 
 # Codegraph local index (do not commit)
 .codegraph/
+
+
+# Superpowers agent working directory (local only, contains brainstorming state, plans, etc.)
+.superpowers/
