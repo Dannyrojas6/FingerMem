@@ -16,10 +16,11 @@
 ```
 .
 ├── app/                  # 前端应用（Vite + React + TypeScript + Tailwind）
-├── dicts/                # 词典数据目录（每个子文件夹是一个独立词典）
-│   └── basic-850/        # 示例：基础英语 850 词
+├── dicts/                # 词典数据源（每个子文件夹是一个独立词典）
+│   ├── basic-850/        # 示例：基础英语 850 词（10 场景）
+│   └── basic-english-850-words/  # 30 场景词典
 ├── scripts/
-│   └── sync-dicts.js     # 词典同步脚本
+│   └── sync-dicts.js     # 词典切换脚本（推荐使用方式）
 ├── English-基础850词.md  # 官方 850 词表参考
 └── README.md
 ```
@@ -37,9 +38,34 @@ npm run dev
 ## 添加新词典
 
 1. 在 `dicts/` 目录下新建一个文件夹（例如 `dicts/my-wordlist/`）
-2. 按照 `dicts/basic-850/` 的格式放入 JSON 文件
-3. 运行同步脚本（可选）
-4. 重启应用即可在界面中切换词典
+2. 放入符合格式的场景 JSON 文件（每个文件包含 `name` 和 `sentences` 数组）
+3. 使用切换脚本激活该词典：
+   ```bash
+   cd app
+   npm run sync-dicts my-wordlist
+   ```
+4. 重启/刷新开发服务器即可使用新词典数据
+
+**注意**：目前不提供界面内切换词典的功能，全部通过脚本控制。
+
+## 切换词典
+
+在 `app/` 目录下执行：
+
+```bash
+npm run sync-dicts basic-english-850-words   # 切换到 30 场景词典
+npm run sync-dicts basic-850                 # 切换回 10 场景词典
+```
+
+不带参数时会列出所有可用词典及当前激活状态：
+
+```bash
+npm run sync-dicts
+```
+
+切换后需要刷新浏览器（或重启 dev server）。
+
+应用始终只从 `app/src/data/dicts/active/` 加载数据，该目录由脚本维护并被 git 忽略。
 
 ## 技术栈
 
@@ -50,8 +76,10 @@ npm run dev
 
 ## 开发说明
 
-- 词典数据与应用代码完全分离
-- 所有练习逻辑集中在 `app/src/pages/Practice.tsx`
+- 词典数据源位于 `dicts/` 目录，每个子文件夹是一个独立词典
+- 使用 `npm run sync-dicts <name>` 将词典激活到 `app/src/data/dicts/active/`
+- 应用代码（`scenes.ts` 等）始终从 `active/` 加载，不关心具体词典名称
+- 测试已尽量做到与具体词典数据解耦（切换词典不应导致大量测试失败）
 - 欢迎贡献新的词典或功能
 
 ---
