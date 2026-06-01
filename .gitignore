@@ -11,6 +11,11 @@ build/
 # AI workflow artifacts (snapshots can grow large, regenerate from latest)
 .understand-snapshots/
 
+# Superpowers design artifacts (specs, plans, visual mocks, etc.)
+# These are generated during AI-assisted design sessions and are not meant to be committed by default.
+# Use `git add -f` if you intentionally want to commit a specific design doc.
+docs/superpowers/
+
 # Environment
 .env
 .env.local
