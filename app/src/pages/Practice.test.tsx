@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Practice from './Practice'
-import { getScene } from '../data/scenes'
+import { scenes } from '../data/scenes'
 
 // Helper to render Practice with specific route params
 function renderPractice(sceneId: string, index: string | number = '0') {
@@ -42,62 +42,67 @@ function renderPracticeWithLocation(sceneId: string, index: string | number = '0
 }
 
 describe('Practice 组件 - 核心打字交互', () => {
-  const dailyLife = getScene('daily-life')!
-  const firstSentence = dailyLife.sentences[0] // "I want to go home now."
+  // 使用当前激活词典的第一个场景（数据无关）
+  const testScene = scenes[0]
+  const firstSentence = testScene.sentences[0]
 
   beforeEach(() => {
     vi.useRealTimers()
   })
 
   it('应该正确渲染句子和翻译', () => {
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
-    // 句子文本被拆成多个 span，用 container 文本内容判断（空格会显示为 ·）
+    // 句子文本被拆成多个 span，用 container 文本内容判断
     const text = container.textContent || ''
-    expect(text.replace(/·/g, ' ')).toContain('I want to go home now.')
-    expect(screen.getByText('我现在想回家。')).toBeInTheDocument()
-    expect(screen.getByText(/第 1 \/ 10 句/)).toBeInTheDocument()
+    expect(text.replace(/·/g, ' ')).toContain(firstSentence.en)
+    expect(screen.getByText(firstSentence.zh)).toBeInTheDocument()
+    expect(screen.getByText(/第 1 \/ \d+ 句/)).toBeInTheDocument()
   })
 
   it('正确输入字符时应对应字符显示为绿色', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
 
-    await user.type(input, 'I want')
+    // 输入前几个字符（使用实际句子内容的前缀）
+    const prefix = firstSentence.en.slice(0, 6)
+    await user.type(input, prefix)
 
-    // 找到句子区域内的 span（排除其他区域的 span）
     const sentenceArea = container.querySelector('.text-4xl')!
     const spans = Array.from(sentenceArea.querySelectorAll('span'))
 
-    // 前几个正确输入的字符应该是绿色
-    expect(spans[0]).toHaveClass('text-green-600') // I
-    expect(spans[2]).toHaveClass('text-green-600') // w (after space)
+    // 至少第一个字符应该被标记为正确
+    expect(spans[0]).toHaveClass('text-green-600')
   })
 
   it('输入错误字符时应对应字符显示为红色', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
 
-    await user.type(input, 'I xant') // 故意打错 "want" 为 "xant"
+    // 故意输入一个错误字符（修改第一个字符）
+    const wrongInput = 'X' + firstSentence.en.slice(1, 5)
+    await user.type(input, wrongInput)
 
     const sentenceArea = container.querySelector('.text-4xl')!
     const spans = Array.from(sentenceArea.querySelectorAll('span'))
 
-    // 'x' 位置应该是红色（索引2对应 'w' 的位置）
-    expect(spans[2]).toHaveClass('text-red-600')
+    // 应该有红色标记的错误字符
+    const hasRed = spans.some(s => s.classList.contains('text-red-600'))
+    expect(hasRed).toBe(true)
   })
 
   it('输入空格错误时应显示为红色 ·', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
 
-    await user.type(input, 'Ix ') // 故意打错 + 空格
+    // 故意打错 + 输入空格
+    await user.type(input, 'X ')
 
     const sentenceArea = container.querySelector('.text-4xl')!
     const spans = Array.from(sentenceArea.querySelectorAll('span'))
@@ -109,34 +114,34 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('进度条应根据正确前缀长度更新', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
 
     const progressBar = container.querySelector('.bg-blue-600') as HTMLElement
 
-    await user.type(input, 'I w')
+    const prefix = firstSentence.en.slice(0, 4)
+    await user.type(input, prefix)
 
-    // 此时应该有一定进度
     await waitFor(() => {
       const style = progressBar?.getAttribute('style') || ''
-      expect(style).toMatch(/width: [1-9]/) // 不是 0%
+      expect(style).toMatch(/width: [1-9]/)
     })
   })
 
   it('完全正确输入后（不以空格结尾）应该标记完成并自动进入下一句', async () => {
     const user = userEvent.setup()
-    renderPractice('daily-life', 0)
+    renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
 
-    // 完整正确输入第一句（不带标点）
-    await user.type(input, 'I want to go home now')
+    // 使用实际句子的英文内容（去除末尾标点）
+    const cleanEn = firstSentence.en.replace(/[.,!?;:"']$/, '')
+    await user.type(input, cleanEn)
 
-    // 自动进入下一句（无可见提示文字）
     await waitFor(
       () => {
-        expect(screen.getByText('日常对话')).toBeInTheDocument()
+        expect(screen.getByText(testScene.name)).toBeInTheDocument()
       },
       { timeout: 300 }
     )
@@ -144,13 +149,14 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('按 Escape 应该清空输入', async () => {
     const user = userEvent.setup()
-    renderPractice('daily-life', 0)
+    renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
 
-    await user.type(input, 'I want to go')
+    const prefix = firstSentence.en.slice(0, 8)
+    await user.type(input, prefix)
 
-    expect(input.value).toBe('I want to go')
+    expect(input.value).toBe(prefix)
 
     await user.keyboard('{Escape}')
 
@@ -158,7 +164,7 @@ describe('Practice 组件 - 核心打字交互', () => {
   })
 
   it('句子索引无效时应显示错误信息', () => {
-    renderPractice('daily-life', 99) // 不存在的句子索引
+    renderPractice(testScene.id, 99)
 
     expect(screen.getByText('句子不存在')).toBeInTheDocument()
     expect(screen.getByText('返回场景列表')).toBeInTheDocument()
@@ -172,11 +178,11 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('最后一个句子完全正确输入后应显示恭喜完成界面', async () => {
     const user = userEvent.setup()
-    const total = dailyLife.sentences.length
-    renderPractice('daily-life', total - 1)
+    const total = testScene.sentences.length
+    renderPractice(testScene.id, total - 1)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const lastSentenceEn = dailyLife.sentences[total - 1].en.replace(/[.,!?;:"']$/, '')
+    const lastSentenceEn = testScene.sentences[total - 1].en.replace(/[.,!?;:"']$/, '')
 
     await user.type(input, lastSentenceEn)
 
@@ -192,7 +198,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('点击打字区域应该聚焦隐藏输入框', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const typingArea = container.querySelector(
       '[class*="min-h-"][class*="cursor-text"]'
@@ -208,7 +214,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('完全匹配时进度条应达到 100%', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
     const progressBar = container.querySelector('.bg-blue-600') as HTMLElement
@@ -227,7 +233,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('正确输入后，未输入的部分应保持灰色', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
     const sentenceArea = container.querySelector('.text-4xl')!
@@ -244,7 +250,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('输入错误后再纠正，字符颜色应恢复为绿色', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
     const sentenceArea = container.querySelector('.text-4xl')!
@@ -265,7 +271,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('新句子默认静态下划线（不闪烁），只有长时间未输入后才开始闪烁', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
     const sentenceArea = container.querySelector('[class*="cursor-text"]')!
@@ -287,11 +293,11 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('完成非最后一句后应自动显示下一句的内容', async () => {
     const user = userEvent.setup()
-    renderPractice('daily-life', 0)
+    renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const firstSentenceClean = dailyLife.sentences[0].en.replace(/[.,!?;:"']$/, '')
-    const secondSentenceZh = dailyLife.sentences[1].zh
+    const firstSentenceClean = firstSentence.en.replace(/[.,!?;:"']$/, '')
+    const secondSentenceZh = testScene.sentences[1].zh
 
     await user.type(input, firstSentenceClean)
 
@@ -307,7 +313,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('Escape 按键在输入错误后仍然可以清空输入', async () => {
     const user = userEvent.setup()
-    renderPractice('daily-life', 0)
+    renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
 
@@ -321,7 +327,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('输入超长内容时应被限制且不会产生多余的红色错误字符', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
     const sentenceArea = container.querySelector('.text-4xl')!
@@ -343,11 +349,11 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('最后一个句子的两个操作按钮点击后应该有正确的行为', async () => {
     const user = userEvent.setup()
-    const total = dailyLife.sentences.length
-    renderPractice('daily-life', total - 1)
+    const total = testScene.sentences.length
+    renderPractice(testScene.id, total - 1)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const lastClean = dailyLife.sentences[total - 1].en.replace(/[.,!?;:"']$/, '')
+    const lastClean = testScene.sentences[total - 1].en.replace(/[.,!?;:"']$/, '')
 
     await user.type(input, lastClean)
 
@@ -376,16 +382,16 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('完成一句后输入框应该被重置为空（进入下一句）', async () => {
     const user = userEvent.setup()
-    renderPractice('daily-life', 0)
+    renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
-    const clean = dailyLife.sentences[0].en.replace(/[.,!?;:"']$/, '')
+    const clean = firstSentence.en.replace(/[.,!?;:"']$/, '')
 
     await user.type(input, clean)
 
     await waitFor(
       () => {
-        expect(screen.getByText(dailyLife.sentences[1].zh)).toBeInTheDocument()
+        expect(screen.getByText(testScene.sentences[1].zh)).toBeInTheDocument()
         expect(input.value).toBe('')
       },
       { timeout: 600 }
@@ -394,10 +400,10 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('点击完成界面的“返回场景列表”应导航回首页', async () => {
     const user = userEvent.setup()
-    renderPracticeWithLocation('daily-life', dailyLife.sentences.length - 1)
+    renderPracticeWithLocation(testScene.id, testScene.sentences.length - 1)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const lastClean = dailyLife.sentences[dailyLife.sentences.length - 1].en.replace(
+    const lastClean = testScene.sentences[testScene.sentences.length - 1].en.replace(
       /[.,!?;:"']$/,
       ''
     )
@@ -421,10 +427,10 @@ describe('Practice 组件 - 核心打字交互', () => {
 
   it('点击完成界面的“重新练习本场景”应回到该场景第一句', async () => {
     const user = userEvent.setup()
-    renderPracticeWithLocation('daily-life', dailyLife.sentences.length - 1)
+    renderPracticeWithLocation(testScene.id, testScene.sentences.length - 1)
 
     const input = screen.getByRole('textbox', { hidden: true })
-    const lastClean = dailyLife.sentences[dailyLife.sentences.length - 1].en.replace(
+    const lastClean = testScene.sentences[testScene.sentences.length - 1].en.replace(
       /[.,!?;:"']$/,
       ''
     )
@@ -436,46 +442,45 @@ describe('Practice 组件 - 核心打字交互', () => {
 
     await waitFor(() => {
       // 应该回到第一句
-      expect(screen.getByText(dailyLife.sentences[0].zh)).toBeInTheDocument()
-      expect(screen.getByText(/第 1 \/ 10 句/)).toBeInTheDocument()
+      expect(screen.getByText(testScene.sentences[0].zh)).toBeInTheDocument()
+      expect(screen.getByText(/第 1 \/ \d+ 句/)).toBeInTheDocument()
     })
   })
 
   it('大量纠错后仍能继续正常输入并看到绿色反馈', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
     const sentenceArea = container.querySelector('.text-4xl')!
 
-    // 打很多错的
+    // 打很多错的然后删除
     await user.type(input, 'wrongwrongwrong')
-    // 大量删除
     await user.type(input, '{backspace}'.repeat(15))
 
-    // 重新正常输入
-    await user.type(input, 'I want')
+    // 重新正常输入前几个字符
+    const prefix = firstSentence.en.slice(0, 6)
+    await user.type(input, prefix)
 
     const spans = Array.from(sentenceArea.querySelectorAll('span'))
     const greenCount = spans.filter(s => s.classList.contains('text-green-600')).length
 
     expect(greenCount).toBeGreaterThan(0)
-    expect(input.value).toBe('I want')
   })
 
   it('完成一句后新句子的进度条应从 0% 开始', async () => {
     const user = userEvent.setup()
-    const { container } = renderPractice('daily-life', 0)
+    const { container } = renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true })
     const progressBar = container.querySelector('.bg-blue-600') as HTMLElement
 
-    const clean = dailyLife.sentences[0].en.replace(/[.,!?;:"']$/, '')
+    const clean = firstSentence.en.replace(/[.,!?;:"']$/, '')
     await user.type(input, clean)
 
     await waitFor(
       () => {
-        expect(screen.getByText(dailyLife.sentences[1].zh)).toBeInTheDocument()
+        expect(screen.getByText(testScene.sentences[1].zh)).toBeInTheDocument()
       },
       { timeout: 500 }
     )

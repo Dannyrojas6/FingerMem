@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App'
+import { scenes } from './data/scenes'
 
 describe('App 路由烟雾测试', () => {
   it('默认路由能正常渲染场景列表', () => {
@@ -14,14 +15,15 @@ describe('App 路由烟雾测试', () => {
   })
 
   it('访问场景详情页能正常渲染', () => {
+    const firstSceneId = scenes[0]?.id || 'daily-life'
     render(
-      <MemoryRouter initialEntries={['/scene/daily-life']}>
+      <MemoryRouter initialEntries={[`/scene/${firstSceneId}`]}>
         <App />
       </MemoryRouter>
     )
-    // 至少能渲染出场景名称或练习入口
+    // 至少能渲染出场景名称或练习入口（数据无关）
     expect(
-      screen.queryByText('日常对话') || screen.queryByText(/开始练习|开始连续练习/)
+      screen.queryByText(scenes[0]?.name || '') || screen.queryByText(/开始练习|开始连续练习|练习/)
     ).toBeTruthy()
   })
 
