@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom'
 import { getScene } from '../data/scenes'
 import ErrorMessage from '../components/ErrorMessage'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 
 export default function SceneDetail() {
   const { sceneId } = useParams<{ sceneId: string }>()
@@ -22,38 +24,36 @@ export default function SceneDetail() {
 
   return (
     <div>
-      <div className="flex items-start justify-between">
+      <div className="mb-6 flex items-end justify-between">
         <div>
-          <div className="text-[15px] font-semibold text-[#f4f4f5]">{scene.name}</div>
-          <div className="text-[13px] text-[#888] mt-0.5">{scene.sentences.length} 个句子</div>
+          <div className="text-[10px] tracking-[1.5px] text-muted-foreground/50 mb-0.5">SCENE</div>
+          <div className="text-[19px] font-medium tracking-[-0.25px]">{scene.name}</div>
         </div>
-        <Link
-          to={`/practice/${sceneId}/0`}
-          className="inline-flex items-center justify-center px-5 py-2 bg-[#f5f5f5] hover:bg-[#e5e5e5] text-[#161616] font-medium text-sm rounded-[12px] whitespace-nowrap"
+
+        {/* 开始入口 */}
+        <Button
+          render={<Link to={`/practice/${sceneId}/0`} />}
+          size="sm"
+          className="text-[12px] tracking-[0.4px] px-3"
         >
-          连续练习本场景
-        </Link>
+          开始练习
+        </Button>
       </div>
 
-      <div className="h-px bg-[#2a2a2a] my-4" />
+      <Separator className="my-5" />
 
-      <div className="flex flex-col gap-[10px]">
+      <div className="space-y-2.5">
         {scene.sentences.map((sentence, index) => (
-          <div
+          <Link
             key={index}
-            className="bg-[#252525] rounded-[10px] p-4 flex items-center justify-between gap-4"
+            to={`/practice/${sceneId}/${index}`}
+            className="group block rounded-2xl bg-[#181818] px-4 py-3 hover:bg-[#1F1F1F] active:bg-[#222] transition-colors"
           >
-            <div className="flex-1 min-w-0">
-              <div className="text-[13px] font-mono text-[#f4f4f5] mb-1">{sentence.en}</div>
-              <div className="text-[12px] text-[#a1a1aa]">{sentence.zh}</div>
+            <div>
+              <div className="font-mono text-[18px] tracking-[0.05px] leading-snug mb-1.5">{sentence.en}</div>
+              <div className="text-[15.5px] text-muted-foreground/85 tracking-[0.05px]">{sentence.zh}</div>
             </div>
-            <Link
-              to={`/practice/${sceneId}/${index}`}
-              className="shrink-0 bg-[#232323] hover:bg-[#2a2a2a] text-[#f4f4f5] text-[13px] font-medium rounded-[8px] px-[14px] py-[5px] whitespace-nowrap"
-            >
-              练习
-            </Link>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

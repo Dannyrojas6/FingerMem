@@ -4,28 +4,29 @@ import { scenes } from '../data/scenes'
 export default function SceneList() {
   return (
     <div>
-      <h2 className="text-xl font-medium text-[#f4f4f5] mb-6">基础英语 850 · 请选择一个场景</h2>
+      <div className="mb-8">
+        <div className="text-[10px] tracking-[2px] text-muted-foreground/40 mb-1">INSTRUMENT</div>
+        <h2 className="text-[22px] font-medium tracking-[-0.3px]">选择练习场景</h2>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         {scenes.map(scene => (
-          <Link
-            key={scene.id}
-            to={`/scene/${scene.id}`}
-            className="block"
+          <Link 
+            key={scene.id} 
+            to={`/scene/${scene.id}`} 
+            className="block rounded-xl border border-border/40 bg-[#181818] px-5 py-4 transition-all hover:border-border hover:bg-[#1F1F1F] active:bg-[#222]"
           >
-            <div className="bg-[#1f1f1f] p-4 rounded-[10px] border border-[#2a2a2a] transition-colors hover:border-[#3a3a3a]">
-              <div className="text-[16px] font-semibold text-[#f4f4f5]">{scene.name}</div>
-              <div className="text-[13px] text-[#888] mt-2">
-                {scene.sentences.length} 个句子 · 点击开始练习
-              </div>
+            <div className="text-[15px] font-medium tracking-[-0.1px] mb-1">{scene.name}</div>
+            <div className="text-[12.5px] text-muted-foreground/75 tracking-[0.15px]">
+              {scene.sentences.length} 句
             </div>
           </Link>
         ))}
       </div>
 
-      <p className="mt-8 text-sm text-[#888]">
-        点击卡片查看场景内容，可选择单个句子练习或连续练习整个场景。
-      </p>
+      <div className="mt-9 text-[12px] text-muted-foreground/50 tracking-[0.4px]">
+        选择一个场景开始练习
+      </div>
     </div>
   )
 }
