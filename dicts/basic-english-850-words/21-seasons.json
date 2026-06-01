@@ -1,0 +1,15 @@
+{
+  "name": "季节",
+  "sentences": [
+    { "en": "There are four seasons in a year.", "zh": "一年有四个季节。" },
+    { "en": "It is very hot in summer.", "zh": "夏天非常热。" },
+    { "en": "The trees are green in spring.", "zh": "春天树是绿的。" },
+    { "en": "Leaves fall in autumn.", "zh": "秋天树叶会掉落。" },
+    { "en": "Winter is cold and white.", "zh": "冬天又冷又白。" },
+    { "en": "Spring is my favorite season.", "zh": "春天是我最喜欢的季节。" },
+    { "en": "The weather is different in every season.", "zh": "每个季节的天气都不一样。" },
+    { "en": "Flowers come out in spring.", "zh": "春天花会开。" },
+    { "en": "It snows in winter.", "zh": "冬天会下雪。" },
+    { "en": "Summer is the warmest season.", "zh": "夏天是最温暖的季节。" }
+  ]
+}

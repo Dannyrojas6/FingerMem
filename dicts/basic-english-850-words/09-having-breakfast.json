@@ -1,0 +1,15 @@
+{
+  "name": "吃早餐",
+  "sentences": [
+    { "en": "I go to the table.", "zh": "我走到桌子边。" },
+    { "en": "I eat bread.", "zh": "我吃面包。" },
+    { "en": "I have some water.", "zh": "我喝一些水。" },
+    { "en": "The food is good.", "zh": "食物很好吃。" },
+    { "en": "I put the cup on the table.", "zh": "我把杯子放在桌子上。" },
+    { "en": "I pick up the bread.", "zh": "我拿起面包。" },
+    { "en": "I need food.", "zh": "我需要食物。" },
+    { "en": "I take the bread slowly.", "zh": "我慢慢吃面包。" },
+    { "en": "I am full now.", "zh": "我现在吃饱了。" },
+    { "en": "I clean the table.", "zh": "我把桌子擦干净。" }
+  ]
+}

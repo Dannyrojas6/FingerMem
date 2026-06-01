@@ -1,0 +1,15 @@
+{
+  "name": "玩耍",
+  "sentences": [
+    { "en": "I play with the ball.", "zh": "我玩球。" },
+    { "en": "The children play together.", "zh": "孩子们一起玩。" },
+    { "en": "I throw the ball.", "zh": "我扔球。" },
+    { "en": "I run and play.", "zh": "我跑着玩。" },
+    { "en": "I laugh when I play.", "zh": "我玩的时候会笑。" },
+    { "en": "We play in the garden.", "zh": "我们在花园里玩。" },
+    { "en": "I play with my friend.", "zh": "我和朋友一起玩。" },
+    { "en": "I think of a new game.", "zh": "我想出一个新游戏。" },
+    { "en": "We enjoy playing.", "zh": "我们玩得很开心。" },
+    { "en": "I stop playing.", "zh": "我停止玩耍。" }
+  ]
+}

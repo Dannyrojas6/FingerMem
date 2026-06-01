@@ -1,0 +1,15 @@
+{
+  "name": "简单原因",
+  "sentences": [
+    { "en": "I am tired because I walked a long way.", "zh": "我累了，因为我走了很远的路。" },
+    { "en": "It rained, so the ground is wet.", "zh": "下雨了，所以地面很湿。" },
+    { "en": "He has a new book. That is why he is happy.", "zh": "他有一本新书，所以他很高兴。" },
+    { "en": "I do not go out because it is cold.", "zh": "我不出去，因为天气很冷。" },
+    { "en": "The child cries because he is hungry.", "zh": "孩子哭是因为他饿了。" },
+    { "en": "The weather is bad, so we stay at home.", "zh": "天气不好，所以我们待在家里。" },
+    { "en": "I like this place because it is quiet.", "zh": "我喜欢这个地方，因为它很安静。" },
+    { "en": "The flowers grow because there is water and sun.", "zh": "花长出来是因为有水和阳光。" },
+    { "en": "She is not hungry, so she does not eat.", "zh": "她不饿，所以不吃东西。" },
+    { "en": "The road was long. That is why he came late.", "zh": "路很远，所以他来晚了。" }
+  ]
+}

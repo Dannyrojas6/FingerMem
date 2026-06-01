@@ -1,0 +1,15 @@
+{
+  "name": "比较东西",
+  "sentences": [
+    { "en": "This box is bigger than that one.", "zh": "这个盒子比那个大。" },
+    { "en": "My book is smaller than yours.", "zh": "我的书比你的小。" },
+    { "en": "The table is longer than the chair.", "zh": "桌子比椅子长。" },
+    { "en": "This road is better than that one.", "zh": "这条路比那条好。" },
+    { "en": "The red one is more beautiful.", "zh": "红色的那个更漂亮。" },
+    { "en": "My hand is smaller than my foot.", "zh": "我的手比我的脚小。" },
+    { "en": "This is the best apple.", "zh": "这是最好的苹果。" },
+    { "en": "The old man walks slower than the boy.", "zh": "老人走得比男孩慢。" },
+    { "en": "This cup is not as big as that one.", "zh": "这个杯子没有那个大。" },
+    { "en": "The two boxes are almost the same.", "zh": "这两个盒子几乎一样。" }
+  ]
+}

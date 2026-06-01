@@ -1,0 +1,15 @@
+{
+  "name": "愿望和需要",
+  "sentences": [
+    { "en": "I want to go out today.", "zh": "我今天想出去。" },
+    { "en": "She needs more water.", "zh": "她需要更多的水。" },
+    { "en": "I would like a new book.", "zh": "我想要一本新书。" },
+    { "en": "It is time to rest now.", "zh": "现在该休息了。" },
+    { "en": "He would like to see the sea.", "zh": "他想去看海。" },
+    { "en": "I need to make the bed.", "zh": "我需要整理床铺。" },
+    { "en": "They would like to play together.", "zh": "他们想一起玩。" },
+    { "en": "I need some warm clothes.", "zh": "我需要一些暖和的衣服。" },
+    { "en": "She would like to learn more.", "zh": "她想学更多东西。" },
+    { "en": "We need to be quiet.", "zh": "我们需要安静。" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "身边的东西",
+  "sentences": [
+    { "en": "The table is here.", "zh": "桌子在这里。" },
+    { "en": "I see a chair.", "zh": "我看到一把椅子。" },
+    { "en": "The bed is in the room.", "zh": "床在房间里。" },
+    { "en": "The cup is on the table.", "zh": "杯子在桌子上。" },
+    { "en": "I have a book.", "zh": "我有一本书。" },
+    { "en": "The door is shut.", "zh": "门是关着的。" },
+    { "en": "The window is open.", "zh": "窗户是开着的。" },
+    { "en": "I put the cup on the table.", "zh": "我把杯子放在桌子上。" },
+    { "en": "The box is small.", "zh": "盒子很小。" },
+    { "en": "I see the bed.", "zh": "我看到床。" }
+  ]
+}

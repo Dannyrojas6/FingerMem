@@ -1,0 +1,15 @@
+{
+  "name": "描述地点",
+  "sentences": [
+    { "en": "The school is near my house.", "zh": "学校在我家附近。" },
+    { "en": "There is a big park in the town.", "zh": "镇上有一个大公园。" }
+    { "en": "The shop is on the other side of the road.", "zh": "商店在路的另一边。" },
+    { "en": "My room is on the second floor.", "zh": "我的房间在二楼。" },
+    { "en": "The river runs through the city.", "zh": "这条河穿过城市。" },
+    { "en": "There are many trees around the house.", "zh": "房子周围有很多树。" },
+    { "en": "The station is far from here.", "zh": "车站离这里很远。" },
+    { "en": "We live in a quiet place.", "zh": "我们住在一个安静的地方。" },
+    { "en": "The sea is to the east of the town.", "zh": "海在镇的东边。" },
+    { "en": "This is a beautiful place.", "zh": "这是一个美丽的地方。" }
+  ]
+}

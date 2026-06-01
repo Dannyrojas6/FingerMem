@@ -1,0 +1,15 @@
+{
+  "name": "天气",
+  "sentences": [
+    { "en": "The weather is cold today.", "zh": "今天天气很冷。" },
+    { "en": "The sun is hot.", "zh": "太阳很热。" },
+    { "en": "It rains a lot in this season.", "zh": "这个季节经常下雨。" },
+    { "en": "The wind is strong.", "zh": "风很大。" },
+    { "en": "The sky is blue and clear.", "zh": "天空又蓝又晴朗。" },
+    { "en": "It is warm in the room.", "zh": "房间里很暖和。" },
+    { "en": "The weather changes quickly.", "zh": "天气变化很快。" },
+    { "en": "I do not like cold weather.", "zh": "我不喜欢寒冷的天气。" },
+    { "en": "The rain makes the ground wet.", "zh": "雨把地面弄湿了。" },
+    { "en": "The weather is good for walking.", "zh": "这样的天气适合走路。" }
+  ]
+}
