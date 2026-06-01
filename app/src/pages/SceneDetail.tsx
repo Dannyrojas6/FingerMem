@@ -25,13 +25,14 @@ export default function SceneDetail() {
   return (
     <div>
       <div className="mb-6 flex items-end justify-between">
-        <div>
+        <div data-testid="scene-name">
           <div className="text-[10px] tracking-[1.5px] text-muted-foreground/50 mb-0.5">SCENE</div>
           <div className="text-[19px] font-medium tracking-[-0.25px]">{scene.name}</div>
         </div>
 
         {/* 开始入口 */}
         <Button
+          data-testid="start-practice-button"
           render={<Link to={`/practice/${sceneId}/0`} />}
           size="sm"
           className="text-[12px] tracking-[0.4px] px-3"
@@ -46,6 +47,8 @@ export default function SceneDetail() {
         {scene.sentences.map((sentence, index) => (
           <Link
             key={index}
+            data-testid="sentence-item"
+            data-sentence-index={index}
             to={`/practice/${sceneId}/${index}`}
             className="group block rounded-2xl bg-[#181818] px-4 py-3 hover:bg-[#1F1F1F] active:bg-[#222] transition-colors"
           >

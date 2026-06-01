@@ -6,7 +6,7 @@ export default function SceneList() {
     <div>
       <div className="mb-8">
         <div className="text-[10px] tracking-[2px] text-muted-foreground/40 mb-1">INSTRUMENT</div>
-        <h2 className="text-[22px] font-medium tracking-[-0.3px]">选择练习场景</h2>
+        <h2 data-testid="scene-list-title" className="text-[22px] font-medium tracking-[-0.3px]">选择练习场景</h2>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

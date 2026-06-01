@@ -11,7 +11,7 @@ describe('App 路由烟雾测试', () => {
         <App />
       </MemoryRouter>
     )
-    expect(screen.getByText('基础英语 850 · 请选择一个场景')).toBeInTheDocument()
+    expect(screen.getByTestId('scene-list-title')).toBeInTheDocument()
   })
 
   it('访问场景详情页能正常渲染', () => {
