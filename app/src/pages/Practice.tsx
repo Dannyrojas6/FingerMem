@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState, useRef } from 'react'
 import { getScene } from '../data/scenes'
-import { cleanTarget, getMatchedPrefixLength, isSentenceCompleted } from '../utils/typing'
+import { cleanTarget, getMatchedPrefixLength, isInputComplete } from '../utils/typing'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
 import {
@@ -139,10 +139,9 @@ export default function Practice() {
 
     let value = e.target.value
 
-    // 严格限制在有效长度内（忽略末尾标点后的长度）
-    if (value.length > effectiveLength) {
-      value = value.slice(0, effectiveLength)
-    }
+    // Length is no longer hard-capped here.
+    // The new completion logic (isInputComplete) is based on exact normalized match.
+    // Users may type slightly beyond the target during correction; this is allowed and expected.
 
     // === 实时CPM统计（仅正确字符） ===
     const prevMatched = getMatchedPrefixLength(userInput, effectiveTarget)
@@ -171,8 +170,7 @@ export default function Practice() {
       setDisplayCPM("—")
     }
 
-    // 使用共享的完成判断逻辑（防空格作弊）
-    const isNowCompleted = isSentenceCompleted(value, effectiveTarget)
+    const isNowCompleted = isInputComplete(value, effectiveTarget)
 
     setIsCompleted(isNowCompleted)
 
