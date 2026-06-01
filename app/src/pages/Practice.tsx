@@ -17,7 +17,7 @@ export default function Practice() {
   const sentenceIndex = parseInt(index || '0', 10)
   const navigate = useNavigate()
   const inputRef = useRef<HTMLInputElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
+  // titleRef was previously used for Dialog initialFocus (removed due to type incompatibility with @base-ui/react)
 
   // 直接在句子上的打字状态
   const [userInput, setUserInput] = useState('')
@@ -235,7 +235,7 @@ export default function Practice() {
   const effectiveTarget = cleanTarget(target)
   const effectiveLength = effectiveTarget.length
 
-  // 光标位置永远不超过有效内容长度（不跳到末尾标点上）
+  // 光标位置跟随用户实际输入位置，但不跳到末尾标点上
   const cursorPosition = Math.min(userInput.length, effectiveLength)
 
   // 注意：上方视觉进度条已移除，进度仅通过底部控制台文字显示
@@ -246,11 +246,12 @@ export default function Practice() {
       {/* 句子核心区域 —— 保持在中央偏下的位置（专注最佳位置）
           再往下移一点，中英文和底部信息整体下移 */}
       <div
+        data-testid="practice-typing-area"
         className="flex min-h-[55vh] flex-col items-center justify-center cursor-text pt-16 pb-2"
         onClick={() => inputRef.current?.focus()}
       >
         {/* 句子主体 */}
-        <div className="font-mono text-[42px] leading-[1.35] tracking-[0.3px] text-center select-none md:text-[48px] md:leading-[1.32]">
+        <div data-testid="practice-sentence" className="font-mono text-[42px] leading-[1.35] tracking-[0.3px] text-center select-none md:text-[48px] md:leading-[1.32]">
           {chars.map((targetChar, i) => {
             const typedChar = userInput[i]
             const isCursorPosition = i === cursorPosition && cursorPosition < effectiveLength
@@ -262,6 +263,9 @@ export default function Practice() {
 
             let className = 'text-foreground/40'
 
+            // 直接按用户实际输入判断对错：
+            // 空格位置正常处理，字母位置打空格即为错误 → 显示红色
+            // 高频输入无效空格时，后续字母自然变红（红绿对比明显，用户能清楚看到错误位置）
             if (typedChar !== undefined) {
               if (typedChar === targetChar) {
                 className = 'text-emerald-400/90'
@@ -303,7 +307,7 @@ export default function Practice() {
         <div className="flex-1 truncate">{sceneName}</div>
 
         {/* 进度放在正中间，不受左右内容长度影响 */}
-        <div className="absolute left-1/2 -translate-x-1/2 tabular-nums">
+        <div data-testid="practice-progress" className="absolute left-1/2 -translate-x-1/2 tabular-nums">
           {sentenceIndex + 1} / {totalSentences}
         </div>
 
@@ -315,16 +319,16 @@ export default function Practice() {
       <Dialog open={showCompletionModal} onOpenChange={setShowCompletionModal}>
         <DialogPopup 
           className="max-w-[380px] bg-[#1a1a1a]/70 backdrop-blur-xl border-white/10 p-8 text-center"
-          initialFocus={titleRef}
         >
           <DialogHeader className="mb-2">
-            <DialogTitle ref={titleRef} className="text-[18px] font-medium tracking-[0.2px]">
+            <DialogTitle className="text-[18px] font-medium tracking-[0.2px]">
               练习完成
             </DialogTitle>
           </DialogHeader>
 
           <DialogFooter className="mt-7 gap-3">
             <Button
+              data-testid="completion-retry-button"
               render={<Link to={`/practice/${sceneId}/0`} />}
               onClick={() => setShowCompletionModal(false)}
               className="flex-1 text-[13px]"
@@ -332,6 +336,7 @@ export default function Practice() {
               重新练习
             </Button>
             <Button
+              data-testid="completion-back-button"
               variant="ghost"
               render={<Link to="/" />}
               onClick={() => setShowCompletionModal(false)}
