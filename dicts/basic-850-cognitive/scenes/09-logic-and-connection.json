@@ -1,0 +1,23 @@
+{
+  "name": "Logic & Connection",
+  "sentences": [
+    { "en": "I have a pen and a book.", "zh": "我有一支钢笔和一本书。" },
+    { "en": "She is young but wise.", "zh": "她年轻但聪明。" },
+    { "en": "I will go if you go.", "zh": "如果你去，我就去。" },
+    { "en": "Is this a cat or a dog?", "zh": "这是猫还是狗？" },
+    { "en": "I am happy because I see you.", "zh": "我很高兴因为我见到了你。" },
+    { "en": "He is kind though he is strict.", "zh": "他很和善，虽然他很严格。" },
+    { "en": "All are here except John.", "zh": "除了约翰，所有人都在这里。" },
+    { "en": "I like all fruit so I eat an apple.", "zh": "我喜欢所有水果，所以我吃了一个苹果。" },
+    { "en": "She is taller than me.", "zh": "她比我高。" },
+    { "en": "How do you do that?", "zh": "你怎么做那个？" },
+    { "en": "I do not know why he is angry.", "zh": "我不知道他为什么生气。" },
+    { "en": "Tell me when you are ready.", "zh": "当你准备好了告诉我。" },
+    { "en": "I know where the key is.", "zh": "我知道钥匙在哪里。" },
+    { "en": "He is sad while she is happy.", "zh": "他很难过而她很开心。" },
+    { "en": "The cause of the fire was a match.", "zh": "火灾的原因是火柴。" },
+    { "en": "His act of kindness was noted.", "zh": "他的善举被注意到了。" },
+    { "en": "The purpose of this meeting is to make a plan.", "zh": "这次会议的目的是制定一个计划。" },
+    { "en": "I am in complete agreement with you.", "zh": "我完全同意你的看法。" }
+  ]
+}

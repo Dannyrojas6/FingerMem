@@ -1,0 +1,26 @@
+{
+  "name": "Furniture & Things",
+  "sentences": [
+    { "en": "The table is in the middle of the room.", "zh": "桌子在房间中央。" },
+    { "en": "I sit on a chair at the table.", "zh": "我坐在桌子前的椅子上。" },
+    { "en": "The bed is soft and warm.", "zh": "床又软又暖和。" },
+    { "en": "I turn on the lamp when it is dark.", "zh": "天黑时我打开灯。" },
+    { "en": "The books are on the shelf.", "zh": "书在架子上。" },
+    { "en": "I put the glass on the table.", "zh": "我把玻璃杯放在桌子上。" },
+    { "en": "The plate is round and white.", "zh": "盘子是圆的、白色的。" },
+    { "en": "I drink tea from a cup.", "zh": "我用杯子喝茶。" },
+    { "en": "The bottle is full of water.", "zh": "瓶子里装满了水。" },
+    { "en": "Put the things in the box.", "zh": "把东西放进盒子里。" },
+    { "en": "The bag is on the floor.", "zh": "包在地板上。" },
+    { "en": "I put fruit in the basket.", "zh": "我把水果放进篮子里。" },
+    { "en": "The glass on the shelf is empty.", "zh": "架子上的杯子是空的。" },
+    { "en": "The cushion on the chair is soft.", "zh": "椅子上的坐垫很软。" },
+    { "en": "I put the kettle on the fire for tea.", "zh": "我把水壶放在火上烧茶。" },
+    { "en": "The curtain at the window is blue.", "zh": "窗户上的窗帘是蓝色的。" },
+    { "en": "I keep my boots in a special tray.", "zh": "我把靴子放在一个特别的托盘里。" },
+    { "en": "The lock on the door is broken.", "zh": "门上的锁坏了。" },
+    { "en": "Open the top drawer of the desk.", "zh": "打开书桌的最上面抽屉。" },
+    { "en": "The drain in the kitchen takes water away.", "zh": "厨房里的排水管把水排走。" },
+    { "en": "A cushion gives comfort when you sit.", "zh": "坐垫在你坐的时候提供舒适。" }
+  ]
+}

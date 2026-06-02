@@ -1,0 +1,19 @@
+{
+  "name": "Coming & Going",
+  "sentences": [
+    { "en": "I come to the school every day.", "zh": "我每天都来学校。" },
+    { "en": "You come in through the door.", "zh": "你从门进来。" },
+    { "en": "He goes to the shop.", "zh": "他去商店。" },
+    { "en": "She goes out of the house.", "zh": "她走出房子。" },
+    { "en": "We go to work by train.", "zh": "我们坐火车去上班。" },
+    { "en": "They go home after school.", "zh": "他们放学后回家。" },
+    { "en": "I keep the money in my bag.", "zh": "我把钱放在包里。" },
+    { "en": "You keep the door open.", "zh": "你让门开着。" },
+    { "en": "He lets me use his book.", "zh": "他让我用他的书。" },
+    { "en": "She lets the dog run in the garden.", "zh": "她让狗在花园里跑。" },
+    { "en": "I send a letter to my friend.", "zh": "我给朋友寄了一封信。" },
+    { "en": "You send a message to her.", "zh": "你给她发了一条消息。" },
+    { "en": "We stay at home on Sunday.", "zh": "我们星期天待在家里。" },
+    { "en": "They stay in the hotel for a week.", "zh": "他们在酒店住了一周。" }
+  ]
+}

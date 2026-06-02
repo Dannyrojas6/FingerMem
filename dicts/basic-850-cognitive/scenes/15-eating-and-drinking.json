@@ -1,0 +1,26 @@
+{
+  "name": "Eating & Drinking",
+  "sentences": [
+    { "en": "I eat bread for breakfast.", "zh": "我早餐吃面包。" },
+    { "en": "She drinks a glass of water.", "zh": "她喝了一杯水。" },
+    { "en": "Rice is a common food.", "zh": "米饭是一种常见食物。" },
+    { "en": "I have milk in my cup.", "zh": "我的杯子里有牛奶。" },
+    { "en": "The egg is on the plate.", "zh": "鸡蛋在盘子上。" },
+    { "en": "This fruit is sweet.", "zh": "这个水果很甜。" },
+    { "en": "Do you like meat or fish?", "zh": "你喜欢肉还是鱼？" },
+    { "en": "The bitter taste is not good.", "zh": "苦味不好。" },
+    { "en": "She cooks the food in the kitchen.", "zh": "她在厨房里做饭。" },
+    { "en": "I eat an apple every day.", "zh": "我每天吃一个苹果。" },
+    { "en": "Do you have enough food?", "zh": "你有足够的食物吗？" },
+    { "en": "The soup is hot. Do not drink it now.", "zh": "汤是热的。现在不要喝。" },
+    { "en": "We have rice and meat for dinner.", "zh": "我们晚餐吃米饭和肉。" },
+    { "en": "Is the water safe to drink?", "zh": "这水能安全饮用吗？" },
+    { "en": "I take a bite of the apple.", "zh": "我咬了一口苹果。" },
+    { "en": "The potato is a common food.", "zh": "土豆是一种常见食物。" },
+    { "en": "I drink wine with my meal.", "zh": "我吃饭时喝酒。" },
+    { "en": "The jelly on the bread is sweet.", "zh": "面包上的果冻是甜的。" },
+    { "en": "A bit of sugar makes the tea taste better.", "zh": "一点糖让茶的味道更好。" },
+    { "en": "The lip of the cup was broken.", "zh": "杯子的边缘破了。" },
+    { "en": "The liquid in the glass was water.", "zh": "杯子里的液体是水。" }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Actions & Movement",
+  "sentences": [
+    { "en": "I walk to school every day.", "zh": "我每天步行去学校。" },
+    { "en": "He runs fast in the park.", "zh": "他在公园里跑得很快。" },
+    { "en": "We sit on the chairs.", "zh": "我们坐在椅子上。" },
+    { "en": "They stand up when the teacher comes.", "zh": "老师进来时他们站起来。" },
+    { "en": "The cat jumps onto the table.", "zh": "猫跳上了桌子。" },
+    { "en": "Turn left at the corner.", "zh": "在拐角处向左转。" },
+    { "en": "Push the door to open it.", "zh": "推门以打开它。" },
+    { "en": "Pull the rope.", "zh": "拉绳子。" },
+    { "en": "I lift the box with my hands.", "zh": "我用双手抬起箱子。" },
+    { "en": "The apple falls from the tree.", "zh": "苹果从树上掉下来。" },
+    { "en": "Open the window, please.", "zh": "请打开窗户。" },
+    { "en": "Shut the door after you.", "zh": "随手关门。" },
+    { "en": "Do not run in the house.", "zh": "不要在房子里跑。" },
+    { "en": "She turns her head and smiles.", "zh": "她转过头微笑。" },
+    { "en": "I moved the chair to the corner.", "zh": "我把椅子移到角落。" },
+    { "en": "She lost her balance and almost fell.", "zh": "她失去平衡几乎跌倒。" },
+    { "en": "I have a strong grip on the rope.", "zh": "我紧紧抓住绳子。" },
+    { "en": "Stop at the red light.", "zh": "在红灯前停下。" },
+    { "en": "Twist the top of the bottle to open it.", "zh": "拧开瓶盖打开它。" },
+    { "en": "I move my hand to say goodbye.", "zh": "我挥动我的手说再见。" },
+    { "en": "Do not cry. Everything is all right.", "zh": "不要哭。一切都会好的。" },
+    { "en": "Fold the paper in half.", "zh": "把纸对折。" },
+    { "en": "The flame of the candle was bright.", "zh": "蜡烛的火焰很亮。" },
+    { "en": "I have a general idea of the story.", "zh": "我对这个故事有一个大致的了解。" },
+    { "en": "The roof is hanging over the edge.", "zh": "屋顶悬在边缘上方。" },
+    { "en": "I fall down and hurt my knee.", "zh": "我摔倒了，伤了膝盖。" },
+    { "en": "A driver uses a brake to stop the car.", "zh": "司机用刹车来停车。" }
+  ]
+}

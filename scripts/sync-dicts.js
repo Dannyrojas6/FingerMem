@@ -3,7 +3,8 @@
 /**
  * 词典切换脚本
  *
- * 功能：将 dicts/<name>/ 下的场景数据复制到 app/src/data/dicts/active/ 作为当前激活词典。
+ * 功能：将 dicts/<name>/scenes/ 下的场景 JSON 复制到 app/src/data/dicts/active/ 作为当前激活词典。
+ * 词典根目录的其他文件（README、word-index.json、设计文档等）不会复制。
  * 应用始终只从 active/ 加载数据，实现词典的脚本化切换。
  *
  * 使用方式：
@@ -15,7 +16,7 @@
  *       npm run sync-dicts basic-english-850-words
  *       npm run sync-dicts basic-850
  *
- * 要求：目标词典文件夹下至少包含一个 .json 场景文件。
+ * 要求：目标词典下 scenes/ 目录至少包含一个 .json 场景文件。
  */
 
 const fs = require('fs');
@@ -35,8 +36,26 @@ function error(message) {
   process.exit(1);
 }
 
+const SCENES_SUBDIR = 'scenes';
+
 /**
- * 获取所有有效词典（包含至少一个 .json 文件的文件夹）
+ * 词典内场景 JSON 所在目录：dicts/<name>/scenes/
+ */
+function getScenesSourceDir(dictName) {
+  return path.join(DICTS_DIR, dictName, SCENES_SUBDIR);
+}
+
+/**
+ * 列出词典 scenes/ 下的场景文件名（仅 .json）
+ */
+function listSceneJsonFiles(dictName) {
+  const scenesDir = getScenesSourceDir(dictName);
+  if (!fs.existsSync(scenesDir)) return [];
+  return fs.readdirSync(scenesDir).filter(f => f.endsWith('.json'));
+}
+
+/**
+ * 获取所有有效词典（scenes/ 下至少有一个 .json 场景文件）
  */
 function getAvailableDicts() {
   if (!fs.existsSync(DICTS_DIR)) return [];
@@ -44,15 +63,7 @@ function getAvailableDicts() {
   return fs.readdirSync(DICTS_DIR, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name)
-    .filter(name => {
-      const dirPath = path.join(DICTS_DIR, name);
-      try {
-        const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.json'));
-        return files.length > 0;
-      } catch {
-        return false;
-      }
-    })
+    .filter(name => listSceneJsonFiles(name).length > 0)
     .sort();
 }
 
@@ -80,9 +91,14 @@ function switchToDict(dictName) {
     error(`词典不存在: ${dictName}\n可用词典: ${available || '(无)'}`);
   }
 
-  const jsonFiles = fs.readdirSync(sourceDir).filter(f => f.endsWith('.json'));
+  const scenesDir = getScenesSourceDir(dictName);
+  if (!fs.existsSync(scenesDir)) {
+    error(`词典 "${dictName}" 缺少 scenes/ 目录`);
+  }
+
+  const jsonFiles = listSceneJsonFiles(dictName);
   if (jsonFiles.length === 0) {
-    error(`词典 "${dictName}" 下没有找到任何 .json 场景文件`);
+    error(`词典 "${dictName}" 的 scenes/ 下没有找到任何 .json 场景文件`);
   }
 
   // 确保 active 目录存在
@@ -98,9 +114,9 @@ function switchToDict(dictName) {
     }
   }
 
-  // 复制新的场景文件
+  // 复制新的场景文件（仅 scenes/）
   for (const file of jsonFiles) {
-    const src = path.join(sourceDir, file);
+    const src = path.join(scenesDir, file);
     const dest = path.join(ACTIVE_DIR, file);
     fs.copyFileSync(src, dest);
   }

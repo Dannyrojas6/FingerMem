@@ -1,0 +1,26 @@
+{
+  "name": "Home & Rooms",
+  "sentences": [
+    { "en": "This is my house. It has a red door.", "zh": "这是我的房子。它有一扇红色的门。" },
+    { "en": "The window in the kitchen is open.", "zh": "厨房的窗户是开着的。" },
+    { "en": "The wall in my room is white.", "zh": "我房间的墙是白色的。" },
+    { "en": "The floor is made of wood.", "zh": "地板是木头做的。" },
+    { "en": "The cat is on the roof.", "zh": "猫在屋顶上。" },
+    { "en": "The stairs go up to the second floor.", "zh": "楼梯通向二楼。" },
+    { "en": "I sleep in the bedroom.", "zh": "我在卧室里睡觉。" },
+    { "en": "We cook in the kitchen.", "zh": "我们在厨房里做饭。" },
+    { "en": "There is a garden at the back of the house.", "zh": "房子后面有一个花园。" },
+    { "en": "I hear the bell at the door.", "zh": "我听到门铃声。" },
+    { "en": "The rooms in this house are small.", "zh": "这所房子的房间很小。" },
+    { "en": "Is there a bath in the bathroom?", "zh": "浴室里有浴缸吗？" },
+    { "en": "He goes up the stairs to his room.", "zh": "他上楼去他的房间。" },
+    { "en": "The oven in the kitchen is hot.", "zh": "厨房里的烤箱是热的。" },
+    { "en": "The owner of the house is my uncle.", "zh": "房子的主人是我的叔叔。" },
+    { "en": "The living room is the biggest room.", "zh": "客厅是最大的房间。" },
+    { "en": "The base of the house is made of stone.", "zh": "房子的地基是石头做的。" },
+    { "en": "I wash my hands in the basin.", "zh": "我在洗手盆里洗手。" },
+    { "en": "The condition of the old house was not good.", "zh": "老房子状况不好。" },
+    { "en": "The connection between the two pipes was broken.", "zh": "两根管子之间的连接断了。" },
+    { "en": "The control of the house temperature was automatic.", "zh": "房子温度的调节是自动的。" }
+  ]
+}

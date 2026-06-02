@@ -1,0 +1,18 @@
+{
+  "name": "Relations & Connections",
+  "sentences": [
+    { "en": "I go with my friend.", "zh": "我和我的朋友一起去。" },
+    { "en": "This is a present for you.", "zh": "这是给你的礼物。" },
+    { "en": "The book is by the window.", "zh": "书在窗户旁边。" },
+    { "en": "The top of the box is red.", "zh": "盒子的顶部是红色的。" },
+    { "en": "He is as tall as me.", "zh": "他和我一样高。" },
+    { "en": "I have a book about animals.", "zh": "我有一本关于动物的书。" },
+    { "en": "The cat is between the two chairs.", "zh": "猫在两把椅子之间。" },
+    { "en": "The school is across the street.", "zh": "学校在街对面。" },
+    { "en": "The bank is near the station.", "zh": "银行在车站附近。" },
+    { "en": "The farm is far from the town.", "zh": "农场离城镇很远。" },
+    { "en": "The letter is from my mother.", "zh": "这封信来自我母亲。" },
+    { "en": "We walk through the park.", "zh": "我们穿过公园。" },
+    { "en": "She puts the milk in the cup.", "zh": "她把牛奶倒进杯子里。" }
+  ]
+}

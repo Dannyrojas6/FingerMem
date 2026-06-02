@@ -1,0 +1,27 @@
+{
+  "name": "Plants & Growing",
+  "sentences": [
+    { "en": "The tree is tall and strong.", "zh": "树又高又壮。" },
+    { "en": "A flower has a sweet smell.", "zh": "花有香甜的气味。" },
+    { "en": "The grass is green in the garden.", "zh": "花园里的草是绿色的。" },
+    { "en": "A leaf falls from the tree in autumn.", "zh": "秋天叶子从树上落下。" },
+    { "en": "The root of the tree is in the earth.", "zh": "树根在地下。" },
+    { "en": "A seed grows into a plant.", "zh": "种子长成植物。" },
+    { "en": "The tree has fruit on its branches.", "zh": "树上有果实。" },
+    { "en": "Plants need sun and water to grow.", "zh": "植物需要阳光和水来生长。" },
+    { "en": "I cut a branch from the tree.", "zh": "我从树上砍下一根树枝。" },
+    { "en": "The wood from this tree is hard.", "zh": "这棵树的木头很硬。" },
+    { "en": "The flower is red and beautiful.", "zh": "花是红色的，很美丽。" },
+    { "en": "I grow tomatoes in my garden.", "zh": "我在我的花园里种西红柿。" },
+    { "en": "A berry is a small fruit.", "zh": "浆果是一种小水果。" },
+    { "en": "The stem of the plant is thin.", "zh": "植物的茎很细。" },
+    { "en": "The tree has many branches.", "zh": "树有很多树枝。" },
+    { "en": "The root of the plant is in the earth.", "zh": "植物的根在土里。" },
+    { "en": "Grain from the fields is used for making bread.", "zh": "田里的谷物用来做面包。" },
+    { "en": "The leaf of the tree is green.", "zh": "树的叶子是绿色的。" },
+    { "en": "Each seed grows into a new plant.", "zh": "每一粒种子长成一棵新植物。" },
+    { "en": "A farmer uses a spade to dig the earth.", "zh": "农民用铲子挖土。" },
+    { "en": "A plough is used to make the earth ready for planting.", "zh": "犁用来松土准备种植。" },
+    { "en": "The soil here is fertile. Plants grow well.", "zh": "这里的土壤很肥沃。植物长得好。" }
+  ]
+}

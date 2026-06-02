@@ -1,0 +1,24 @@
+{
+  "name": "Time & Sequence",
+  "sentences": [
+    { "en": "I am here now.", "zh": "我现在在这里。" },
+    { "en": "You go now.", "zh": "你现在走吧。" },
+    { "en": "He was there then.", "zh": "他那时在那里。" },
+    { "en": "I do my work before school.", "zh": "我在上学前做我的功课。" },
+    { "en": "We go home after the game.", "zh": "我们在游戏后回家。" },
+    { "en": "I am still at home.", "zh": "我还在家。" },
+    { "en": "Say it again, please.", "zh": "请再说一遍。" },
+    { "en": "I go there first.", "zh": "我先去那里。" },
+    { "en": "You come next.", "zh": "你下一个来。" },
+    { "en": "I see you today.", "zh": "我今天见到你。" },
+    { "en": "Tomorrow is a holiday.", "zh": "明天是一个假日。" },
+    { "en": "Yesterday was a good day.", "zh": "昨天是个好日子。" },
+    { "en": "I get up early every day.", "zh": "我每天早起。" },
+    { "en": "He is still asleep.", "zh": "他还在睡觉。" },
+    { "en": "Do not be late for school.", "zh": "上学不要迟到。" },
+    { "en": "Please wait till I come back.", "zh": "请等到我回来。" },
+    { "en": "The past is gone. The future is not here yet.", "zh": "过去已经过去了。未来还没有到来。" },
+    { "en": "I watch the clock all day.", "zh": "我整天看着钟。" },
+    { "en": "She came late last night.", "zh": "她昨晚来晚了。" }
+  ]
+}

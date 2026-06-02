@@ -1,0 +1,21 @@
+{
+  "name": "Daily Care & Clean",
+  "sentences": [
+    { "en": "I wash my face every morning.", "zh": "我每天早上洗脸。" },
+    { "en": "She cleans the room with a cloth.", "zh": "她用布打扫房间。" },
+    { "en": "I brush my teeth before bed.", "zh": "我睡觉前刷牙。" },
+    { "en": "Use soap to wash your hands.", "zh": "用肥皂洗手。" },
+    { "en": "The towel is on the rack.", "zh": "毛巾在架子上。" },
+    { "en": "I have a glass of water after I get up.", "zh": "我起床后喝一杯水。" },
+    { "en": "She uses a comb on her hair.", "zh": "她用梳子梳头发。" },
+    { "en": "I look at myself in the mirror.", "zh": "我看着镜子里的自己。" },
+    { "en": "I take a bath in the evening.", "zh": "我晚上洗澡。" },
+    { "en": "She dusts the shelf every week.", "zh": "她每周擦架子的灰尘。" },
+    { "en": "Rub the dry cloth on the glass.", "zh": "用干布擦拭玻璃。" },
+    { "en": "I clean my shoes before I go out.", "zh": "我出门前擦干净鞋子。" },
+    { "en": "The mirror is on the wall.", "zh": "镜子在墙上。" },
+    { "en": "I use wax to make the floor smooth.", "zh": "我用蜡使地板光滑。" },
+    { "en": "The sponge is wet with soap.", "zh": "海绵沾满了肥皂水。" },
+    { "en": "I put powder on my face.", "zh": "我在脸上扑粉。" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Location & Direction",
+  "sentences": [
+    { "en": "The book is in the bag.", "zh": "书在包里。" },
+    { "en": "The cat is on the table.", "zh": "猫在桌子上。" },
+    { "en": "He is at the door.", "zh": "他在门口。" },
+    { "en": "I go to the park.", "zh": "我去公园。" },
+    { "en": "She comes from London.", "zh": "她来自伦敦。" },
+    { "en": "The ball is under the chair.", "zh": "球在椅子下面。" },
+    { "en": "The picture is on the wall.", "zh": "画在墙上。" },
+    { "en": "The sun is up in the sky.", "zh": "太阳在天上。" },
+    { "en": "The cat is down on the floor.", "zh": "猫在地板上。" },
+    { "en": "Come here, please.", "zh": "请到这里来。" },
+    { "en": "Put the box there.", "zh": "把盒子放在那里。" },
+    { "en": "Turn left at the shop.", "zh": "在商店向左转。" },
+    { "en": "Turn right at the school.", "zh": "在学校向右转。" },
+    { "en": "The dog is in front of the house.", "zh": "狗在房子前面。" },
+    { "en": "The garden is at the back of the house.", "zh": "花园在房子的后面。" },
+    { "en": "The sun comes up in the east.", "zh": "太阳从东方升起。" },
+    { "en": "The wind comes from the west.", "zh": "风从西边吹来。" },
+    { "en": "Go south at the crossroads.", "zh": "在十字路口向南走。" },
+    { "en": "The north side of the house is cold.", "zh": "房子的北面很冷。" }
+  ]
+}

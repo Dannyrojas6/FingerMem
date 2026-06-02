@@ -1,0 +1,21 @@
+{
+  "name": "Things Around Me",
+  "sentences": [
+    { "en": "Every thing has a name.", "zh": "每样东西都有一个名字。" },
+    { "en": "A part of the cake is on the plate.", "zh": "蛋糕的一部分在盘子上。" },
+    { "en": "The end of the road is near the river.", "zh": "路的尽头在河附近。" },
+    { "en": "The pen is on one side of the book.", "zh": "钢笔在书的一侧。" },
+    { "en": "Draw a straight line on the paper.", "zh": "在纸上画一条直线。" },
+    { "en": "A circle has no end.", "zh": "圆没有终点。" },
+    { "en": "The top of the mountain is white with snow.", "zh": "山顶是白雪覆盖的。" },
+    { "en": "The middle of the room has a table.", "zh": "房间中央有一张桌子。" },
+    { "en": "The front of the car is red.", "zh": "汽车的前部是红色的。" },
+    { "en": "The back of the house has a garden.", "zh": "房子的后面有一个花园。" },
+    { "en": "There is a hole in my sock.", "zh": "我的袜子上有一个洞。" },
+    { "en": "The edge of the knife is sharp.", "zh": "刀刃很锋利。" },
+    { "en": "The hollow inside the tree was home for birds.", "zh": "树内的空洞是鸟的家。" },
+    { "en": "The structure of the building was strong.", "zh": "建筑的结构很坚固。" },
+    { "en": "The substance inside the bottle was water.", "zh": "瓶子里的物质是水。" },
+    { "en": "The stretch of land from here to the sea is flat.", "zh": "从这里到海边的这片土地是平坦的。" }
+  ]
+}

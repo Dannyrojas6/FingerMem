@@ -1,0 +1,27 @@
+{
+  "name": "Towns & Buildings",
+  "sentences": [
+    { "en": "The town has a market in the middle.", "zh": "这个城镇中心有一个市场。" },
+    { "en": "The city is big and loud.", "zh": "这个城市又大又喧闹。" },
+    { "en": "The street is full of people.", "zh": "街上挤满了人。" },
+    { "en": "The house on the corner is yellow.", "zh": "拐角处的房子是黄色的。" },
+    { "en": "I buy food at the shop.", "zh": "我在商店买食物。" },
+    { "en": "The market is open every morning.", "zh": "市场每天早上开放。" },
+    { "en": "Children go to school.", "zh": "孩子们去上学。" },
+    { "en": "We go to church on Sunday.", "zh": "我们星期天去教堂。" },
+    { "en": "The hospital is near the station.", "zh": "医院在车站附近。" },
+    { "en": "The bridge connects the two parts of the town.", "zh": "这座桥连接城镇的两个部分。" },
+    { "en": "Is there a library in this town?", "zh": "这个镇上有图书馆吗？" },
+    { "en": "The street has many shops and houses.", "zh": "这条街有很多商店和房子。" },
+    { "en": "The building at the end of the street is a school.", "zh": "街尽头的建筑是一所学校。" },
+    { "en": "The library is a quiet place for reading.", "zh": "图书馆是一个安静的阅读场所。" },
+    { "en": "The prison is a place for punishment.", "zh": "监狱是用来惩罚的地方。" },
+    { "en": "I went to the station to get on the train.", "zh": "我去车站乘坐火车。" },
+    { "en": "The office of the manager is on the second floor.", "zh": "经理的办公室在二楼。" },
+    { "en": "The church has a tall tower.", "zh": "教堂有一个高塔。" },
+    { "en": "The arch of the old bridge was beautiful.", "zh": "老桥的拱形很美丽。" },
+    { "en": "The main street was made of brick.", "zh": "主街道是用砖铺的。" },
+    { "en": "The direction of the road was north.", "zh": "这条路的方向是向北。" },
+    { "en": "A chemical plant was outside the town.", "zh": "一家化工厂在镇外。" }
+  ]
+}

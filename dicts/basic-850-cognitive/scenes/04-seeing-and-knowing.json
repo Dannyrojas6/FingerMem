@@ -1,0 +1,20 @@
+{
+  "name": "Seeing & Knowing",
+  "sentences": [
+    { "en": "I see a bird in the tree.", "zh": "我看到树上有一只鸟。" },
+    { "en": "You see the sun in the sky.", "zh": "你看到天空中的太阳。" },
+    { "en": "He says hello to me.", "zh": "他对我说你好。" },
+    { "en": "She says yes to the idea.", "zh": "她同意了这个想法。" },
+    { "en": "I think about my family.", "zh": "我想念我的家人。" },
+    { "en": "You think this is a good book.", "zh": "你认为这是一本好书。" },
+    { "en": "I know her name.", "zh": "我知道她的名字。" },
+    { "en": "He knows the answer.", "zh": "他知道答案。" },
+    { "en": "I want a glass of water.", "zh": "我想要一杯水。" },
+    { "en": "She wants to see the doctor.", "zh": "她想看医生。" },
+    { "en": "I will do my work tomorrow.", "zh": "我明天会做我的工作。" },
+    { "en": "You will get the book tomorrow.", "zh": "你明天会拿到那本书。" },
+    { "en": "I can see the mountain from here.", "zh": "我能从这里看到山。" },
+    { "en": "You can have my pen.", "zh": "你可以用我的钢笔。" },
+    { "en": "May I come in?", "zh": "我可以进来吗？" }
+  ]
+}

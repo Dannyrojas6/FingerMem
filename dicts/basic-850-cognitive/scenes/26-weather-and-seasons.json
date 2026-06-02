@@ -1,0 +1,20 @@
+{
+  "name": "Weather & Seasons",
+  "sentences": [
+    { "en": "The weather is warm in spring.", "zh": "春天的天气很温暖。" },
+    { "en": "Rain is common in spring.", "zh": "春天雨水很多。" },
+    { "en": "The wind is strong in the storm.", "zh": "暴风雨中的风很强。" },
+    { "en": "There is a flash of light in the sky.", "zh": "天空中有一道闪光。" },
+    { "en": "Thunder comes after the light.", "zh": "闪电之后雷声响起。" },
+    { "en": "Summer is warm and bright.", "zh": "夏天又温暖又明亮。" },
+    { "en": "Winter is cold and dry.", "zh": "冬天又冷又干燥。" },
+    { "en": "Is the weather good for a walk?", "zh": "天气适合散步吗？" },
+    { "en": "The air is warm and wet in summer.", "zh": "夏天的空气温暖而潮湿。" },
+    { "en": "The snow is deep in winter.", "zh": "冬天的雪很深。" },
+    { "en": "Spring is after winter and before summer.", "zh": "春天在冬天之后、夏天之前。" },
+    { "en": "The sky is dark before a storm.", "zh": "暴风雨前天空很暗。" },
+    { "en": "There was a light mist in the morning.", "zh": "早上有一层薄雾。" },
+    { "en": "People use an umbrella when it rains.", "zh": "下雨时人们用雨伞。" },
+    { "en": "The wind gave a strong blow.", "zh": "风猛烈地吹了一下。" }
+  ]
+}

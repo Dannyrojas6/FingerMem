@@ -1,0 +1,25 @@
+{
+  "name": "A Day in My Life",
+  "sentences": [
+    { "en": "I got up at seven o'clock this morning.", "zh": "我今天早上七点起床了。" },
+    { "en": "First, I washed my face and brushed my teeth.", "zh": "首先，我洗了脸、刷了牙。" },
+    { "en": "Then I had bread and milk for breakfast.", "zh": "然后我早餐吃了面包和牛奶。" },
+    { "en": "I put on my shirt and coat and went to school.", "zh": "我穿上衬衫和外套去了学校。" },
+    { "en": "I walked to school with my friend.", "zh": "我和我的朋友一起步行去学校。" },
+    { "en": "We had a test in the morning class.", "zh": "我们上午的课有一个测试。" },
+    { "en": "After school, I went back home.", "zh": "放学后，我回家了。" },
+    { "en": "I did my work for one hour.", "zh": "我做了一个小时的功课。" },
+    { "en": "Then I had dinner with my family.", "zh": "然后我和家人一起吃了晚餐。" },
+    { "en": "I took a bath and went to bed at nine.", "zh": "我洗了澡，九点上了床。" },
+    { "en": "I was very tired after the long day.", "zh": "漫长的一天后我很累。" },
+    { "en": "It was a good day.", "zh": "这是美好的一天。" },
+    { "en": "I was awake when the sun came up.", "zh": "太阳升起时我已经醒了。" },
+    { "en": "I was asleep by ten o'clock.", "zh": "我十点前睡着了。" },
+    { "en": "I put on my sock and shoes before I went out.", "zh": "我出门前穿上袜子和鞋子。" },
+    { "en": "I made a start on my new book.", "zh": "我开始读一本新书。" },
+    { "en": "I took a rest after lunch.", "zh": "午饭后我休息了一会儿。" },
+    { "en": "Every step I took was a step forward.", "zh": "我走的每一步都是向前的一步。" },
+    { "en": "Driving a car is not a simple thing.", "zh": "开车不是一件简单的事。" },
+    { "en": "I have a hearing test at school.", "zh": "我在学校做了听力测试。" }
+  ]
+}

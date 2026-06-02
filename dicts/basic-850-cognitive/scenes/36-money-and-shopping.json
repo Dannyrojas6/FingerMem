@@ -1,0 +1,21 @@
+{
+  "name": "Money & Shopping",
+  "sentences": [
+    { "en": "I need money to buy food.", "zh": "我需要钱来买食物。" },
+    { "en": "The price of this coat is high.", "zh": "这件外套的价格很高。" },
+    { "en": "The cost of the ticket is ten dollars.", "zh": "票的价格是十美元。" },
+    { "en": "This shirt is cheap. That one is expensive.", "zh": "这件衬衫便宜。那件贵。" },
+    { "en": "I buy milk and bread at the shop.", "zh": "我在商店买牛奶和面包。" },
+    { "en": "He sells fruit at the market.", "zh": "他在市场卖水果。" },
+    { "en": "I pay the money at the end.", "zh": "我最后付钱。" },
+    { "en": "Here is your change, Sir.", "zh": "这是找您的零钱，先生。" },
+    { "en": "This ring has great value.", "zh": "这枚戒指很有价值。" },
+    { "en": "I keep an account of my money.", "zh": "我记录我的钱的花销。" },
+    { "en": "Do you have enough money for the book?", "zh": "你有足够的钱买那本书吗？" },
+    { "en": "The value of this old coin is high.", "zh": "这枚旧硬币的价值很高。" },
+    { "en": "I need insurance to keep my house safe.", "zh": "我需要保险来保障我的房子安全。" },
+    { "en": "I have a debt to the bank.", "zh": "我欠银行一笔钱。" },
+    { "en": "My credit with the shop is good.", "zh": "我在那家店的信用很好。" },
+    { "en": "The exchange rate between our money and theirs is good.", "zh": "我们的钱和他们的钱之间的汇率不错。" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Numbers & Time (2)",
+  "sentences": [
+    { "en": "There are twelve months in a year.", "zh": "一年有十二个月。" },
+    { "en": "Twenty and thirty make fifty.", "zh": "二十加三十等于五十。" },
+    { "en": "One hundred is a round number.", "zh": "一百是一个整十数。" },
+    { "en": "A day has twenty-four hours.", "zh": "一天有二十四小时。" },
+    { "en": "There are seven days in a week.", "zh": "一周有七天。" },
+    { "en": "A month has about thirty days.", "zh": "一个月约有三十天。" },
+    { "en": "The year has four seasons.", "zh": "一年有四季。" },
+    { "en": "The clock on the wall says three o'clock.", "zh": "墙上的钟显示三点钟。" },
+    { "en": "An hour has sixty minutes.", "zh": "一小时有六十分钟。" },
+    { "en": "A minute is a short time.", "zh": "一分钟是短暂的时间。" },
+    { "en": "What day is it today?", "zh": "今天星期几？" },
+    { "en": "The clock gives us the time.", "zh": "钟表给我们时间。" },
+    { "en": "I am ten years old.", "zh": "我十岁了。" },
+    { "en": "The past year was a good one.", "zh": "过去的一年是美好的一年。" },
+    { "en": "We have no memory of the future.", "zh": "我们对未来没有记忆。" },
+    { "en": "I have a watch on my arm.", "zh": "我手臂上戴着一块手表。" }
+  ]
+}

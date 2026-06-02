@@ -1,0 +1,30 @@
+{
+  "name": "Size, Shape & Measure",
+  "sentences": [
+    { "en": "The snake is long and thin.", "zh": "蛇又长又细。" },
+    { "en": "A mouse is small. An elephant is big.", "zh": "老鼠很小。大象很大。" },
+    { "en": "The mountain is high.", "zh": "山很高。" },
+    { "en": "The river is wide and deep.", "zh": "河又宽又深。" },
+    { "en": "The ice is thick on the lake.", "zh": "湖上的冰很厚。" },
+    { "en": "This paper is very thin.", "zh": "这张纸非常薄。" },
+    { "en": "The table is round.", "zh": "桌子是圆的。" },
+    { "en": "The land is flat here.", "zh": "这里的土地是平坦的。" },
+    { "en": "Is this box big enough for all the things?", "zh": "这个盒子够大来装所有东西吗？" },
+    { "en": "The road is long and straight.", "zh": "路又长又直。" },
+    { "en": "The water in this part is deep. Do not go in.", "zh": "这一部分的水很深。不要下去。" },
+    { "en": "The window is low to the ground.", "zh": "窗户离地面很低。" },
+    { "en": "I need a long piece of string.", "zh": "我需要一根长绳子。" },
+    { "en": "The two lines are parallel to each other.", "zh": "这两条线彼此平行。" },
+    { "en": "The curve of the road was sharp.", "zh": "路的弯道很急。" },
+    { "en": "The distance between the two towns is ten miles.", "zh": "两个城镇之间的距离是十英里。" },
+    { "en": "The sticky substance on the table was glue.", "zh": "桌子上的粘性物质是胶水。" },
+    { "en": "The cloth had a stiff texture.", "zh": "这块布料质地很硬挺。" },
+    { "en": "The weight of the box was not great.", "zh": "箱子的重量不大。" },
+    { "en": "A square has four equal sides.", "zh": "正方形有四条相等的边。" },
+    { "en": "The solid ice did not break.", "zh": "坚固的冰没有破裂。" },
+    { "en": "The mass of the rock was great.", "zh": "岩石的质量很大。" },
+    { "en": "Elastic material goes back to its old shape.", "zh": "弹性材料会恢复原来的形状。" },
+    { "en": "The limit of the land is the river.", "zh": "土地的边界是河流。" },
+    { "en": "The fat man was the same size as the door.", "zh": "那个胖男人和门一样大。" }
+  ]
+}

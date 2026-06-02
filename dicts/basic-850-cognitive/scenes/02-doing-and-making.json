@@ -1,0 +1,19 @@
+{
+  "name": "Doing & Making",
+  "sentences": [
+    { "en": "I do my work every day.", "zh": "我每天做我的工作。" },
+    { "en": "You do a good job.", "zh": "你做得很好。" },
+    { "en": "He does the work at home.", "zh": "他在家做工作。" },
+    { "en": "She makes a cake.", "zh": "她做了一个蛋糕。" },
+    { "en": "We make a plan.", "zh": "我们制定了一个计划。" },
+    { "en": "They make a fire.", "zh": "他们生了一堆火。" },
+    { "en": "I get a letter from her.", "zh": "我收到她的一封信。" },
+    { "en": "You get a new book.", "zh": "你得到了一本新书。" },
+    { "en": "He gives me a hand.", "zh": "他帮了我一把。" },
+    { "en": "She gives a present to him.", "zh": "她给了他一份礼物。" },
+    { "en": "I take a cup of tea.", "zh": "我喝一杯茶。" },
+    { "en": "You take the book from the table.", "zh": "你从桌子上拿走书。" },
+    { "en": "We put the box on the shelf.", "zh": "我们把盒子放在架子上。" },
+    { "en": "They put the chairs in the room.", "zh": "他们把椅子放在房间里。" }
+  ]
+}

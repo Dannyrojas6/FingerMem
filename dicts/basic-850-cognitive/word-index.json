@@ -1,0 +1,7878 @@
+{
+  "a": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "06-relations-and-connections",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "20-family-and-people",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "able": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "about": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "06-relations-and-connections",
+      "13-feelings-and-emotions",
+      "34-numbers-and-time-2",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "44-visiting-a-friend",
+      "46-a-trip-to-another-town",
+      "50-school-and-learning",
+      "53-a-special-day"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "account": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping",
+      "45-going-to-the-doctor",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "acid": {
+    "category": "quality",
+    "appears_in": [
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "43-cooking-a-meal"
+  },
+  "across": {
+    "category": "operation",
+    "appears_in": [
+      "06-relations-and-connections",
+      "30-land-and-travel-paths",
+      "32-moving-around",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "act": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "addition": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "adjustment": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "after": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "07-time-and-sequence",
+      "11-body-and-parts",
+      "14-actions-and-movement",
+      "19-daily-care-and-clean",
+      "26-weather-and-seasons",
+      "33-numbers-and-counting-1",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "50-school-and-learning",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "again": {
+    "category": "operation",
+    "appears_in": [
+      "07-time-and-sequence",
+      "13-feelings-and-emotions",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "against": {
+    "category": "operation",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "agreement": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection",
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "air": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "26-weather-and-seasons",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "all": {
+    "category": "operation",
+    "appears_in": [
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "24-size-shape-and-measure",
+      "38-government-and-community",
+      "45-going-to-the-doctor",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "almost": {
+    "category": "operation",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "among": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "amount": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "amusement": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "and": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "18-furniture-and-things",
+      "20-family-and-people",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "38-government-and-community",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "anger": {
+    "category": "quality",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "animal": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "another": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "answer": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "37-communication",
+      "39-education-and-learning"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "any": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "apparatus": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "apple": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection",
+      "12-senses-and-sensations",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "approval": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "arch": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "argument": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "arm": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "34-numbers-and-time-2",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "army": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "art": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning",
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "as": {
+    "category": "operation",
+    "appears_in": [
+      "06-relations-and-connections",
+      "24-size-shape-and-measure",
+      "35-work-and-occupations",
+      "43-cooking-a-meal",
+      "48-children-playing-outside",
+      "51-making-something"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "at": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "07-time-and-sequence",
+      "11-body-and-parts",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "20-family-and-people",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "29-colors-and-light",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "attack": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "attempt": {
+    "category": "thing",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "attention": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "attraction": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "authority": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "automatic": {
+    "category": "quality",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "awake": {
+    "category": "quality",
+    "appears_in": [
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "42-a-day-in-my-life"
+  },
+  "baby": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "20-family-and-people",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "back": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "07-time-and-sequence",
+      "10-manner-and-quality",
+      "17-home-and-rooms",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "40-art-music-and-play",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "bad": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality",
+      "13-feelings-and-emotions",
+      "41-people-and-character"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "bag": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "18-furniture-and-things",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "balance": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "ball": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "22-fire-tools-and-making",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "band": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "base": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "basin": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "basket": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "bath": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms",
+      "19-daily-care-and-clean",
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "be": {
+    "category": "operation",
+    "appears_in": [
+      "07-time-and-sequence",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "50-school-and-learning",
+      "51-making-something"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "beautiful": {
+    "category": "quality",
+    "appears_in": [
+      "28-plants-and-growing",
+      "31-towns-and-buildings",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "46-a-trip-to-another-town",
+      "53-a-special-day"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "because": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "13-feelings-and-emotions",
+      "41-people-and-character",
+      "43-cooking-a-meal",
+      "49-the-four-seasons-story",
+      "53-a-special-day"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "bed": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "27-animals-and-living-things",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "51-making-something"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "bee": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "before": {
+    "category": "operation",
+    "appears_in": [
+      "07-time-and-sequence",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "26-weather-and-seasons",
+      "33-numbers-and-counting-1",
+      "42-a-day-in-my-life",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "behavior": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "belief": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "41-people-and-character"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "bell": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms",
+      "32-moving-around",
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "bent": {
+    "category": "quality",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "berry": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "between": {
+    "category": "operation",
+    "appears_in": [
+      "06-relations-and-connections",
+      "17-home-and-rooms",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "36-money-and-shopping",
+      "44-visiting-a-friend",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "bird": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "12-senses-and-sensations",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "32-moving-around",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "birth": {
+    "category": "thing",
+    "appears_in": [
+      "53-a-special-day"
+    ],
+    "introduced_in": "53-a-special-day"
+  },
+  "bit": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "bite": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "bitter": {
+    "category": "quality",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "black": {
+    "category": "quality",
+    "appears_in": [
+      "11-body-and-parts",
+      "16-clothing-and-getting-ready",
+      "29-colors-and-light",
+      "37-communication",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "blade": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "blood": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "29-colors-and-light"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "blow": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "blue": {
+    "category": "quality",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "18-furniture-and-things",
+      "25-nature-and-landscape",
+      "29-colors-and-light",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "board": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "boat": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "body": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "boiling": {
+    "category": "quality",
+    "appears_in": [
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "43-cooking-a-meal"
+  },
+  "bone": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "book": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "09-logic-and-connection",
+      "23-things-around-me",
+      "36-money-and-shopping",
+      "37-communication",
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "boot": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "bottle": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "18-furniture-and-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "box": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "08-quantity-and-degree",
+      "14-actions-and-movement",
+      "18-furniture-and-things",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "51-making-something"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "boy": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "20-family-and-people",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "brain": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "brake": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "branch": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "brass": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "bread": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "28-plants-and-growing",
+      "36-money-and-shopping",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "breath": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "brick": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "bridge": {
+    "category": "thing",
+    "appears_in": [
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "30-land-and-travel-paths"
+  },
+  "bright": {
+    "category": "quality",
+    "appears_in": [
+      "14-actions-and-movement",
+      "22-fire-tools-and-making",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "29-colors-and-light",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "broken": {
+    "category": "quality",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "29-colors-and-light",
+      "51-making-something"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "brother": {
+    "category": "thing",
+    "appears_in": [
+      "20-family-and-people",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "20-family-and-people"
+  },
+  "brown": {
+    "category": "quality",
+    "appears_in": [
+      "29-colors-and-light",
+      "47-shopping-for-clothes",
+      "51-making-something"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "brush": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "bucket": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "building": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me",
+      "31-towns-and-buildings",
+      "40-art-music-and-play",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "bulb": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "burn": {
+    "category": "thing",
+    "appears_in": [
+      "21-keeping-things"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "burst": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "business": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "but": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "27-animals-and-living-things",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "butter": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "button": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "by": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "06-relations-and-connections",
+      "32-moving-around",
+      "37-communication",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "cake": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "33-numbers-and-counting-1",
+      "44-visiting-a-friend",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "camera": {
+    "category": "thing",
+    "appears_in": [
+      "53-a-special-day"
+    ],
+    "introduced_in": "53-a-special-day"
+  },
+  "can": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "12-senses-and-sensations",
+      "22-fire-tools-and-making",
+      "41-people-and-character",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "canvas": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "card": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "care": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "45-going-to-the-doctor",
+      "51-making-something"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "carriage": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "cart": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around",
+      "51-making-something"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "cat": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "09-logic-and-connection",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "cause": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "certain": {
+    "category": "quality",
+    "appears_in": [
+      "08-quantity-and-degree"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "chain": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "chalk": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "chance": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "39-education-and-learning"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "change": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping",
+      "39-education-and-learning",
+      "45-going-to-the-doctor",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "cheap": {
+    "category": "quality",
+    "appears_in": [
+      "36-money-and-shopping",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "cheese": {
+    "category": "thing",
+    "appears_in": [
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "43-cooking-a-meal"
+  },
+  "chemical": {
+    "category": "quality",
+    "appears_in": [
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "chest": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "chief": {
+    "category": "quality",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "child": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "20-family-and-people",
+      "33-numbers-and-counting-1",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "chin": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "church": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "circle": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "clean": {
+    "category": "quality",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "41-people-and-character",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "clear": {
+    "category": "quality",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "44-visiting-a-friend",
+      "49-the-four-seasons-story",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "clock": {
+    "category": "thing",
+    "appears_in": [
+      "07-time-and-sequence",
+      "34-numbers-and-time-2",
+      "42-a-day-in-my-life",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "cloth": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "12-senses-and-sensations",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "24-size-shape-and-measure",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "cloud": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "29-colors-and-light"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "coal": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "coat": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "16-clothing-and-getting-ready",
+      "29-colors-and-light",
+      "36-money-and-shopping",
+      "42-a-day-in-my-life",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "cold": {
+    "category": "quality",
+    "appears_in": [
+      "05-location-and-direction",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "21-keeping-things",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "45-going-to-the-doctor",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "collar": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "color": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "comb": {
+    "category": "thing",
+    "appears_in": [
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "19-daily-care-and-clean"
+  },
+  "come": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "07-time-and-sequence"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "comfort": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "common": {
+    "category": "quality",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "26-weather-and-seasons",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "committee": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "company": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "comparison": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "competition": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "complete": {
+    "category": "quality",
+    "appears_in": [
+      "09-logic-and-connection",
+      "39-education-and-learning"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "complex": {
+    "category": "quality",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "condition": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "connection": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "conscious": {
+    "category": "quality",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "control": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "cook": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "copper": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "copy": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "cord": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "cork": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "cotton": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "cough": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "country": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "cover": {
+    "category": "thing",
+    "appears_in": [
+      "21-keeping-things"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "cow": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "crack": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "credit": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "crime": {
+    "category": "thing",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "cruel": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "crush": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "cry": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "cup": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "06-relations-and-connections",
+      "08-quantity-and-degree",
+      "15-eating-and-drinking",
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "current": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "curtain": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "curve": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "cushion": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "cut": {
+    "category": "quality",
+    "appears_in": [
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "28-plants-and-growing",
+      "43-cooking-a-meal",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "damage": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "danger": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "dark": {
+    "category": "quality",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "18-furniture-and-things",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "29-colors-and-light",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "daughter": {
+    "category": "thing",
+    "appears_in": [
+      "20-family-and-people"
+    ],
+    "introduced_in": "20-family-and-people"
+  },
+  "day": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "dead": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "dear": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "death": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "debt": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "decision": {
+    "category": "thing",
+    "appears_in": [
+      "47-shopping-for-clothes",
+      "50-school-and-learning",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "47-shopping-for-clothes"
+  },
+  "deep": {
+    "category": "quality",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "24-size-shape-and-measure",
+      "26-weather-and-seasons",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "degree": {
+    "category": "thing",
+    "appears_in": [
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "33-numbers-and-counting-1"
+  },
+  "delicate": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "dependent": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "design": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations",
+      "40-art-music-and-play",
+      "51-making-something"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "desire": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "destruction": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "detail": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "development": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "digestion": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "different": {
+    "category": "quality",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "direction": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "dirty": {
+    "category": "quality",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "41-people-and-character"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "discovery": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "discussion": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "disease": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "disgust": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "distance": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "distribution": {
+    "category": "thing",
+    "appears_in": [
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "33-numbers-and-counting-1"
+  },
+  "division": {
+    "category": "thing",
+    "appears_in": [
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "33-numbers-and-counting-1"
+  },
+  "do": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "04-seeing-and-knowing",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "32-moving-around",
+      "36-money-and-shopping",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "dog": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "13-feelings-and-emotions",
+      "27-animals-and-living-things",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "door": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "08-quantity-and-degree",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "24-size-shape-and-measure",
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "doubt": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "down": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction",
+      "14-actions-and-movement",
+      "48-children-playing-outside",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "drain": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "drawer": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "dress": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "drink": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "driving": {
+    "category": "thing",
+    "appears_in": [
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "42-a-day-in-my-life"
+  },
+  "drop": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "dry": {
+    "category": "quality",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "26-weather-and-seasons",
+      "30-land-and-travel-paths",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "dust": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "30-land-and-travel-paths"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "ear": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "early": {
+    "category": "quality",
+    "appears_in": [
+      "07-time-and-sequence",
+      "53-a-special-day"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "earth": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "east": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "edge": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement",
+      "22-fire-tools-and-making",
+      "23-things-around-me"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "education": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "effect": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "egg": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "elastic": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "electric": {
+    "category": "quality",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "end": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "23-things-around-me",
+      "31-towns-and-buildings",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "39-education-and-learning",
+      "41-people-and-character"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "engine": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "32-moving-around",
+      "39-education-and-learning",
+      "51-making-something"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "enough": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "12-senses-and-sensations",
+      "15-eating-and-drinking",
+      "24-size-shape-and-measure",
+      "36-money-and-shopping",
+      "51-making-something"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "equal": {
+    "category": "quality",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "24-size-shape-and-measure",
+      "33-numbers-and-counting-1",
+      "38-government-and-community"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "error": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "event": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "37-communication",
+      "39-education-and-learning",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "ever": {
+    "category": "operation",
+    "appears_in": [
+      "53-a-special-day"
+    ],
+    "introduced_in": "53-a-special-day"
+  },
+  "even": {
+    "category": "operation",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "example": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "exchange": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "existence": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "expansion": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "experience": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "expert": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "eye": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "face": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "19-daily-care-and-clean",
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "fact": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "fall": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "false": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "family": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "08-quantity-and-degree",
+      "13-feelings-and-emotions",
+      "20-family-and-people",
+      "33-numbers-and-counting-1",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "53-a-special-day"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "far": {
+    "category": "operation",
+    "appears_in": [
+      "06-relations-and-connections"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "farm": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "27-animals-and-living-things",
+      "32-moving-around"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "fat": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "father": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "20-family-and-people",
+      "44-visiting-a-friend",
+      "51-making-something",
+      "53-a-special-day"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "fear": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "feather": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "feeble": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "feeling": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "44-visiting-a-friend",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "female": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "fertile": {
+    "category": "quality",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "fiction": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "field": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "fight": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "finger": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "29-colors-and-light"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "fire": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "09-logic-and-connection",
+      "18-furniture-and-things",
+      "22-fire-tools-and-making",
+      "38-government-and-community",
+      "43-cooking-a-meal",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "first": {
+    "category": "quality",
+    "appears_in": [
+      "07-time-and-sequence",
+      "33-numbers-and-counting-1",
+      "37-communication",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "47-shopping-for-clothes",
+      "50-school-and-learning",
+      "51-making-something"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "fish": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "27-animals-and-living-things",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "fixed": {
+    "category": "quality",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "flag": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "flame": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "flat": {
+    "category": "quality",
+    "appears_in": [
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "30-land-and-travel-paths",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "flight": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "floor": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "31-towns-and-buildings",
+      "44-visiting-a-friend",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "flower": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "12-senses-and-sensations",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "48-children-playing-outside",
+      "53-a-special-day"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "fly": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "fold": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "food": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "11-body-and-parts",
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking",
+      "21-keeping-things",
+      "27-animals-and-living-things",
+      "31-towns-and-buildings",
+      "33-numbers-and-counting-1",
+      "36-money-and-shopping",
+      "43-cooking-a-meal",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "foolish": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "foot": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "16-clothing-and-getting-ready",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "for": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "06-relations-and-connections",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "18-furniture-and-things",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "force": {
+    "category": "thing",
+    "appears_in": [
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "49-the-four-seasons-story"
+  },
+  "fork": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "form": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "forward": {
+    "category": "operation",
+    "appears_in": [
+      "10-manner-and-quality",
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "fowl": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "frame": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "free": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "frequent": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "friend": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "06-relations-and-connections",
+      "20-family-and-people",
+      "27-animals-and-living-things",
+      "37-communication",
+      "40-art-music-and-play",
+      "42-a-day-in-my-life",
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "from": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "16-clothing-and-getting-ready",
+      "18-furniture-and-things",
+      "20-family-and-people",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "30-land-and-travel-paths",
+      "32-moving-around",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "41-people-and-character",
+      "43-cooking-a-meal",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "front": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "11-body-and-parts",
+      "23-things-around-me",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "fruit": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection",
+      "15-eating-and-drinking",
+      "18-furniture-and-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "36-money-and-shopping",
+      "53-a-special-day"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "full": {
+    "category": "quality",
+    "appears_in": [
+      "18-furniture-and-things",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "future": {
+    "category": "quality",
+    "appears_in": [
+      "07-time-and-sequence",
+      "34-numbers-and-time-2",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "garden": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "17-home-and-rooms",
+      "20-family-and-people",
+      "21-keeping-things",
+      "23-things-around-me",
+      "28-plants-and-growing",
+      "40-art-music-and-play",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "general": {
+    "category": "quality",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "get": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "04-seeing-and-knowing",
+      "07-time-and-sequence",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "31-towns-and-buildings",
+      "35-work-and-occupations",
+      "39-education-and-learning",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "girl": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "20-family-and-people",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "give": {
+    "category": "operation",
+    "appears_in": [
+      "10-manner-and-quality",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "glass": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "08-quantity-and-degree",
+      "15-eating-and-drinking",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "glove": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "go": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "07-time-and-sequence",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "24-size-shape-and-measure",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "35-work-and-occupations",
+      "39-education-and-learning",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "goat": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "gold": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "good": {
+    "category": "quality",
+    "appears_in": [
+      "02-doing-and-making",
+      "04-seeing-and-knowing",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "10-manner-and-quality",
+      "15-eating-and-drinking",
+      "17-home-and-rooms",
+      "20-family-and-people",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "38-government-and-community",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "47-shopping-for-clothes",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "government": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community",
+      "50-school-and-learning",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "grain": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "28-plants-and-growing",
+      "32-moving-around"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "grass": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "great": {
+    "category": "quality",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "24-size-shape-and-measure",
+      "36-money-and-shopping",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "44-visiting-a-friend",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "green": {
+    "category": "quality",
+    "appears_in": [
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "grey": {
+    "category": "quality",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "grip": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "group": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "growth": {
+    "category": "thing",
+    "appears_in": [
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "49-the-four-seasons-story"
+  },
+  "guide": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "gun": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "hair": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "hammer": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "51-making-something"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "hand": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "11-body-and-parts",
+      "14-actions-and-movement",
+      "16-clothing-and-getting-ready",
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "hanging": {
+    "category": "quality",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "happiness": {
+    "category": "quality",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "harbor": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "hard": {
+    "category": "quality",
+    "appears_in": [
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "22-fire-tools-and-making",
+      "25-nature-and-landscape",
+      "28-plants-and-growing",
+      "43-cooking-a-meal",
+      "48-children-playing-outside",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "harmony": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "hat": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "hate": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "have": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "04-seeing-and-knowing",
+      "06-relations-and-connections",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "20-family-and-people",
+      "29-colors-and-light",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "36-money-and-shopping",
+      "37-communication",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "42-a-day-in-my-life",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "he": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "22-fire-tools-and-making",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "41-people-and-character",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "head": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "14-actions-and-movement",
+      "27-animals-and-living-things",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "healthy": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "hearing": {
+    "category": "thing",
+    "appears_in": [
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "42-a-day-in-my-life"
+  },
+  "heart": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "41-people-and-character"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "heat": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "25-nature-and-landscape",
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "help": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication",
+      "39-education-and-learning",
+      "41-people-and-character",
+      "44-visiting-a-friend",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "here": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "28-plants-and-growing",
+      "30-land-and-travel-paths",
+      "32-moving-around",
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "high": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality",
+      "16-clothing-and-getting-ready",
+      "24-size-shape-and-measure",
+      "33-numbers-and-counting-1",
+      "36-money-and-shopping",
+      "38-government-and-community",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "history": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "hole": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "23-things-around-me"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "hollow": {
+    "category": "quality",
+    "appears_in": [
+      "23-things-around-me"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "hook": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "hope": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "horn": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "horse": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things",
+      "32-moving-around"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "hospital": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "hour": {
+    "category": "thing",
+    "appears_in": [
+      "34-numbers-and-time-2",
+      "39-education-and-learning",
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "34-numbers-and-time-2"
+  },
+  "house": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "23-things-around-me",
+      "27-animals-and-living-things",
+      "31-towns-and-buildings",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "44-visiting-a-friend",
+      "53-a-special-day"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "how": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "humor": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "i": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "20-family-and-people",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "ice": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "idea": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "10-manner-and-quality",
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "if": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "ill": {
+    "category": "quality",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "important": {
+    "category": "quality",
+    "appears_in": [
+      "37-communication",
+      "45-going-to-the-doctor",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "impulse": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "in": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "11-body-and-parts",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "20-family-and-people",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "increase": {
+    "category": "thing",
+    "appears_in": [
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "49-the-four-seasons-story"
+  },
+  "industry": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "ink": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "insect": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "instrument": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "insurance": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "interest": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "invention": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "iron": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "island": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "jelly": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "jewel": {
+    "category": "thing",
+    "appears_in": [
+      "53-a-special-day"
+    ],
+    "introduced_in": "53-a-special-day"
+  },
+  "join": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "journey": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "judge": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "jump": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "13-feelings-and-emotions",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "keep": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "18-furniture-and-things",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "36-money-and-shopping",
+      "38-government-and-community",
+      "47-shopping-for-clothes",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "kettle": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "key": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "kick": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "kind": {
+    "category": "quality",
+    "appears_in": [
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "13-feelings-and-emotions",
+      "41-people-and-character",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "knee": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "knife": {
+    "category": "thing",
+    "appears_in": [
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "43-cooking-a-meal",
+      "51-making-something"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "knot": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "knowledge": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "land": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "language": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "last": {
+    "category": "quality",
+    "appears_in": [
+      "07-time-and-sequence",
+      "44-visiting-a-friend",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "late": {
+    "category": "quality",
+    "appears_in": [
+      "07-time-and-sequence"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "laugh": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "law": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "lead": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "leaf": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "learning": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "39-education-and-learning",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "leather": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "left": {
+    "category": "quality",
+    "appears_in": [
+      "05-location-and-direction",
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "leg": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "let": {
+    "category": "operation",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "level": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "library": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "38-government-and-community",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "lift": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "14-actions-and-movement",
+      "41-people-and-character"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "light": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement",
+      "22-fire-tools-and-making",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "29-colors-and-light"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "like": {
+    "category": "quality",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking",
+      "32-moving-around",
+      "40-art-music-and-play",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "limit": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "line": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "linen": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "lip": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "liquid": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "list": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "little": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "living": {
+    "category": "quality",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "lock": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "long": {
+    "category": "quality",
+    "appears_in": [
+      "11-body-and-parts",
+      "16-clothing-and-getting-ready",
+      "24-size-shape-and-measure",
+      "27-animals-and-living-things",
+      "30-land-and-travel-paths",
+      "32-moving-around",
+      "37-communication",
+      "38-government-and-community",
+      "42-a-day-in-my-life",
+      "46-a-trip-to-another-town",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "look": {
+    "category": "thing",
+    "appears_in": [
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "19-daily-care-and-clean"
+  },
+  "loose": {
+    "category": "quality",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "loss": {
+    "category": "thing",
+    "appears_in": [
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "47-shopping-for-clothes"
+  },
+  "loud": {
+    "category": "quality",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "48-children-playing-outside",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "love": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "low": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "machine": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "22-fire-tools-and-making",
+      "39-education-and-learning",
+      "51-making-something"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "make": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "09-logic-and-connection",
+      "19-daily-care-and-clean",
+      "22-fire-tools-and-making",
+      "28-plants-and-growing",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "37-communication",
+      "40-art-music-and-play",
+      "43-cooking-a-meal",
+      "48-children-playing-outside",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "male": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "man": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "08-quantity-and-degree",
+      "20-family-and-people",
+      "24-size-shape-and-measure",
+      "27-animals-and-living-things",
+      "41-people-and-character",
+      "45-going-to-the-doctor",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "manager": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "map": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "mark": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "market": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "married": {
+    "category": "quality",
+    "appears_in": [
+      "53-a-special-day"
+    ],
+    "introduced_in": "53-a-special-day"
+  },
+  "mass": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "match": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection",
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "material": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure",
+      "51-making-something"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "may": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "meal": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "measure": {
+    "category": "thing",
+    "appears_in": [
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "33-numbers-and-counting-1"
+  },
+  "meat": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "medical": {
+    "category": "quality",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "meeting": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection",
+      "35-work-and-occupations",
+      "37-communication",
+      "38-government-and-community"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "memory": {
+    "category": "thing",
+    "appears_in": [
+      "34-numbers-and-time-2"
+    ],
+    "introduced_in": "34-numbers-and-time-2"
+  },
+  "metal": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "35-work-and-occupations",
+      "51-making-something"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "middle": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "18-furniture-and-things",
+      "23-things-around-me",
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "military": {
+    "category": "quality",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "milk": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "08-quantity-and-degree",
+      "15-eating-and-drinking",
+      "27-animals-and-living-things",
+      "36-money-and-shopping",
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "mind": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "mine": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "minute": {
+    "category": "thing",
+    "appears_in": [
+      "34-numbers-and-time-2"
+    ],
+    "introduced_in": "34-numbers-and-time-2"
+  },
+  "mist": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "mixed": {
+    "category": "quality",
+    "appears_in": [
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "43-cooking-a-meal"
+  },
+  "money": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "16-clothing-and-getting-ready",
+      "21-keeping-things",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "47-shopping-for-clothes",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "monkey": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "month": {
+    "category": "thing",
+    "appears_in": [
+      "34-numbers-and-time-2",
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "34-numbers-and-time-2"
+  },
+  "moon": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "morning": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "26-weather-and-seasons",
+      "29-colors-and-light",
+      "31-towns-and-buildings",
+      "42-a-day-in-my-life",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "mother": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "20-family-and-people",
+      "37-communication",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside",
+      "53-a-special-day"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "motion": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "mountain": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "mouth": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "move": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "much": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "13-feelings-and-emotions",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "muscle": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "music": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "nail": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "name": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "20-family-and-people",
+      "23-things-around-me"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "narrow": {
+    "category": "quality",
+    "appears_in": [
+      "30-land-and-travel-paths"
+    ],
+    "introduced_in": "30-land-and-travel-paths"
+  },
+  "nation": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "natural": {
+    "category": "quality",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "near": {
+    "category": "operation",
+    "appears_in": [
+      "06-relations-and-connections",
+      "23-things-around-me",
+      "31-towns-and-buildings",
+      "44-visiting-a-friend",
+      "48-children-playing-outside",
+      "51-making-something"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "necessary": {
+    "category": "quality",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "neck": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "need": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "16-clothing-and-getting-ready",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "28-plants-and-growing",
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "nerve": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "net": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "new": {
+    "category": "quality",
+    "appears_in": [
+      "02-doing-and-making",
+      "08-quantity-and-degree",
+      "13-feelings-and-emotions",
+      "22-fire-tools-and-making",
+      "28-plants-and-growing",
+      "35-work-and-occupations",
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "44-visiting-a-friend",
+      "47-shopping-for-clothes",
+      "50-school-and-learning",
+      "51-making-something"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "news": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "night": {
+    "category": "thing",
+    "appears_in": [
+      "07-time-and-sequence",
+      "25-nature-and-landscape",
+      "29-colors-and-light"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "no": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "23-things-around-me",
+      "27-animals-and-living-things",
+      "34-numbers-and-time-2",
+      "38-government-and-community",
+      "41-people-and-character"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "noise": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "normal": {
+    "category": "quality",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "north": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction",
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "nose": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "12-senses-and-sensations"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "not": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "07-time-and-sequence",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "17-home-and-rooms",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "29-colors-and-light",
+      "37-communication",
+      "38-government-and-community",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "note": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "number": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "nut": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "observation": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "of": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "20-family-and-people",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "off": {
+    "category": "operation",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "offer": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "office": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "oil": {
+    "category": "thing",
+    "appears_in": [
+      "21-keeping-things",
+      "43-cooking-a-meal",
+      "51-making-something"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "old": {
+    "category": "quality",
+    "appears_in": [
+      "17-home-and-rooms",
+      "24-size-shape-and-measure",
+      "27-animals-and-living-things",
+      "31-towns-and-buildings",
+      "34-numbers-and-time-2",
+      "36-money-and-shopping",
+      "41-people-and-character",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "on": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "37-communication",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "only": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "open": {
+    "category": "quality",
+    "appears_in": [
+      "03-coming-and-going",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "31-towns-and-buildings",
+      "38-government-and-community"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "operation": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "opinion": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "opposite": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "or": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "15-eating-and-drinking",
+      "20-family-and-people",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "orange": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "order": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "organization": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "ornament": {
+    "category": "thing",
+    "appears_in": [
+      "53-a-special-day"
+    ],
+    "introduced_in": "53-a-special-day"
+  },
+  "other": {
+    "category": "operation",
+    "appears_in": [
+      "24-size-shape-and-measure",
+      "44-visiting-a-friend",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "out": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "25-nature-and-landscape",
+      "32-moving-around",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "53-a-special-day"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "oven": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "over": {
+    "category": "operation",
+    "appears_in": [
+      "14-actions-and-movement",
+      "38-government-and-community"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "owner": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "page": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "pain": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "41-people-and-character",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "paint": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "paper": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement",
+      "21-keeping-things",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "37-communication",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "parallel": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "parcel": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "part": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "33-numbers-and-counting-1",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "past": {
+    "category": "quality",
+    "appears_in": [
+      "07-time-and-sequence",
+      "34-numbers-and-time-2"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "paste": {
+    "category": "thing",
+    "appears_in": [
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "43-cooking-a-meal"
+  },
+  "payment": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "peace": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "pen": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "04-seeing-and-knowing",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "23-things-around-me",
+      "37-communication"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "pencil": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "person": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community",
+      "41-people-and-character",
+      "50-school-and-learning",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "physical": {
+    "category": "quality",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "picture": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "37-communication",
+      "40-art-music-and-play",
+      "44-visiting-a-friend",
+      "53-a-special-day"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "pig": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "pin": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "pipe": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "place": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "31-towns-and-buildings",
+      "50-school-and-learning",
+      "51-making-something"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "plane": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "plant": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "21-keeping-things",
+      "28-plants-and-growing",
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "plate": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "18-furniture-and-things",
+      "23-things-around-me",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "play": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "pleasure": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "44-visiting-a-friend",
+      "48-children-playing-outside",
+      "51-making-something",
+      "53-a-special-day"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "plough": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "pocket": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "point": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "poison": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "polish": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "political": {
+    "category": "quality",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "poor": {
+    "category": "quality",
+    "appears_in": [
+      "45-going-to-the-doctor",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "porter": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "position": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "possible": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "pot": {
+    "category": "thing",
+    "appears_in": [
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "potato": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "powder": {
+    "category": "thing",
+    "appears_in": [
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "19-daily-care-and-clean"
+  },
+  "power": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character",
+      "51-making-something"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "present": {
+    "category": "quality",
+    "appears_in": [
+      "02-doing-and-making",
+      "06-relations-and-connections",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "price": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "print": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "prison": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "private": {
+    "category": "quality",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "probable": {
+    "category": "quality",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "process": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor",
+      "51-making-something"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "produce": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "profit": {
+    "category": "thing",
+    "appears_in": [
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "47-shopping-for-clothes"
+  },
+  "property": {
+    "category": "thing",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "prose": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "protest": {
+    "category": "thing",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "public": {
+    "category": "quality",
+    "appears_in": [
+      "38-government-and-community",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "pull": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "pump": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "punishment": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "purpose": {
+    "category": "thing",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "push": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement",
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "put": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "05-location-and-direction",
+      "16-clothing-and-getting-ready",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "37-communication",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "48-children-playing-outside",
+      "51-making-something"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "quality": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "question": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "quick": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "quiet": {
+    "category": "quality",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "quite": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "rail": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "rain": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "10-manner-and-quality",
+      "12-senses-and-sensations",
+      "16-clothing-and-getting-ready",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "range": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "rat": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "rate": {
+    "category": "thing",
+    "appears_in": [
+      "36-money-and-shopping",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "36-money-and-shopping"
+  },
+  "ray": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "reaction": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "reading": {
+    "category": "thing",
+    "appears_in": [
+      "31-towns-and-buildings",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "31-towns-and-buildings"
+  },
+  "ready": {
+    "category": "quality",
+    "appears_in": [
+      "09-logic-and-connection",
+      "21-keeping-things",
+      "28-plants-and-growing",
+      "40-art-music-and-play",
+      "43-cooking-a-meal",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "reason": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning",
+      "41-people-and-character"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "receipt": {
+    "category": "thing",
+    "appears_in": [
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "47-shopping-for-clothes"
+  },
+  "record": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "red": {
+    "category": "quality",
+    "appears_in": [
+      "06-relations-and-connections",
+      "11-body-and-parts",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "23-things-around-me",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "38-government-and-community",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "regret": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "regular": {
+    "category": "quality",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "relation": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "religion": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "representative": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "request": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "respect": {
+    "category": "thing",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "responsible": {
+    "category": "quality",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "rest": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "reward": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "rhythm": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "rice": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "right": {
+    "category": "quality",
+    "appears_in": [
+      "05-location-and-direction",
+      "14-actions-and-movement",
+      "47-shopping-for-clothes",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "ring": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light",
+      "36-money-and-shopping",
+      "53-a-special-day"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "river": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths",
+      "32-moving-around",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "road": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "rod": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "roll": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "roof": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "room": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "23-things-around-me",
+      "29-colors-and-light",
+      "41-people-and-character",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "51-making-something"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "root": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "rough": {
+    "category": "quality",
+    "appears_in": [
+      "30-land-and-travel-paths"
+    ],
+    "introduced_in": "30-land-and-travel-paths"
+  },
+  "round": {
+    "category": "quality",
+    "appears_in": [
+      "18-furniture-and-things",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "32-moving-around",
+      "34-numbers-and-time-2"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "rub": {
+    "category": "thing",
+    "appears_in": [
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "19-daily-care-and-clean"
+  },
+  "rule": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "run": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "14-actions-and-movement",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "sad": {
+    "category": "quality",
+    "appears_in": [
+      "01-being-and-having",
+      "09-logic-and-connection",
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "safe": {
+    "category": "quality",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "21-keeping-things",
+      "36-money-and-shopping",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "sail": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "salt": {
+    "category": "thing",
+    "appears_in": [
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "43-cooking-a-meal"
+  },
+  "same": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "sand": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "scale": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "school": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "07-time-and-sequence",
+      "10-manner-and-quality",
+      "14-actions-and-movement",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "35-work-and-occupations",
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "44-visiting-a-friend",
+      "48-children-playing-outside",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "science": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "scissors": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "screw": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "51-making-something"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "sea": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me",
+      "25-nature-and-landscape",
+      "29-colors-and-light",
+      "30-land-and-travel-paths",
+      "32-moving-around",
+      "40-art-music-and-play",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "seat": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "second": {
+    "category": "quality",
+    "appears_in": [
+      "17-home-and-rooms",
+      "31-towns-and-buildings",
+      "33-numbers-and-counting-1",
+      "47-shopping-for-clothes",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "secret": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "secretary": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "see": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "07-time-and-sequence",
+      "09-logic-and-connection",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths",
+      "40-art-music-and-play",
+      "44-visiting-a-friend",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "seed": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "selection": {
+    "category": "thing",
+    "appears_in": [
+      "47-shopping-for-clothes",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "47-shopping-for-clothes"
+  },
+  "self": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "send": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "11-body-and-parts",
+      "37-communication"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "sense": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "separate": {
+    "category": "quality",
+    "appears_in": [
+      "20-family-and-people"
+    ],
+    "introduced_in": "20-family-and-people"
+  },
+  "serious": {
+    "category": "quality",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "servant": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "sex": {
+    "category": "thing",
+    "appears_in": [
+      "20-family-and-people"
+    ],
+    "introduced_in": "20-family-and-people"
+  },
+  "shade": {
+    "category": "thing",
+    "appears_in": [
+      "29-colors-and-light",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "shake": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "shame": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "sharp": {
+    "category": "quality",
+    "appears_in": [
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "sheep": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "shelf": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "33-numbers-and-counting-1",
+      "37-communication",
+      "51-making-something"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "ship": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "shirt": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "36-money-and-shopping",
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "shock": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "shoe": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "short": {
+    "category": "quality",
+    "appears_in": [
+      "34-numbers-and-time-2",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "34-numbers-and-time-2"
+  },
+  "shut": {
+    "category": "quality",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "side": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "11-body-and-parts",
+      "23-things-around-me",
+      "30-land-and-travel-paths"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "sign": {
+    "category": "thing",
+    "appears_in": [
+      "30-land-and-travel-paths",
+      "33-numbers-and-counting-1"
+    ],
+    "introduced_in": "30-land-and-travel-paths"
+  },
+  "silk": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "silver": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play",
+      "53-a-special-day"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "simple": {
+    "category": "quality",
+    "appears_in": [
+      "37-communication",
+      "42-a-day-in-my-life",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "sister": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "20-family-and-people",
+      "46-a-trip-to-another-town",
+      "53-a-special-day"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "size": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "skin": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "12-senses-and-sensations"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "skirt": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "sky": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "29-colors-and-light",
+      "32-moving-around",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "sleep": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "slip": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "slope": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "slow": {
+    "category": "quality",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "small": {
+    "category": "quality",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "17-home-and-rooms",
+      "20-family-and-people",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "32-moving-around",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "53-a-special-day"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "smash": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "smell": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "smile": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "smoke": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "smooth": {
+    "category": "quality",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "25-nature-and-landscape"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "snake": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure",
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "sneeze": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "snow": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "29-colors-and-light",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "so": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "43-cooking-a-meal",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "soap": {
+    "category": "thing",
+    "appears_in": [
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "19-daily-care-and-clean"
+  },
+  "society": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "sock": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me",
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "soft": {
+    "category": "quality",
+    "appears_in": [
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "16-clothing-and-getting-ready",
+      "18-furniture-and-things",
+      "27-animals-and-living-things",
+      "30-land-and-travel-paths",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "solid": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "some": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "son": {
+    "category": "thing",
+    "appears_in": [
+      "20-family-and-people"
+    ],
+    "introduced_in": "20-family-and-people"
+  },
+  "song": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "40-art-music-and-play",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "sort": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "sound": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "25-nature-and-landscape",
+      "32-moving-around",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "soup": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "south": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "space": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "spade": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "special": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality",
+      "18-furniture-and-things",
+      "53-a-special-day"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "sponge": {
+    "category": "thing",
+    "appears_in": [
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "19-daily-care-and-clean"
+  },
+  "spoon": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "spring": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "square": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "stage": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "stamp": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "star": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "start": {
+    "category": "thing",
+    "appears_in": [
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "42-a-day-in-my-life"
+  },
+  "statement": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "station": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "31-towns-and-buildings",
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "steam": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around",
+      "51-making-something"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "steel": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "51-making-something"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "stem": {
+    "category": "thing",
+    "appears_in": [
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "28-plants-and-growing"
+  },
+  "step": {
+    "category": "thing",
+    "appears_in": [
+      "42-a-day-in-my-life"
+    ],
+    "introduced_in": "42-a-day-in-my-life"
+  },
+  "stick": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "sticky": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "stiff": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "still": {
+    "category": "operation",
+    "appears_in": [
+      "07-time-and-sequence",
+      "10-manner-and-quality",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "stitch": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "stocking": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "stomach": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "stone": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "17-home-and-rooms",
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "stop": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "store": {
+    "category": "thing",
+    "appears_in": [
+      "21-keeping-things",
+      "47-shopping-for-clothes",
+      "51-making-something"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "storm": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "story": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "37-communication",
+      "40-art-music-and-play",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "straight": {
+    "category": "quality",
+    "appears_in": [
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "30-land-and-travel-paths",
+      "32-moving-around",
+      "51-making-something"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "strange": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "street": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "38-government-and-community",
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "stretch": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "strong": {
+    "category": "quality",
+    "appears_in": [
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "38-government-and-community",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "49-the-four-seasons-story",
+      "51-making-something"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "structure": {
+    "category": "thing",
+    "appears_in": [
+      "23-things-around-me"
+    ],
+    "introduced_in": "23-things-around-me"
+  },
+  "substance": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "such": {
+    "category": "operation",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "sudden": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "sugar": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "15-eating-and-drinking",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "suggestion": {
+    "category": "thing",
+    "appears_in": [
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "44-visiting-a-friend"
+  },
+  "summer": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons",
+      "33-numbers-and-counting-1",
+      "46-a-trip-to-another-town",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "sun": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "12-senses-and-sensations",
+      "25-nature-and-landscape",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "42-a-day-in-my-life",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "support": {
+    "category": "thing",
+    "appears_in": [
+      "51-making-something"
+    ],
+    "introduced_in": "51-making-something"
+  },
+  "surprise": {
+    "category": "thing",
+    "appears_in": [
+      "53-a-special-day"
+    ],
+    "introduced_in": "53-a-special-day"
+  },
+  "sweet": {
+    "category": "quality",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "15-eating-and-drinking",
+      "20-family-and-people",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "40-art-music-and-play",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "swim": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "system": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "table": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "05-location-and-direction",
+      "14-actions-and-movement",
+      "18-furniture-and-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "29-colors-and-light",
+      "33-numbers-and-counting-1",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "tail": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "take": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "12-senses-and-sensations",
+      "15-eating-and-drinking",
+      "19-daily-care-and-clean",
+      "27-animals-and-living-things",
+      "49-the-four-seasons-story",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "talk": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication",
+      "38-government-and-community",
+      "44-visiting-a-friend"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "tall": {
+    "category": "quality",
+    "appears_in": [
+      "06-relations-and-connections",
+      "28-plants-and-growing",
+      "31-towns-and-buildings"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "taste": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking",
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "tax": {
+    "category": "thing",
+    "appears_in": [
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "47-shopping-for-clothes"
+  },
+  "teaching": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "tendency": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "test": {
+    "category": "thing",
+    "appears_in": [
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "39-education-and-learning"
+  },
+  "than": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "20-family-and-people",
+      "22-fire-tools-and-making",
+      "38-government-and-community",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "that": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "22-fire-tools-and-making",
+      "27-animals-and-living-things",
+      "36-money-and-shopping",
+      "41-people-and-character",
+      "48-children-playing-outside",
+      "51-making-something"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "the": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "06-relations-and-connections",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "20-family-and-people",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "theory": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "there": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "17-home-and-rooms",
+      "23-things-around-me",
+      "26-weather-and-seasons",
+      "31-towns-and-buildings",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "38-government-and-community",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "thick": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "thin": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure",
+      "28-plants-and-growing"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "thing": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "42-a-day-in-my-life",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "this": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "06-relations-and-connections",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "28-plants-and-growing",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "45-going-to-the-doctor",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "though": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "thought": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character",
+      "43-cooking-a-meal",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "thread": {
+    "category": "thing",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "throat": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "through": {
+    "category": "operation",
+    "appears_in": [
+      "03-coming-and-going",
+      "06-relations-and-connections",
+      "11-body-and-parts",
+      "30-land-and-travel-paths",
+      "46-a-trip-to-another-town",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "thunder": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "ticket": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around",
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "tight": {
+    "category": "quality",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "till": {
+    "category": "operation",
+    "appears_in": [
+      "07-time-and-sequence"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "time": {
+    "category": "thing",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "34-numbers-and-time-2",
+      "38-government-and-community",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "49-the-four-seasons-story",
+      "51-making-something",
+      "53-a-special-day"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "tin": {
+    "category": "thing",
+    "appears_in": [
+      "43-cooking-a-meal"
+    ],
+    "introduced_in": "43-cooking-a-meal"
+  },
+  "tired": {
+    "category": "quality",
+    "appears_in": [
+      "42-a-day-in-my-life",
+      "46-a-trip-to-another-town",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "42-a-day-in-my-life"
+  },
+  "to": {
+    "category": "operation",
+    "appears_in": [
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "05-location-and-direction",
+      "08-quantity-and-degree",
+      "09-logic-and-connection",
+      "10-manner-and-quality",
+      "11-body-and-parts",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "33-numbers-and-counting-1",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "49-the-four-seasons-story",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "toe": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "together": {
+    "category": "operation",
+    "appears_in": [
+      "10-manner-and-quality",
+      "40-art-music-and-play",
+      "44-visiting-a-friend",
+      "51-making-something",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "tomorrow": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "07-time-and-sequence"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "tongue": {
+    "category": "thing",
+    "appears_in": [
+      "11-body-and-parts"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "tooth": {
+    "category": "thing",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "top": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "14-actions-and-movement",
+      "18-furniture-and-things",
+      "23-things-around-me",
+      "30-land-and-travel-paths",
+      "46-a-trip-to-another-town",
+      "53-a-special-day"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "touch": {
+    "category": "thing",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "town": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "25-nature-and-landscape",
+      "30-land-and-travel-paths",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "35-work-and-occupations",
+      "38-government-and-community",
+      "44-visiting-a-friend",
+      "46-a-trip-to-another-town",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "trade": {
+    "category": "thing",
+    "appears_in": [
+      "35-work-and-occupations"
+    ],
+    "introduced_in": "35-work-and-occupations"
+  },
+  "train": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "31-towns-and-buildings",
+      "32-moving-around",
+      "37-communication",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "transport": {
+    "category": "thing",
+    "appears_in": [
+      "32-moving-around",
+      "51-making-something"
+    ],
+    "introduced_in": "32-moving-around"
+  },
+  "tray": {
+    "category": "thing",
+    "appears_in": [
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "18-furniture-and-things"
+  },
+  "tree": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "14-actions-and-movement",
+      "23-things-around-me",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "trick": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "trouble": {
+    "category": "thing",
+    "appears_in": [
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "52-helping-in-the-community"
+  },
+  "trousers": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "true": {
+    "category": "quality",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "turn": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "14-actions-and-movement",
+      "18-furniture-and-things"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "twist": {
+    "category": "thing",
+    "appears_in": [
+      "14-actions-and-movement"
+    ],
+    "introduced_in": "14-actions-and-movement"
+  },
+  "umbrella": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "under": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction",
+      "11-body-and-parts"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "unit": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "up": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction",
+      "07-time-and-sequence",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "19-daily-care-and-clean",
+      "25-nature-and-landscape",
+      "38-government-and-community",
+      "42-a-day-in-my-life",
+      "48-children-playing-outside",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "use": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "26-weather-and-seasons",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "41-people-and-character"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "value": {
+    "category": "thing",
+    "appears_in": [
+      "33-numbers-and-counting-1",
+      "36-money-and-shopping"
+    ],
+    "introduced_in": "33-numbers-and-counting-1"
+  },
+  "verse": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "vessel": {
+    "category": "thing",
+    "appears_in": [
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "46-a-trip-to-another-town"
+  },
+  "very": {
+    "category": "operation",
+    "appears_in": [
+      "08-quantity-and-degree",
+      "10-manner-and-quality",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "24-size-shape-and-measure",
+      "25-nature-and-landscape",
+      "27-animals-and-living-things",
+      "29-colors-and-light",
+      "39-education-and-learning",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "52-helping-in-the-community",
+      "53-a-special-day"
+    ],
+    "introduced_in": "08-quantity-and-degree"
+  },
+  "view": {
+    "category": "thing",
+    "appears_in": [
+      "41-people-and-character",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "violent": {
+    "category": "quality",
+    "appears_in": [
+      "13-feelings-and-emotions"
+    ],
+    "introduced_in": "13-feelings-and-emotions"
+  },
+  "voice": {
+    "category": "thing",
+    "appears_in": [
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "40-art-music-and-play"
+  },
+  "waiting": {
+    "category": "quality",
+    "appears_in": [
+      "10-manner-and-quality"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "walk": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "11-body-and-parts",
+      "14-actions-and-movement",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "30-land-and-travel-paths",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "wall": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "17-home-and-rooms",
+      "19-daily-care-and-clean",
+      "34-numbers-and-time-2",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "44-visiting-a-friend",
+      "51-making-something"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "want": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "46-a-trip-to-another-town",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "war": {
+    "category": "thing",
+    "appears_in": [
+      "38-government-and-community",
+      "40-art-music-and-play"
+    ],
+    "introduced_in": "38-government-and-community"
+  },
+  "warm": {
+    "category": "quality",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "18-furniture-and-things",
+      "26-weather-and-seasons",
+      "46-a-trip-to-another-town",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "wash": {
+    "category": "thing",
+    "appears_in": [
+      "16-clothing-and-getting-ready",
+      "17-home-and-rooms",
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "16-clothing-and-getting-ready"
+  },
+  "waste": {
+    "category": "thing",
+    "appears_in": [
+      "21-keeping-things",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "21-keeping-things"
+  },
+  "watch": {
+    "category": "thing",
+    "appears_in": [
+      "07-time-and-sequence",
+      "34-numbers-and-time-2"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "water": {
+    "category": "thing",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "08-quantity-and-degree",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "15-eating-and-drinking",
+      "18-furniture-and-things",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "24-size-shape-and-measure",
+      "27-animals-and-living-things",
+      "28-plants-and-growing",
+      "43-cooking-a-meal",
+      "46-a-trip-to-another-town",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "wave": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape",
+      "46-a-trip-to-another-town"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "wax": {
+    "category": "thing",
+    "appears_in": [
+      "19-daily-care-and-clean"
+    ],
+    "introduced_in": "19-daily-care-and-clean"
+  },
+  "way": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "40-art-music-and-play",
+      "44-visiting-a-friend",
+      "48-children-playing-outside",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "weather": {
+    "category": "thing",
+    "appears_in": [
+      "10-manner-and-quality",
+      "16-clothing-and-getting-ready",
+      "26-weather-and-seasons",
+      "49-the-four-seasons-story",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "week": {
+    "category": "thing",
+    "appears_in": [
+      "03-coming-and-going",
+      "19-daily-care-and-clean",
+      "33-numbers-and-counting-1",
+      "34-numbers-and-time-2",
+      "37-communication",
+      "38-government-and-community",
+      "39-education-and-learning",
+      "40-art-music-and-play",
+      "45-going-to-the-doctor",
+      "47-shopping-for-clothes"
+    ],
+    "introduced_in": "03-coming-and-going"
+  },
+  "weight": {
+    "category": "thing",
+    "appears_in": [
+      "24-size-shape-and-measure"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "well": {
+    "category": "operation",
+    "appears_in": [
+      "10-manner-and-quality",
+      "13-feelings-and-emotions",
+      "28-plants-and-growing",
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "10-manner-and-quality"
+  },
+  "west": {
+    "category": "operation",
+    "appears_in": [
+      "05-location-and-direction"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "wet": {
+    "category": "quality",
+    "appears_in": [
+      "12-senses-and-sensations",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "26-weather-and-seasons",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "12-senses-and-sensations"
+  },
+  "wheel": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "32-moving-around",
+      "51-making-something"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "when": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "11-body-and-parts",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "18-furniture-and-things",
+      "26-weather-and-seasons",
+      "42-a-day-in-my-life",
+      "44-visiting-a-friend",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "where": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection",
+      "11-body-and-parts",
+      "44-visiting-a-friend",
+      "50-school-and-learning",
+      "51-making-something"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "while": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "whip": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "whistle": {
+    "category": "thing",
+    "appears_in": [
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "48-children-playing-outside"
+  },
+  "white": {
+    "category": "quality",
+    "appears_in": [
+      "11-body-and-parts",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "23-things-around-me",
+      "25-nature-and-landscape",
+      "29-colors-and-light",
+      "32-moving-around",
+      "38-government-and-community",
+      "46-a-trip-to-another-town",
+      "49-the-four-seasons-story",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "11-body-and-parts"
+  },
+  "who": {
+    "category": "operation",
+    "appears_in": [
+      "41-people-and-character"
+    ],
+    "introduced_in": "41-people-and-character"
+  },
+  "why": {
+    "category": "operation",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "wide": {
+    "category": "quality",
+    "appears_in": [
+      "24-size-shape-and-measure",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "24-size-shape-and-measure"
+  },
+  "will": {
+    "category": "operation",
+    "appears_in": [
+      "04-seeing-and-knowing",
+      "09-logic-and-connection",
+      "45-going-to-the-doctor",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "04-seeing-and-knowing"
+  },
+  "wind": {
+    "category": "thing",
+    "appears_in": [
+      "05-location-and-direction",
+      "13-feelings-and-emotions",
+      "25-nature-and-landscape",
+      "26-weather-and-seasons",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "05-location-and-direction"
+  },
+  "window": {
+    "category": "thing",
+    "appears_in": [
+      "06-relations-and-connections",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "17-home-and-rooms",
+      "18-furniture-and-things",
+      "22-fire-tools-and-making",
+      "24-size-shape-and-measure",
+      "48-children-playing-outside"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "wine": {
+    "category": "thing",
+    "appears_in": [
+      "15-eating-and-drinking"
+    ],
+    "introduced_in": "15-eating-and-drinking"
+  },
+  "wing": {
+    "category": "thing",
+    "appears_in": [
+      "25-nature-and-landscape"
+    ],
+    "introduced_in": "25-nature-and-landscape"
+  },
+  "winter": {
+    "category": "thing",
+    "appears_in": [
+      "26-weather-and-seasons",
+      "45-going-to-the-doctor",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "26-weather-and-seasons"
+  },
+  "wire": {
+    "category": "thing",
+    "appears_in": [
+      "22-fire-tools-and-making",
+      "51-making-something"
+    ],
+    "introduced_in": "22-fire-tools-and-making"
+  },
+  "wise": {
+    "category": "quality",
+    "appears_in": [
+      "09-logic-and-connection",
+      "41-people-and-character",
+      "44-visiting-a-friend",
+      "50-school-and-learning"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  },
+  "with": {
+    "category": "operation",
+    "appears_in": [
+      "06-relations-and-connections",
+      "09-logic-and-connection",
+      "11-body-and-parts",
+      "12-senses-and-sensations",
+      "13-feelings-and-emotions",
+      "14-actions-and-movement",
+      "15-eating-and-drinking",
+      "16-clothing-and-getting-ready",
+      "19-daily-care-and-clean",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "23-things-around-me",
+      "35-work-and-occupations",
+      "36-money-and-shopping",
+      "37-communication",
+      "40-art-music-and-play",
+      "41-people-and-character",
+      "42-a-day-in-my-life",
+      "43-cooking-a-meal",
+      "44-visiting-a-friend",
+      "45-going-to-the-doctor",
+      "46-a-trip-to-another-town",
+      "47-shopping-for-clothes",
+      "48-children-playing-outside",
+      "50-school-and-learning",
+      "51-making-something",
+      "53-a-special-day"
+    ],
+    "introduced_in": "06-relations-and-connections"
+  },
+  "woman": {
+    "category": "thing",
+    "appears_in": [
+      "01-being-and-having",
+      "10-manner-and-quality",
+      "20-family-and-people",
+      "41-people-and-character",
+      "50-school-and-learning",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "wood": {
+    "category": "thing",
+    "appears_in": [
+      "17-home-and-rooms",
+      "21-keeping-things",
+      "22-fire-tools-and-making",
+      "28-plants-and-growing",
+      "29-colors-and-light",
+      "51-making-something"
+    ],
+    "introduced_in": "17-home-and-rooms"
+  },
+  "wool": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "word": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "work": {
+    "category": "thing",
+    "appears_in": [
+      "02-doing-and-making",
+      "03-coming-and-going",
+      "04-seeing-and-knowing",
+      "07-time-and-sequence",
+      "08-quantity-and-degree",
+      "10-manner-and-quality",
+      "22-fire-tools-and-making",
+      "29-colors-and-light",
+      "32-moving-around",
+      "35-work-and-occupations",
+      "37-communication",
+      "42-a-day-in-my-life",
+      "44-visiting-a-friend",
+      "50-school-and-learning",
+      "51-making-something",
+      "52-helping-in-the-community"
+    ],
+    "introduced_in": "02-doing-and-making"
+  },
+  "worm": {
+    "category": "thing",
+    "appears_in": [
+      "27-animals-and-living-things"
+    ],
+    "introduced_in": "27-animals-and-living-things"
+  },
+  "wound": {
+    "category": "thing",
+    "appears_in": [
+      "45-going-to-the-doctor"
+    ],
+    "introduced_in": "45-going-to-the-doctor"
+  },
+  "writing": {
+    "category": "thing",
+    "appears_in": [
+      "37-communication"
+    ],
+    "introduced_in": "37-communication"
+  },
+  "wrong": {
+    "category": "quality",
+    "appears_in": [
+      "50-school-and-learning"
+    ],
+    "introduced_in": "50-school-and-learning"
+  },
+  "year": {
+    "category": "thing",
+    "appears_in": [
+      "34-numbers-and-time-2",
+      "49-the-four-seasons-story",
+      "53-a-special-day"
+    ],
+    "introduced_in": "34-numbers-and-time-2"
+  },
+  "yellow": {
+    "category": "quality",
+    "appears_in": [
+      "29-colors-and-light",
+      "31-towns-and-buildings",
+      "49-the-four-seasons-story"
+    ],
+    "introduced_in": "29-colors-and-light"
+  },
+  "yes": {
+    "category": "operation",
+    "appears_in": [
+      "01-being-and-having",
+      "04-seeing-and-knowing"
+    ],
+    "introduced_in": "01-being-and-having"
+  },
+  "yesterday": {
+    "category": "operation",
+    "appears_in": [
+      "07-time-and-sequence",
+      "43-cooking-a-meal",
+      "45-going-to-the-doctor",
+      "53-a-special-day"
+    ],
+    "introduced_in": "07-time-and-sequence"
+  },
+  "young": {
+    "category": "quality",
+    "appears_in": [
+      "09-logic-and-connection"
+    ],
+    "introduced_in": "09-logic-and-connection"
+  }
+}

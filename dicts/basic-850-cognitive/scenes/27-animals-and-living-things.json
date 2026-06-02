@@ -1,0 +1,33 @@
+{
+  "name": "Animals & Living Things",
+  "sentences": [
+    { "en": "A dog is a good friend to man.", "zh": "狗是人类的好朋友。" },
+    { "en": "The cat drinks milk from a dish.", "zh": "猫从盘子里喝牛奶。" },
+    { "en": "A bird has wings and feathers.", "zh": "鸟有翅膀和羽毛。" },
+    { "en": "Fish live in water.", "zh": "鱼生活在水中。" },
+    { "en": "The horse runs fast.", "zh": "马跑得很快。" },
+    { "en": "A cow gives us milk.", "zh": "奶牛给我们牛奶。" },
+    { "en": "Sheep give us wool.", "zh": "羊给我们羊毛。" },
+    { "en": "An animal needs food and water.", "zh": "动物需要食物和水。" },
+    { "en": "The insect is very small.", "zh": "昆虫非常小。" },
+    { "en": "The bird moves its wings to fly.", "zh": "鸟移动翅膀来飞翔。" },
+    { "en": "The dog is at the foot of the bed.", "zh": "狗在床脚边。" },
+    { "en": "A fish has a tail but no legs.", "zh": "鱼有尾巴但没有腿。" },
+    { "en": "Is that animal a dog or a cat?", "zh": "那只动物是狗还是猫？" },
+    { "en": "A bee makes honey from flowers.", "zh": "蜜蜂从花中采蜜。" },
+    { "en": "A sheep gives us wool for cloth.", "zh": "羊给我们羊毛做衣服。" },
+    { "en": "A pig lives on a farm.", "zh": "猪生活在农场里。" },
+    { "en": "The goat climbed the rock.", "zh": "山羊爬上了岩石。" },
+    { "en": "A monkey uses its hands to take food.", "zh": "猴子用手拿食物。" },
+    { "en": "I saw a rat in the old house.", "zh": "我在老房子里看到一只老鼠。" },
+    { "en": "A snake has a long body and no legs.", "zh": "蛇有长长的身体，没有腿。" },
+    { "en": "A worm lives in the earth.", "zh": "蚯蚓生活在泥土里。" },
+    { "en": "The wings of a bird are strong.", "zh": "鸟的翅膀很强壮。" },
+    { "en": "A fowl is a bird that lives on a farm.", "zh": "家禽是生活在农场里的鸟。" },
+    { "en": "The cow has a horn on its head.", "zh": "牛头上有一个角。" },
+    { "en": "The cat has a soft tail.", "zh": "猫有一条柔软的尾巴。" },
+    { "en": "A bird has two wings to fly.", "zh": "鸟有两只翅膀飞翔。" },
+    { "en": "The feather of the bird was light.", "zh": "鸟的羽毛很轻。" },
+    { "en": "The fish has a scale on its body.", "zh": "鱼身上有鳞片。" }
+  ]
+}

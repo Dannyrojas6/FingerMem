@@ -1,0 +1,26 @@
+{
+  "name": "Work & Occupations",
+  "sentences": [
+    { "en": "I go to work every day.", "zh": "我每天去上班。" },
+    { "en": "She has a business in the town.", "zh": "她在镇上有一个生意。" },
+    { "en": "He works in an office.", "zh": "他在一间办公室工作。" },
+    { "en": "The manager is in charge of the company.", "zh": "经理负责管理公司。" },
+    { "en": "A servant helps with work in the house.", "zh": "仆人帮忙做家务。" },
+    { "en": "The judge makes decisions in the court.", "zh": "法官在法庭上做判决。" },
+    { "en": "The writer makes books and stories.", "zh": "作家写书和故事。" },
+    { "en": "A worker does physical work.", "zh": "工人做体力工作。" },
+    { "en": "He is in the trade of selling cars.", "zh": "他从事卖车的行业。" },
+    { "en": "I get money for my work.", "zh": "我因工作得到钱。" },
+    { "en": "Payment is made at the end of the month.", "zh": "每月月底发工资。" },
+    { "en": "What is your work?", "zh": "你的工作是什么？" },
+    { "en": "The manager gives orders to the workers.", "zh": "经理给工人下达指令。" },
+    { "en": "I am a teacher. My work is at the school.", "zh": "我是一名老师。我的工作在学校。" },
+    { "en": "The porter helped with the bags at the station.", "zh": "搬运工在车站帮忙搬行李。" },
+    { "en": "I am in a position of responsibility at work.", "zh": "我在工作中处于负责的职位。" },
+    { "en": "The reward for the work was good.", "zh": "工作的报酬很好。" },
+    { "en": "The secretary wrote the notes for the meeting.", "zh": "秘书为会议做记录。" },
+    { "en": "I join the company as a new worker.", "zh": "我作为新员工加入公司。" },
+    { "en": "The expert gave his opinion on the design.", "zh": "专家对设计发表了他的意见。" },
+    { "en": "The industry in this town makes metal parts.", "zh": "这个镇的工业生产金属零件。" }
+  ]
+}

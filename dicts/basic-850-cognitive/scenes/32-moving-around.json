@@ -1,0 +1,23 @@
+{
+  "name": "Moving Around",
+  "sentences": [
+    { "en": "I go to work by train.", "zh": "我坐火车去上班。" },
+    { "en": "She drives a car.", "zh": "她开一辆车。" },
+    { "en": "The cart is pulled by a horse.", "zh": "马车由一匹马拉着。" },
+    { "en": "The ship goes across the sea.", "zh": "船穿过大海。" },
+    { "en": "The boat is small. It is on the river.", "zh": "船很小。它在河上。" },
+    { "en": "The plane is like a bird in the sky.", "zh": "飞机像天空中的一只鸟。" },
+    { "en": "The wheel on the train goes round and round.", "zh": "火车上的轮子不停地转。" },
+    { "en": "What is your transport to school?", "zh": "你用什么交通工具去学校？" },
+    { "en": "The engine makes the train go.", "zh": "引擎让火车前进。" },
+    { "en": "I travel to another town by bus.", "zh": "我坐公交去另一个城镇。" },
+    { "en": "Do you have a ticket for the train?", "zh": "你有火车票吗？" },
+    { "en": "The flight from here to London is long.", "zh": "从这里到伦敦的飞行很长。" },
+    { "en": "The sail on the ship was white.", "zh": "船上的帆是白色的。" },
+    { "en": "Steam came out of the engine of the train.", "zh": "蒸汽从火车的引擎中冒出。" },
+    { "en": "The rail was long and straight.", "zh": "铁轨又长又直。" },
+    { "en": "The cart was full of grain from the farm.", "zh": "马车上装满了从农场来的谷物。" },
+    { "en": "The carriage was pulled by two horses.", "zh": "马车由两匹马拉着。" },
+    { "en": "The bell of the train made a loud sound.", "zh": "火车的铃铛发出了很大的声音。" }
+  ]
+}

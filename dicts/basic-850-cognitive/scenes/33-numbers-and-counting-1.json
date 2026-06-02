@@ -1,0 +1,22 @@
+{
+  "name": "Numbers & Counting (1)",
+  "sentences": [
+    { "en": "One and two are three.", "zh": "一加二等于三。" },
+    { "en": "I have four fingers on one hand.", "zh": "我一只手上四根手指。" },
+    { "en": "There are five apples on the table.", "zh": "桌子上有五个苹果。" },
+    { "en": "Six comes after five.", "zh": "六在五之后。" },
+    { "en": "Seven days make one week.", "zh": "七天组成一周。" },
+    { "en": "An eight-sided shape is an octagon.", "zh": "八边形是一个八角形。" },
+    { "en": "Nine is before ten.", "zh": "九在十之前。" },
+    { "en": "A number is a sign for a value.", "zh": "数字是数值的符号。" },
+    { "en": "I count the books on the shelf.", "zh": "我数架子上的书。" },
+    { "en": "The first day of the week is Sunday.", "zh": "一周的第一天是星期天。" },
+    { "en": "She is the second child in the family.", "zh": "她是家里的第二个孩子。" },
+    { "en": "A half of the apple is for you.", "zh": "半个苹果给你。" },
+    { "en": "A part of the cake is gone.", "zh": "蛋糕的一部分不见了。" },
+    { "en": "We measure the length of the table.", "zh": "我们测量桌子的长度。" },
+    { "en": "The division of the cake into four parts was fair.", "zh": "把蛋糕分成四份是公平的。" },
+    { "en": "The distribution of food to everyone was equal.", "zh": "食物分配给每个人是相等的。" },
+    { "en": "The degree of heat in summer is high.", "zh": "夏天的热度很高。" }
+  ]
+}

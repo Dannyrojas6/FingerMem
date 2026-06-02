@@ -18,6 +18,7 @@
 ├── app/                  # 前端应用（Vite + React + TypeScript + Tailwind）
 ├── dicts/                # 词典数据源（每个子文件夹是一个独立词典）
 │   ├── basic-850/        # 示例：基础英语 850 词（10 场景）
+│   │   └── scenes/       # 场景 JSON（sync-dicts 只同步此目录）
 │   └── basic-english-850-words/  # 30 场景词典
 ├── scripts/
 │   └── sync-dicts.js     # 词典切换脚本（推荐使用方式）
@@ -38,7 +39,7 @@ npm run dev
 ## 添加新词典
 
 1. 在 `dicts/` 目录下新建一个文件夹（例如 `dicts/my-wordlist/`）
-2. 放入符合格式的场景 JSON 文件（每个文件包含 `name` 和 `sentences` 数组）
+2. 在词典下创建 `scenes/`，放入场景 JSON（每个文件包含 `name` 和 `sentences` 数组）；README、索引等放在词典根目录即可
 3. 使用切换脚本激活该词典：
    ```bash
    cd app

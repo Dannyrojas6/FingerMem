@@ -1,0 +1,19 @@
+{
+  "name": "Being & Having",
+  "sentences": [
+    { "en": "I am a man.", "zh": "我是一个男人。" },
+    { "en": "You are a woman.", "zh": "你是一个女人。" },
+    { "en": "He is a boy.", "zh": "他是一个男孩。" },
+    { "en": "She is a girl.", "zh": "她是一个女孩。" },
+    { "en": "It is a dog.", "zh": "它是一只狗。" },
+    { "en": "We are friends.", "zh": "我们是朋友。" },
+    { "en": "They are in the house.", "zh": "他们在房子里。" },
+    { "en": "I have a book.", "zh": "我有一本书。" },
+    { "en": "You have a pen.", "zh": "你有一支钢笔。" },
+    { "en": "He has a cat.", "zh": "他有一只猫。" },
+    { "en": "She has a bag.", "zh": "她有一个包。" },
+    { "en": "Yes, I am a teacher.", "zh": "是的，我是一名老师。" },
+    { "en": "No, I am not a doctor.", "zh": "不，我不是医生。" },
+    { "en": "I am not sad. I am happy.", "zh": "我不难过。我很开心。" }
+  ]
+}

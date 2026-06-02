@@ -1,0 +1,27 @@
+{
+  "name": "Quantity & Degree",
+  "sentences": [
+    { "en": "I have much work to do.", "zh": "我有很多工作要做。" },
+    { "en": "How many books do you have?", "zh": "你有多少本书？" },
+    { "en": "I have some water.", "zh": "我有些水。" },
+    { "en": "Do you have any milk?", "zh": "你有牛奶吗？" },
+    { "en": "Every day is a new day.", "zh": "每一天都是新的一天。" },
+    { "en": "All the children are here.", "zh": "所有的孩子都在这里。" },
+    { "en": "The water is enough for us.", "zh": "水够我们用了。" },
+    { "en": "This is very good.", "zh": "这非常好。" },
+    { "en": "The box is quite big.", "zh": "这个盒子相当大。" },
+    { "en": "I have only one pen.", "zh": "我只有一支钢笔。" },
+    { "en": "This is a number.", "zh": "这是一个数字。" },
+    { "en": "He has a great love for music.", "zh": "他对音乐有很深的爱。" },
+    { "en": "A little milk is in the cup.", "zh": "杯子里有一点牛奶。" },
+    { "en": "The amount of water in the glass is small.", "zh": "杯子里的水量很小。" },
+    { "en": "There is a great addition to the family.", "zh": "家里增加了一个新成员。" },
+    { "en": "A certain man came to the door.", "zh": "一个特定的人来到门口。" },
+    { "en": "The adjustment of the machine took time.", "zh": "调整机器花了时间。" },
+    { "en": "Different people have different tastes.", "zh": "不同的人有不同的口味。" },
+    { "en": "We need equal amounts of sugar and butter.", "zh": "我们需要等量的糖和黄油。" },
+    { "en": "Is there any chance of rain today?", "zh": "今天有下雨的机会吗？" },
+    { "en": "Among all the students, she is the tallest.", "zh": "在所有学生中，她是最高的。" },
+    { "en": "What sort of food do you like?", "zh": "你喜欢哪种食物？" }
+  ]
+}

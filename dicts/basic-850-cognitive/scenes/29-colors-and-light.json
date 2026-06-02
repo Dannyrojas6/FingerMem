@@ -1,0 +1,26 @@
+{
+  "name": "Colors & Light",
+  "sentences": [
+    { "en": "The sky is blue and the sun is bright.", "zh": "天空是蓝色的，太阳很明亮。" },
+    { "en": "Blood is red.", "zh": "血是红色的。" },
+    { "en": "The grass in the field is green.", "zh": "田野里的草是绿色的。" },
+    { "en": "Snow is white and coal is black.", "zh": "雪是白色的，煤是黑色的。" },
+    { "en": "The flower is yellow.", "zh": "花是黄色的。" },
+    { "en": "The wood on the table is brown.", "zh": "桌子上的木头是棕色的。" },
+    { "en": "Light comes from the sun.", "zh": "光来自太阳。" },
+    { "en": "The room is dark at night.", "zh": "晚上房间很暗。" },
+    { "en": "The sky is bright in the morning.", "zh": "早上的天空很明亮。" },
+    { "en": "I rest in the shade of the tree.", "zh": "我在树荫下休息。" },
+    { "en": "What color is your coat? It is red.", "zh": "你的外套是什么颜色的？是红色的。" },
+    { "en": "The light is too bright for my eyes.", "zh": "光线对我的眼睛来说太亮了。" },
+    { "en": "The color of the sea is blue.", "zh": "大海的颜色是蓝色的。" },
+    { "en": "The orange fruit is sweet.", "zh": "橙色的水果是甜的。" },
+    { "en": "A grey cloud covered the sky.", "zh": "一片灰色的云遮住了天空。" },
+    { "en": "The sun gives a ray of light into my room.", "zh": "太阳把一束光线射进我的房间。" },
+    { "en": "The electric light was very bright.", "zh": "电灯非常亮。" },
+    { "en": "The bulb in the lamp was broken.", "zh": "灯里的灯泡坏了。" },
+    { "en": "The current of electricity makes the lamp work.", "zh": "电流让灯工作。" },
+    { "en": "In the mine, the light is not bright.", "zh": "在矿井里，光线不亮。" },
+    { "en": "I have a gold ring on my finger.", "zh": "我手指上戴着一枚金戒指。" }
+  ]
+}

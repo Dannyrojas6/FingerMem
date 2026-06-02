@@ -1,0 +1,17 @@
+{
+  "name": "Land & Travel Paths",
+  "sentences": [
+    { "en": "The land is flat here.", "zh": "这里的土地是平坦的。" },
+    { "en": "The road goes from the town to the sea.", "zh": "这条路从城镇通向大海。" },
+    { "en": "We walk across the bridge.", "zh": "我们走过那座桥。" },
+    { "en": "The path through the trees is narrow.", "zh": "穿过树林的小路很窄。" },
+    { "en": "This street is long and straight.", "zh": "这条街道又长又直。" },
+    { "en": "The stone on the path is rough.", "zh": "小路上的石头很粗糙。" },
+    { "en": "The sand on the beach is soft.", "zh": "海滩上的沙子很柔软。" },
+    { "en": "The dust on the road is dry.", "zh": "路上的灰尘很干。" },
+    { "en": "The river goes through the valley.", "zh": "河流穿过山谷。" },
+    { "en": "We see the mountain from the road.", "zh": "我们从路上看到山。" },
+    { "en": "The sign on the street says 'Stop'.", "zh": "街上的标志写着'停止'。" },
+    { "en": "The path is at the side of the river.", "zh": "小路在河边。" }
+  ]
+}
