@@ -378,25 +378,59 @@ describe('Practice 组件 - 核心打字交互', () => {
     expect(input.value).toBe('')
   })
 
-  it('输入超长内容时不会在视觉渲染上产生多余的红色错误字符（允许超打）', async () => {
+  it('超出有效长度（含句末标点之后）的输入应被截断，且标点位置不可被键入', async () => {
+    const user = userEvent.setup()
+    const sceneWithPunct = scenes.find((s) =>
+      s.sentences.some((sent) => /[.,!?;:"']$/.test(sent.en))
+    )
+    const sentenceWithPunct = sceneWithPunct?.sentences.find((sent) =>
+      /[.,!?;:"']$/.test(sent.en)
+    )
+    if (!sceneWithPunct || !sentenceWithPunct) return
+
+    const sceneId = sceneWithPunct.id
+    const index = sceneWithPunct.sentences.indexOf(sentenceWithPunct)
+    renderPractice(sceneId, index)
+
+    const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
+    const sentenceArea = screen.getByTestId('practice-sentence')
+    const cleanSentence = sentenceWithPunct.en.replace(/[.,!?;:"']$/, '')
+    const punctIndex = sentenceWithPunct.en.length - 1
+
+    const wrongFull = cleanSentence
+      .split('')
+      .map((c) => (c === ' ' ? ' ' : 'x'))
+      .join('')
+    await user.type(input, wrongFull + '?????')
+
+    expect(input.value).toBe(wrongFull)
+    expect(input.value.length).toBe(cleanSentence.length)
+
+    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    expect(spans[punctIndex].classList.contains('text-emerald-400/90')).toBe(false)
+    expect(spans[punctIndex].classList.contains('text-rose-400/90')).toBe(false)
+  })
+
+  it('有效长度打满后 Backspace 应直接删除最后一个可见字母', async () => {
     const user = userEvent.setup()
     renderPractice(testScene.id, 0)
 
     const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
-    const sentenceArea = screen.getByTestId('practice-sentence')
-
     const cleanSentence = firstSentence.en.replace(/[.,!?;:"']$/, '')
-    const overType = cleanSentence + 'xxx'
+    const wrongAlmost = cleanSentence
+      .slice(0, -1)
+      .split('')
+      .map((c) => (c === ' ' ? ' ' : 'x'))
+      .join('')
 
-    await user.type(input, overType)
+    await user.type(input, wrongAlmost)
+    expect(input.value).toBe(wrongAlmost)
 
-    // Phase 1 后允许用户输入超过目标长度（无硬截断，用于纠错）
-    expect(input.value.length).toBeGreaterThan(cleanSentence.length)
+    await user.type(input, 'z')
+    expect(input.value).toBe(wrongAlmost + 'z')
 
-    // 渲染有界（只覆盖 target 字符）。如果原句带末尾标点，超打的第一个字符可能落在标点位置产生少量红色
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
-    const redSpans = spans.filter(s => s.classList.contains('text-rose-400/90'))
-    expect(redSpans.length).toBeLessThanOrEqual(1)
+    await user.keyboard('{Backspace}')
+    expect(input.value).toBe(wrongAlmost)
   })
 
   it('最后一个句子的两个操作按钮点击后应该有正确的行为', async () => {

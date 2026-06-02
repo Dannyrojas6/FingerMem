@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import { cleanTarget, getMatchedPrefixLength, isSentenceCompleted, isInputComplete } from './typing'
+import {
+  clampInputToEffectiveLength,
+  cleanTarget,
+  getEffectiveLength,
+  getMatchedPrefixLength,
+  isSentenceCompleted,
+  isInputComplete,
+} from './typing'
 
 describe('cleanTarget', () => {
   it('应该移除末尾的常见标点', () => {
@@ -17,6 +24,18 @@ describe('cleanTarget', () => {
 
   it('空字符串应返回空字符串', () => {
     expect(cleanTarget('')).toBe('')
+  })
+})
+
+describe('clampInputToEffectiveLength', () => {
+  it('应截断超出有效长度的输入', () => {
+    const target = 'Hello world'
+    expect(clampInputToEffectiveLength('Hello world!!!', target)).toBe('Hello world')
+    expect(clampInputToEffectiveLength('Hello', target)).toBe('Hello')
+  })
+
+  it('getEffectiveLength 与 cleanTarget 长度一致', () => {
+    expect(getEffectiveLength('What time is it now?')).toBe(cleanTarget('What time is it now?').length)
   })
 })
 
@@ -75,6 +94,11 @@ describe('isInputComplete (new primary API)', () => {
 
   it('respects cleanTarget for trailing punctuation', () => {
     expect(isInputComplete('Hello world.', target)).toBe(true)
+  })
+
+  it('错误输入加超长后缀不能误判为完成', () => {
+    const wrong = 'Xxxx xxxx xxxx'
+    expect(isInputComplete(wrong + '     ', target)).toBe(false)
   })
 
   describe('Regression: historical bugs', () => {

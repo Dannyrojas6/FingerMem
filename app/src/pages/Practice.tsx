@@ -2,7 +2,12 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { getScene } from '../data/scenes'
 import type { Sentence } from '../types'
-import { cleanTarget, getMatchedPrefixLength, isInputComplete } from '../utils/typing'
+import {
+  clampInputToEffectiveLength,
+  cleanTarget,
+  getMatchedPrefixLength,
+  isInputComplete,
+} from '../utils/typing'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
 import {
@@ -30,6 +35,9 @@ export default function Practice() {
   const [isIdle, setIsIdle] = useState(false)
   const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isCompletedRef = useRef(false)
+  const sentenceIndexRef = useRef(0)
+  const advanceGenerationRef = useRef(0)
   const IDLE_BLINK_DELAY = 1500
   const AUTO_ADVANCE_DELAY = 80
 
@@ -38,6 +46,7 @@ export default function Practice() {
       clearTimeout(advanceTimerRef.current)
       advanceTimerRef.current = null
     }
+    advanceGenerationRef.current += 1
   }
 
   // 每当有输入或新句子出现时，重置计时器（保持静态），静止够久后才触发闪烁
@@ -75,6 +84,7 @@ export default function Practice() {
     userInputRef.current = ''
     setUserInput('')
     setIsCompleted(false)
+    isCompletedRef.current = false
     setSentenceIndex(nextIndex)
     syncPracticeUrl(nextIndex)
   }
@@ -98,6 +108,8 @@ export default function Practice() {
   const sentence = targetSentence
   userInputRef.current = userInput
   sentenceRef.current = sentence
+  sentenceIndexRef.current = sentenceIndex
+  isCompletedRef.current = isCompleted
 
   // 自动聚焦（当句子变化时聚焦输入框）
   useEffect(() => {
@@ -146,6 +158,7 @@ export default function Practice() {
     userInputRef.current = ''
     setUserInput('')
     setIsCompleted(false)
+    isCompletedRef.current = false
     setShowCompletionModal(false)
     resetIdleTimer()
     correctTimestampsRef.current = []
@@ -163,12 +176,13 @@ export default function Practice() {
     }
   }, [])
 
-  const applyInputValue = (value: string) => {
+  const applyInputValue = (rawValue: string) => {
     const currentSentence = sentenceRef.current
     if (!currentSentence) return
 
     const effectiveTarget = cleanTarget(currentSentence.en)
     const total = sceneData?.sentences.length ?? 0
+    const value = clampInputToEffectiveLength(rawValue, effectiveTarget)
 
     resetIdleTimer()
 
@@ -198,23 +212,29 @@ export default function Practice() {
     }
 
     const isNowCompleted = isInputComplete(value, effectiveTarget)
-    const wasCompleted = isCompleted
+    const wasCompleted = isCompletedRef.current
 
+    isCompletedRef.current = isNowCompleted
     setIsCompleted(isNowCompleted)
 
     if (isNowCompleted && !wasCompleted) {
-      const isLastSentence = sentenceIndex + 1 >= total
+      const isLastSentence = sentenceIndexRef.current + 1 >= total
 
       if (isLastSentence) {
         clearAdvanceTimer()
         setShowCompletionModal(true)
       } else {
         clearAdvanceTimer()
-        const nextIndex = sentenceIndex + 1
+        const scheduledIndex = sentenceIndexRef.current
+        const nextIndex = scheduledIndex + 1
+        const scheduledSentenceEn = currentSentence.en
+        const generation = ++advanceGenerationRef.current
         advanceTimerRef.current = setTimeout(() => {
           advanceTimerRef.current = null
+          if (generation !== advanceGenerationRef.current) return
+          if (sentenceIndexRef.current !== scheduledIndex) return
           const s = sentenceRef.current
-          if (!s) return
+          if (!s || s.en !== scheduledSentenceEn) return
           const targetNow = cleanTarget(s.en)
           if (!isInputComplete(userInputRef.current, targetNow)) return
           advanceToSentence(nextIndex)
@@ -235,6 +255,7 @@ export default function Practice() {
       setUserInput('')
       userInputRef.current = ''
       setIsCompleted(false)
+      isCompletedRef.current = false
       // Escape 清空后保持静态，并重新计时（静止够久才会开始闪烁）
       resetIdleTimer()
 
@@ -297,8 +318,10 @@ export default function Practice() {
         {/* 句子主体 */}
         <div data-testid="practice-sentence" className="font-mono text-[42px] leading-[1.35] tracking-[0.3px] text-center select-none md:text-[48px] md:leading-[1.32]">
           {chars.map((targetChar, i) => {
-            const typedChar = userInput[i]
-            const isCursorPosition = i === cursorPosition && cursorPosition < effectiveLength
+            const isTypableIndex = i < effectiveLength
+            const typedChar = isTypableIndex ? userInput[i] : undefined
+            const isCursorPosition =
+              isTypableIndex && i === cursorPosition && cursorPosition < effectiveLength
 
             let displayChar = targetChar
             if (targetChar === ' ') {
