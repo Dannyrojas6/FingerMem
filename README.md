@@ -68,6 +68,31 @@ npm run sync-dicts
 
 应用始终只从 `app/src/data/dicts/active/` 加载数据，该目录由脚本维护并被 git 忽略。
 
+## 词典校验（Gate 0 / 1 / 2）
+
+改完 `dicts/<词典名>/scenes/` 或 `word-index.json` 后，在 `app/` 目录执行：
+
+```bash
+npm run check-dict
+```
+
+依次完成：**校验数据（Gate 0）→ 同步到 active/ → 构建（Gate 1）**。Gate 2（索引与阶段规则）包含在 `validate-dict` 里。无错误且 build 成功即可 `npm run dev` 或部署。
+
+| Gate | 检查内容 |
+|------|----------|
+| 0 | 场景 JSON 格式、`word-index` 与场景引用是否一致 |
+| 1 | `sync-dicts` + `npm run build` 能否成功 |
+| 2 | 覆盖率与阶段递进（启发式，仅警告） |
+
+仅校验、不构建：
+
+```bash
+npm run validate-dict
+npm run validate-dict -- basic-850-cognitive   # 指定词典，默认即此项
+```
+
+Cloudflare 构建命令示例：`npm ci && npm run check-dict`（Root directory 设为 `app`）。
+
 ## 技术栈
 
 - React 19 + Vite
