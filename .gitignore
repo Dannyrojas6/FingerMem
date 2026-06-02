@@ -55,6 +55,9 @@ app/src/data/dicts/active/
 # Codegraph local index (do not commit)
 .codegraph/
 
+# MCP tool descriptors (local Cursor/Grok harness, not project source)
+mcps/
+
 
 # Superpowers agent working directory (local only, contains brainstorming state, plans, etc.)
 .superpowers/
