@@ -27,7 +27,16 @@ export default function Practice() {
   // 光标闪烁控制：新句子默认静态下划线。只有用户长时间静止不动后才开始闪烁提示。
   const [isIdle, setIsIdle] = useState(false)
   const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const IDLE_BLINK_DELAY = 1500
+  const AUTO_ADVANCE_DELAY = 80
+
+  const clearAdvanceTimer = () => {
+    if (advanceTimerRef.current) {
+      clearTimeout(advanceTimerRef.current)
+      advanceTimerRef.current = null
+    }
+  }
 
   // 每当有输入或新句子出现时，重置计时器（保持静态），静止够久后才触发闪烁
   const resetIdleTimer = () => {
@@ -120,14 +129,17 @@ export default function Practice() {
     // 重置速度统计
     correctTimestampsRef.current = []
     setDisplayCPM("—")
+
+    clearAdvanceTimer()
   }, [sceneId, sentenceIndex])
 
-  // 清理 idle 定时器（组件卸载时）
+  // 清理 idle / auto-advance 定时器（组件卸载时）
   useEffect(() => {
     return () => {
       if (idleTimerRef.current) {
         clearTimeout(idleTimerRef.current)
       }
+      clearAdvanceTimer()
     }
   }, [])
 
@@ -178,18 +190,24 @@ export default function Practice() {
       const isLastSentence = sentenceIndex + 1 >= totalSentences
 
       if (isLastSentence) {
+        clearAdvanceTimer()
         setShowCompletionModal(true)
       } else {
         // 中间句子完成，极短延迟后自动跳转下一句（无文字提示）
-        setTimeout(() => {
+        clearAdvanceTimer()
+        advanceTimerRef.current = setTimeout(() => {
+          advanceTimerRef.current = null
           navigate(`/practice/${sceneId}/${sentenceIndex + 1}`, { replace: true })
-        }, 80)
+        }, AUTO_ADVANCE_DELAY)
       }
+    } else {
+      clearAdvanceTimer()
     }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Escape') {
+      clearAdvanceTimer()
       setUserInput('')
       setIsCompleted(false)
       // Escape 清空后保持静态，并重新计时（静止够久才会开始闪烁）

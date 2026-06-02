@@ -162,6 +162,31 @@ describe('Practice 组件 - 核心打字交互', () => {
     expect(input.value).toBe('')
   })
 
+  it('完成输入后按 Escape 不应在延迟后自动跳到下一句', async () => {
+    const user = userEvent.setup()
+    renderPractice(testScene.id, 0)
+
+    const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
+    const cleanEn = firstSentence.en.replace(/[.,!?;:"']$/, '')
+    const secondSentenceZh = testScene.sentences[1].zh
+
+    await user.type(input, cleanEn)
+    await user.keyboard('{Escape}')
+
+    expect(input.value).toBe('')
+
+    // 等待超过自动跳转延迟（80ms），确认 Escape 取消后不会误跳句
+    await waitFor(
+      () => {
+        expect(screen.getByText(firstSentence.zh)).toBeInTheDocument()
+        expect(screen.queryByText(secondSentenceZh)).not.toBeInTheDocument()
+        const progress = screen.getByTestId('practice-progress')
+        expect(progress.textContent).toMatch(/1\s*\/\s*\d+/)
+      },
+      { timeout: 300 }
+    )
+  })
+
   it('句子索引无效时应显示错误信息', () => {
     renderPractice(testScene.id, 99)
 
