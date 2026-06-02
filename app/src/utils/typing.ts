@@ -14,6 +14,29 @@ export function cleanTarget(text: string): string {
 }
 
 /**
+ * 可输入区域长度（不含句末标点）。与 Practice 渲染的有效字符数一致。
+ */
+export function getEffectiveLength(sentenceEn: string): number {
+  return cleanTarget(sentenceEn).length
+}
+
+/**
+ * 丢弃超出有效长度的输入（含句末标点之后的键入）。
+ */
+export function clampInputToEffectiveLength(input: string, effectiveTarget: string): string {
+  return input.slice(0, effectiveTarget.length)
+}
+
+/** 单次输入长度突变（浏览器自动补全/连字），不应写入练习状态 */
+export function isUnexpectedInputJump(
+  previousInput: string,
+  nextInput: string,
+  maxAppend = 1
+): boolean {
+  return nextInput.length > previousInput.length + maxAppend
+}
+
+/**
  * 计算当前输入和目标匹配的最长正确前缀长度（逐字符严格匹配）
  */
 export function getMatchedPrefixLength(input: string, target: string): number {
@@ -39,16 +62,8 @@ export function getMatchedPrefixLength(input: string, target: string): number {
  * - Remove one trailing punctuation mark (via cleanTarget)
  */
 export function isInputComplete(input: string, target: string): boolean {
-  const normalizedInput = cleanTarget(input.trimEnd());
-  return normalizedInput === target;
-}
-
-/**
- * @deprecated Use `isInputComplete` instead.
- * This function previously contained "strict anti-cheat" logic that has been removed.
- * It now delegates to the new simple completion rule.
- */
-export function isSentenceCompleted(value: string, effectiveTarget: string): boolean {
-  // Temporary bridge during migration. Will be removed after all callers are updated.
-  return isInputComplete(value, effectiveTarget);
+  const clamped = clampInputToEffectiveLength(input, target)
+  const normalizedInput = cleanTarget(clamped.trimEnd())
+  if (normalizedInput !== target) return false
+  return getMatchedPrefixLength(clamped, target) === target.length
 }

@@ -32,6 +32,9 @@ docs/superpowers/
 .DS_Store
 Thumbs.db
 
+# Agent/runtime terminal snapshots (local only)
+terminals/
+
 # Logs
 *.log
 npm-debug.log*

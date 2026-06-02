@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import { cleanTarget, getMatchedPrefixLength, isSentenceCompleted, isInputComplete } from './typing'
+import {
+  clampInputToEffectiveLength,
+  cleanTarget,
+  getEffectiveLength,
+  getMatchedPrefixLength,
+  isUnexpectedInputJump,
+  isInputComplete,
+} from './typing'
 
 describe('cleanTarget', () => {
   it('应该移除末尾的常见标点', () => {
@@ -17,6 +24,29 @@ describe('cleanTarget', () => {
 
   it('空字符串应返回空字符串', () => {
     expect(cleanTarget('')).toBe('')
+  })
+})
+
+describe('isUnexpectedInputJump', () => {
+  it('允许单字符追加或删除', () => {
+    expect(isUnexpectedInputJump('How are', 'How are ')).toBe(false)
+    expect(isUnexpectedInputJump('How are ', 'How are')).toBe(false)
+  })
+
+  it('拒绝一次追加多个字符（自动补全）', () => {
+    expect(isUnexpectedInputJump('How are', 'How are you today')).toBe(true)
+  })
+})
+
+describe('clampInputToEffectiveLength', () => {
+  it('应截断超出有效长度的输入', () => {
+    const target = 'Hello world'
+    expect(clampInputToEffectiveLength('Hello world!!!', target)).toBe('Hello world')
+    expect(clampInputToEffectiveLength('Hello', target)).toBe('Hello')
+  })
+
+  it('getEffectiveLength 与 cleanTarget 长度一致', () => {
+    expect(getEffectiveLength('What time is it now?')).toBe(cleanTarget('What time is it now?').length)
   })
 })
 
@@ -38,25 +68,7 @@ describe('getMatchedPrefixLength', () => {
   })
 })
 
-describe('isSentenceCompleted (deprecated wrapper)', () => {
-  const target = 'Hello world'
-
-  it('returns true for exact match after normalization', () => {
-    expect(isSentenceCompleted('Hello world', target)).toBe(true)
-    expect(isSentenceCompleted('Hello world.', target)).toBe(true) // punctuation is cleaned via cleanTarget (normalized match)
-  })
-
-  it('returns true even if input ends with spaces (no more anti-cheat rule)', () => {
-    expect(isSentenceCompleted('Hello world ', target)).toBe(true)
-    expect(isSentenceCompleted('Hello world  ', target)).toBe(true)
-  })
-
-  it('returns false for incomplete input', () => {
-    expect(isSentenceCompleted('Hello worl', target)).toBe(false)
-  })
-})
-
-describe('isInputComplete (new primary API)', () => {
+describe('isInputComplete', () => {
   const target = 'Hello world'
 
   it('D1/D4: does not auto-complete or synthesize characters', () => {
@@ -75,6 +87,11 @@ describe('isInputComplete (new primary API)', () => {
 
   it('respects cleanTarget for trailing punctuation', () => {
     expect(isInputComplete('Hello world.', target)).toBe(true)
+  })
+
+  it('错误输入加超长后缀不能误判为完成', () => {
+    const wrong = 'Xxxx xxxx xxxx'
+    expect(isInputComplete(wrong + '     ', target)).toBe(false)
   })
 
   describe('Regression: historical bugs', () => {

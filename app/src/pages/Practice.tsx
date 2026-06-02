@@ -1,7 +1,14 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { getScene } from '../data/scenes'
-import { cleanTarget, getMatchedPrefixLength, isInputComplete } from '../utils/typing'
+import type { Sentence } from '../types'
+import {
+  clampInputToEffectiveLength,
+  cleanTarget,
+  getMatchedPrefixLength,
+  isInputComplete,
+  isUnexpectedInputJump,
+} from '../utils/typing'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
 import {
@@ -14,7 +21,8 @@ import {
 
 export default function Practice() {
   const { sceneId, index } = useParams<{ sceneId: string; index: string }>()
-  const sentenceIndex = parseInt(index || '0', 10)
+  const urlSentenceIndex = parseInt(index || '0', 10)
+  const [sentenceIndex, setSentenceIndex] = useState(urlSentenceIndex)
   const navigate = useNavigate()
   const inputRef = useRef<HTMLInputElement>(null)
   // titleRef was previously used for Dialog initialFocus (removed due to type incompatibility with @base-ui/react)
@@ -27,7 +35,20 @@ export default function Practice() {
   // 光标闪烁控制：新句子默认静态下划线。只有用户长时间静止不动后才开始闪烁提示。
   const [isIdle, setIsIdle] = useState(false)
   const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isCompletedRef = useRef(false)
+  const sentenceIndexRef = useRef(0)
+  const advanceGenerationRef = useRef(0)
   const IDLE_BLINK_DELAY = 1500
+  const AUTO_ADVANCE_DELAY = 80
+
+  const clearAdvanceTimer = () => {
+    if (advanceTimerRef.current) {
+      clearTimeout(advanceTimerRef.current)
+      advanceTimerRef.current = null
+    }
+    advanceGenerationRef.current += 1
+  }
 
   // 每当有输入或新句子出现时，重置计时器（保持静态），静止够久后才触发闪烁
   const resetIdleTimer = () => {
@@ -43,8 +64,39 @@ export default function Practice() {
   // 实时 CPM（每分钟正确字符数）计算 —— 仅用于底部极简控制台
   // 使用 10 秒滚动窗口，只统计正确输入的字符
   const correctTimestampsRef = useRef<number[]>([])
+  const userInputRef = useRef('')
+  const sentenceRef = useRef<Sentence | null>(null)
+  const inputOwnerEnRef = useRef<string | null>(null)
   const SPEED_WINDOW_MS = 10_000
   const [displayCPM, setDisplayCPM] = useState("—")
+
+  // URL 变化时（链接进入、浏览器后退）与地址栏同步
+  useEffect(() => {
+    setSentenceIndex(urlSentenceIndex)
+  }, [urlSentenceIndex])
+
+  const syncPracticeUrl = (nextIndex: number) => {
+    if (!sceneId) return
+    const path = `/practice/${sceneId}/${nextIndex}`
+    window.history.replaceState(window.history.state, '', path)
+  }
+
+  /** 下一句：只更新本地状态 + 地址栏，不走 React Router navigate，避免导航 loading */
+  const advanceToSentence = (nextIndex: number) => {
+    const nextSentence = sceneData?.sentences[nextIndex] ?? null
+    sentenceIndexRef.current = nextIndex
+    sentenceRef.current = nextSentence
+    inputOwnerEnRef.current = nextSentence?.en ?? null
+    userInputRef.current = ''
+    setUserInput('')
+    setIsCompleted(false)
+    isCompletedRef.current = false
+    if (inputRef.current) {
+      inputRef.current.value = ''
+    }
+    setSentenceIndex(nextIndex)
+    syncPracticeUrl(nextIndex)
+  }
 
   // 使用共享的纯函数（便于测试）
 
@@ -63,6 +115,10 @@ export default function Practice() {
   const sceneName = sceneData?.name ?? ''
   const totalSentences = sceneData?.sentences.length ?? 0
   const sentence = targetSentence
+  userInputRef.current = userInput
+  sentenceRef.current = sentence
+  sentenceIndexRef.current = sentenceIndex
+  isCompletedRef.current = isCompleted
 
   // 自动聚焦（当句子变化时聚焦输入框）
   useEffect(() => {
@@ -106,46 +162,69 @@ export default function Practice() {
     }
   }, [sentence, isCompleted])
 
-  // 当切换句子时，重置打字输入状态
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- 路由参数变化时重置本地 UI 状态是合理且常见的模式
+  // 切换句子时在绘制前同步清空输入，避免旧输入与新句子逐字比对产生“变绿”闪烁
+  useLayoutEffect(() => {
+    inputOwnerEnRef.current = sentence?.en ?? null
+    userInputRef.current = ''
     setUserInput('')
+    if (inputRef.current) {
+      inputRef.current.value = ''
+    }
     setIsCompleted(false)
+    isCompletedRef.current = false
     setShowCompletionModal(false)
-
-    // 新句子出现时默认静态（不闪烁），并开始计时。
-    // 只有用户静止不动达到上限时间后，才会开始闪烁提示。
     resetIdleTimer()
-
-    // 重置速度统计
     correctTimestampsRef.current = []
     setDisplayCPM("—")
-  }, [sceneId, sentenceIndex])
+    clearAdvanceTimer()
+  }, [sceneId, sentenceIndex, sentence?.en])
 
-  // 清理 idle 定时器（组件卸载时）
+  // 清理 idle / auto-advance 定时器（组件卸载时）
   useEffect(() => {
     return () => {
       if (idleTimerRef.current) {
         clearTimeout(idleTimerRef.current)
       }
+      clearAdvanceTimer()
     }
   }, [])
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!sentence) return
+  const applyInputValue = (rawValue: string, options?: { allowMultiChar?: boolean }) => {
+    const currentSentence = sentenceRef.current
+    if (!currentSentence) return
 
-    // 任何输入都重置空闲计时 → 保持静态，并把开始闪烁的时间往后推
+    const effectiveTarget = cleanTarget(currentSentence.en)
+    const total = sceneData?.sentences.length ?? 0
+    const prevInput = userInputRef.current
+    const value = clampInputToEffectiveLength(rawValue, effectiveTarget)
+
+    if (!options?.allowMultiChar && isUnexpectedInputJump(prevInput, value)) {
+      return
+    }
+
+    if (inputOwnerEnRef.current !== null && inputOwnerEnRef.current !== currentSentence.en) {
+      return
+    }
+
+    // 自动跳句后滞后的 onChange 可能携带上一句全文，与新句零匹配且长度>1
+    if (
+      userInputRef.current === '' &&
+      value.length > 1 &&
+      getMatchedPrefixLength(value, effectiveTarget) === 0
+    ) {
+      return
+    }
+
+    if (value === userInputRef.current) {
+      return
+    }
+
     resetIdleTimer()
 
-    let value = e.target.value
-
-    // Length is no longer hard-capped here.
-    // The new completion logic (isInputComplete) is based on exact normalized match.
-    // Users may type slightly beyond the target during correction; this is allowed and expected.
-
-    // === 实时CPM统计（仅正确字符） ===
-    const prevMatched = getMatchedPrefixLength(userInput, effectiveTarget)
+    const prevMatched = getMatchedPrefixLength(userInputRef.current, effectiveTarget)
     setUserInput(value)
+    userInputRef.current = value
+    inputOwnerEnRef.current = currentSentence.en
 
     const newMatched = getMatchedPrefixLength(value, effectiveTarget)
     const now = Date.now()
@@ -157,11 +236,9 @@ export default function Practice() {
       }
     }
 
-    // 清理超过窗口的旧记录
     const cutoff = now - SPEED_WINDOW_MS
     correctTimestampsRef.current = correctTimestampsRef.current.filter(t => t > cutoff)
 
-    // 计算当前CPM
     const count = correctTimestampsRef.current.length
     if (count >= 3) {
       const cpm = Math.round((count / (SPEED_WINDOW_MS / 1000)) * 60)
@@ -171,34 +248,88 @@ export default function Practice() {
     }
 
     const isNowCompleted = isInputComplete(value, effectiveTarget)
+    const wasCompleted = isCompletedRef.current
 
+    isCompletedRef.current = isNowCompleted
     setIsCompleted(isNowCompleted)
 
-    if (isNowCompleted) {
-      const isLastSentence = sentenceIndex + 1 >= totalSentences
+    if (isNowCompleted && !wasCompleted) {
+      const isLastSentence = sentenceIndexRef.current + 1 >= total
 
       if (isLastSentence) {
+        clearAdvanceTimer()
         setShowCompletionModal(true)
       } else {
-        // 中间句子完成，极短延迟后自动跳转下一句（无文字提示）
-        setTimeout(() => {
-          navigate(`/practice/${sceneId}/${sentenceIndex + 1}`, { replace: true })
-        }, 80)
+        clearAdvanceTimer()
+        const scheduledIndex = sentenceIndexRef.current
+        const nextIndex = scheduledIndex + 1
+        const scheduledSentenceEn = currentSentence.en
+        const generation = ++advanceGenerationRef.current
+        advanceTimerRef.current = setTimeout(() => {
+          advanceTimerRef.current = null
+          if (generation !== advanceGenerationRef.current) return
+          if (sentenceIndexRef.current !== scheduledIndex) return
+          const s = sentenceRef.current
+          if (!s || s.en !== scheduledSentenceEn) return
+          const targetNow = cleanTarget(s.en)
+          if (!isInputComplete(userInputRef.current, targetNow)) return
+          advanceToSentence(nextIndex)
+        }, AUTO_ADVANCE_DELAY)
       }
+    } else if (!isNowCompleted) {
+      clearAdvanceTimer()
+    }
+  }
+
+  const appendTypingKey = (key: string) => {
+    applyInputValue(userInputRef.current + key)
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // 忽略浏览器自动补全/连字触发的 onChange，打字只走 keydown
+    if (e.target.value !== userInputRef.current && inputRef.current) {
+      inputRef.current.value = userInputRef.current
     }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.nativeEvent.isComposing) return
+
     if (e.key === 'Escape') {
+      e.preventDefault()
+      clearAdvanceTimer()
       setUserInput('')
+      userInputRef.current = ''
       setIsCompleted(false)
-      // Escape 清空后保持静态，并重新计时（静止够久才会开始闪烁）
+      isCompletedRef.current = false
+      if (inputRef.current) {
+        inputRef.current.value = ''
+      }
       resetIdleTimer()
 
-      // 重置速度统计
       correctTimestampsRef.current = []
       setDisplayCPM("—")
+      return
     }
+
+    if (e.key === 'Backspace') {
+      e.preventDefault()
+      if (userInputRef.current.length === 0) return
+      applyInputValue(userInputRef.current.slice(0, -1))
+      return
+    }
+
+    if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      e.preventDefault()
+      appendTypingKey(e.key)
+    }
+  }
+
+  const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault()
+    const pasted = e.clipboardData.getData('text/plain')
+    if (!pasted) return
+    applyInputValue(userInputRef.current + pasted, { allowMultiChar: true })
   }
 
   // 完成弹窗键盘快捷键支持
@@ -234,6 +365,7 @@ export default function Practice() {
   const chars = target.split('')
   const effectiveTarget = cleanTarget(target)
   const effectiveLength = effectiveTarget.length
+  const matchedPrefixLen = getMatchedPrefixLength(userInput, effectiveTarget)
 
   // 光标位置跟随用户实际输入位置，但不跳到末尾标点上
   const cursorPosition = Math.min(userInput.length, effectiveLength)
@@ -253,8 +385,10 @@ export default function Practice() {
         {/* 句子主体 */}
         <div data-testid="practice-sentence" className="font-mono text-[42px] leading-[1.35] tracking-[0.3px] text-center select-none md:text-[48px] md:leading-[1.32]">
           {chars.map((targetChar, i) => {
-            const typedChar = userInput[i]
-            const isCursorPosition = i === cursorPosition && cursorPosition < effectiveLength
+            const isTypableIndex = i < effectiveLength
+            const typedChar = isTypableIndex ? userInput[i] : undefined
+            const isCursorPosition =
+              isTypableIndex && i === cursorPosition && cursorPosition < effectiveLength
 
             let displayChar = targetChar
             if (targetChar === ' ') {
@@ -263,11 +397,9 @@ export default function Practice() {
 
             let className = 'text-foreground/40'
 
-            // 直接按用户实际输入判断对错：
-            // 空格位置正常处理，字母位置打空格即为错误 → 显示红色
-            // 高频输入无效空格时，后续字母自然变红（红绿对比明显，用户能清楚看到错误位置）
+            // 仅连续正确前缀显示绿色，避免在空格位置“碰巧相等”或换句后旧输入误显绿
             if (typedChar !== undefined) {
-              if (typedChar === targetChar) {
+              if (i < matchedPrefixLen) {
                 className = 'text-emerald-400/90'
               } else {
                 className = 'text-rose-400/90'
@@ -289,17 +421,26 @@ export default function Practice() {
         <div className="mt-10 text-[20px] text-muted-foreground/70 tracking-[0.05px] text-center leading-snug">
           {sentence.zh}
         </div>
-
-        {/* 隐藏输入框 */}
-        <input
-          ref={inputRef}
-          type="text"
-          value={userInput}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          className="opacity-0 absolute w-px h-px pointer-events-none"
-        />
       </div>
+
+      {/* 捕获键盘的隐藏输入：固定在视口外，避免落在英文/中文之间触发浏览器原生 loading 指示 */}
+      <input
+        ref={inputRef}
+        type="text"
+        value={userInput}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        onPaste={handlePaste}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck={false}
+        data-lpignore="true"
+        data-1p-ignore
+        name="finger-mem-typing"
+        aria-label="打字输入"
+        className="pointer-events-none fixed top-0 left-[-9999px] h-px w-px opacity-0 overflow-hidden"
+      />
 
       {/* 底部极简控制台读数条（Option A 极致克制风格）
           与上方中英文一起再往下移一点 */}
