@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { getScene } from '../data/scenes'
+import type { Sentence } from '../types'
 import { cleanTarget, getMatchedPrefixLength, isInputComplete } from '../utils/typing'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
@@ -52,6 +53,8 @@ export default function Practice() {
   // 实时 CPM（每分钟正确字符数）计算 —— 仅用于底部极简控制台
   // 使用 10 秒滚动窗口，只统计正确输入的字符
   const correctTimestampsRef = useRef<number[]>([])
+  const userInputRef = useRef('')
+  const sentenceRef = useRef<Sentence | null>(null)
   const SPEED_WINDOW_MS = 10_000
   const [displayCPM, setDisplayCPM] = useState("—")
 
@@ -72,6 +75,8 @@ export default function Practice() {
   const sceneName = sceneData?.name ?? ''
   const totalSentences = sceneData?.sentences.length ?? 0
   const sentence = targetSentence
+  userInputRef.current = userInput
+  sentenceRef.current = sentence
 
   // 自动聚焦（当句子变化时聚焦输入框）
   useEffect(() => {
@@ -115,21 +120,15 @@ export default function Practice() {
     }
   }, [sentence, isCompleted])
 
-  // 当切换句子时，重置打字输入状态
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- 路由参数变化时重置本地 UI 状态是合理且常见的模式
+  // 切换句子时在绘制前同步清空输入，避免旧输入与新句子逐字比对产生“变绿”闪烁
+  useLayoutEffect(() => {
+    userInputRef.current = ''
     setUserInput('')
     setIsCompleted(false)
     setShowCompletionModal(false)
-
-    // 新句子出现时默认静态（不闪烁），并开始计时。
-    // 只有用户静止不动达到上限时间后，才会开始闪烁提示。
     resetIdleTimer()
-
-    // 重置速度统计
     correctTimestampsRef.current = []
     setDisplayCPM("—")
-
     clearAdvanceTimer()
   }, [sceneId, sentenceIndex])
 
@@ -144,20 +143,20 @@ export default function Practice() {
   }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!sentence) return
+    const currentSentence = sentenceRef.current
+    if (!currentSentence) return
+
+    const effectiveTarget = cleanTarget(currentSentence.en)
 
     // 任何输入都重置空闲计时 → 保持静态，并把开始闪烁的时间往后推
     resetIdleTimer()
 
-    let value = e.target.value
-
-    // Length is no longer hard-capped here.
-    // The new completion logic (isInputComplete) is based on exact normalized match.
-    // Users may type slightly beyond the target during correction; this is allowed and expected.
+    const value = e.target.value
 
     // === 实时CPM统计（仅正确字符） ===
-    const prevMatched = getMatchedPrefixLength(userInput, effectiveTarget)
+    const prevMatched = getMatchedPrefixLength(userInputRef.current, effectiveTarget)
     setUserInput(value)
+    userInputRef.current = value
 
     const newMatched = getMatchedPrefixLength(value, effectiveTarget)
     const now = Date.now()
@@ -169,11 +168,9 @@ export default function Practice() {
       }
     }
 
-    // 清理超过窗口的旧记录
     const cutoff = now - SPEED_WINDOW_MS
     correctTimestampsRef.current = correctTimestampsRef.current.filter(t => t > cutoff)
 
-    // 计算当前CPM
     const count = correctTimestampsRef.current.length
     if (count >= 3) {
       const cpm = Math.round((count / (SPEED_WINDOW_MS / 1000)) * 60)
@@ -183,24 +180,33 @@ export default function Practice() {
     }
 
     const isNowCompleted = isInputComplete(value, effectiveTarget)
+    const wasCompleted = isCompleted
 
     setIsCompleted(isNowCompleted)
 
-    if (isNowCompleted) {
+    // 仅在「未完成 → 完成」的上升沿触发自动跳转，避免高频空格重复调度 navigate
+    if (isNowCompleted && !wasCompleted) {
       const isLastSentence = sentenceIndex + 1 >= totalSentences
 
       if (isLastSentence) {
         clearAdvanceTimer()
         setShowCompletionModal(true)
       } else {
-        // 中间句子完成，极短延迟后自动跳转下一句（无文字提示）
         clearAdvanceTimer()
+        const nextIndex = sentenceIndex + 1
         advanceTimerRef.current = setTimeout(() => {
           advanceTimerRef.current = null
-          navigate(`/practice/${sceneId}/${sentenceIndex + 1}`, { replace: true })
+          const s = sentenceRef.current
+          if (!s) return
+          const targetNow = cleanTarget(s.en)
+          if (!isInputComplete(userInputRef.current, targetNow)) return
+          setUserInput('')
+          userInputRef.current = ''
+          setIsCompleted(false)
+          navigate(`/practice/${sceneId}/${nextIndex}`, { replace: true })
         }, AUTO_ADVANCE_DELAY)
       }
-    } else {
+    } else if (!isNowCompleted) {
       clearAdvanceTimer()
     }
   }
@@ -209,6 +215,7 @@ export default function Practice() {
     if (e.key === 'Escape') {
       clearAdvanceTimer()
       setUserInput('')
+      userInputRef.current = ''
       setIsCompleted(false)
       // Escape 清空后保持静态，并重新计时（静止够久才会开始闪烁）
       resetIdleTimer()
@@ -252,6 +259,7 @@ export default function Practice() {
   const chars = target.split('')
   const effectiveTarget = cleanTarget(target)
   const effectiveLength = effectiveTarget.length
+  const matchedPrefixLen = getMatchedPrefixLength(userInput, effectiveTarget)
 
   // 光标位置跟随用户实际输入位置，但不跳到末尾标点上
   const cursorPosition = Math.min(userInput.length, effectiveLength)
@@ -281,11 +289,9 @@ export default function Practice() {
 
             let className = 'text-foreground/40'
 
-            // 直接按用户实际输入判断对错：
-            // 空格位置正常处理，字母位置打空格即为错误 → 显示红色
-            // 高频输入无效空格时，后续字母自然变红（红绿对比明显，用户能清楚看到错误位置）
+            // 仅连续正确前缀显示绿色，避免在空格位置“碰巧相等”或换句后旧输入误显绿
             if (typedChar !== undefined) {
-              if (typedChar === targetChar) {
+              if (i < matchedPrefixLen) {
                 className = 'text-emerald-400/90'
               } else {
                 className = 'text-rose-400/90'
@@ -315,6 +321,9 @@ export default function Practice() {
           value={userInput}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck={false}
           className="opacity-0 absolute w-px h-px pointer-events-none"
         />
       </div>

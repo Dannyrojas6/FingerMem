@@ -162,6 +162,40 @@ describe('Practice 组件 - 核心打字交互', () => {
     expect(input.value).toBe('')
   })
 
+  it('全句输入错误后高频空格不应误跳转，且错误字母应保持红色', async () => {
+    const user = userEvent.setup()
+    renderPractice(testScene.id, 0)
+
+    const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
+    const cleanEn = firstSentence.en.replace(/[.,!?;:"']$/, '')
+    const wrong = cleanEn
+      .split('')
+      .map((c) => (c === ' ' ? ' ' : 'x'))
+      .join('')
+    expect(wrong).not.toBe(cleanEn)
+
+    await user.type(input, wrong)
+    await user.type(input, '{Space>25}')
+
+    await waitFor(
+      () => {
+        expect(screen.getByText(firstSentence.zh)).toBeInTheDocument()
+        const progress = screen.getByTestId('practice-progress')
+        expect(progress.textContent).toMatch(/1\s*\/\s*\d+/)
+      },
+      { timeout: 300 }
+    )
+
+    const spans = Array.from(screen.getByTestId('practice-sentence').querySelectorAll('span'))
+    const targetChars = firstSentence.en.split('')
+    let hasRedLetter = false
+    for (let i = 0; i < cleanEn.length; i++) {
+      if (targetChars[i] === ' ') continue
+      if (spans[i]?.classList.contains('text-rose-400/90')) hasRedLetter = true
+    }
+    expect(hasRedLetter).toBe(true)
+  })
+
   it('完成输入后按 Escape 不应在延迟后自动跳到下一句', async () => {
     const user = userEvent.setup()
     renderPractice(testScene.id, 0)
