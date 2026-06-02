@@ -15,7 +15,8 @@ import {
 
 export default function Practice() {
   const { sceneId, index } = useParams<{ sceneId: string; index: string }>()
-  const sentenceIndex = parseInt(index || '0', 10)
+  const urlSentenceIndex = parseInt(index || '0', 10)
+  const [sentenceIndex, setSentenceIndex] = useState(urlSentenceIndex)
   const navigate = useNavigate()
   const inputRef = useRef<HTMLInputElement>(null)
   // titleRef was previously used for Dialog initialFocus (removed due to type incompatibility with @base-ui/react)
@@ -57,6 +58,26 @@ export default function Practice() {
   const sentenceRef = useRef<Sentence | null>(null)
   const SPEED_WINDOW_MS = 10_000
   const [displayCPM, setDisplayCPM] = useState("—")
+
+  // URL 变化时（链接进入、浏览器后退）与地址栏同步
+  useEffect(() => {
+    setSentenceIndex(urlSentenceIndex)
+  }, [urlSentenceIndex])
+
+  const syncPracticeUrl = (nextIndex: number) => {
+    if (!sceneId) return
+    const path = `/practice/${sceneId}/${nextIndex}`
+    window.history.replaceState(window.history.state, '', path)
+  }
+
+  /** 下一句：只更新本地状态 + 地址栏，不走 React Router navigate，避免导航 loading */
+  const advanceToSentence = (nextIndex: number) => {
+    userInputRef.current = ''
+    setUserInput('')
+    setIsCompleted(false)
+    setSentenceIndex(nextIndex)
+    syncPracticeUrl(nextIndex)
+  }
 
   // 使用共享的纯函数（便于测试）
 
@@ -142,18 +163,15 @@ export default function Practice() {
     }
   }, [])
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const applyInputValue = (value: string) => {
     const currentSentence = sentenceRef.current
     if (!currentSentence) return
 
     const effectiveTarget = cleanTarget(currentSentence.en)
+    const total = sceneData?.sentences.length ?? 0
 
-    // 任何输入都重置空闲计时 → 保持静态，并把开始闪烁的时间往后推
     resetIdleTimer()
 
-    const value = e.target.value
-
-    // === 实时CPM统计（仅正确字符） ===
     const prevMatched = getMatchedPrefixLength(userInputRef.current, effectiveTarget)
     setUserInput(value)
     userInputRef.current = value
@@ -184,9 +202,8 @@ export default function Practice() {
 
     setIsCompleted(isNowCompleted)
 
-    // 仅在「未完成 → 完成」的上升沿触发自动跳转，避免高频空格重复调度 navigate
     if (isNowCompleted && !wasCompleted) {
-      const isLastSentence = sentenceIndex + 1 >= totalSentences
+      const isLastSentence = sentenceIndex + 1 >= total
 
       if (isLastSentence) {
         clearAdvanceTimer()
@@ -200,15 +217,16 @@ export default function Practice() {
           if (!s) return
           const targetNow = cleanTarget(s.en)
           if (!isInputComplete(userInputRef.current, targetNow)) return
-          setUserInput('')
-          userInputRef.current = ''
-          setIsCompleted(false)
-          navigate(`/practice/${sceneId}/${nextIndex}`, { replace: true })
+          advanceToSentence(nextIndex)
         }, AUTO_ADVANCE_DELAY)
       }
     } else if (!isNowCompleted) {
       clearAdvanceTimer()
     }
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    applyInputValue(e.target.value)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -313,20 +331,22 @@ export default function Practice() {
         <div className="mt-10 text-[20px] text-muted-foreground/70 tracking-[0.05px] text-center leading-snug">
           {sentence.zh}
         </div>
-
-        {/* 隐藏输入框 */}
-        <input
-          ref={inputRef}
-          type="text"
-          value={userInput}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          autoComplete="off"
-          autoCorrect="off"
-          spellCheck={false}
-          className="opacity-0 absolute w-px h-px pointer-events-none"
-        />
       </div>
+
+      {/* 捕获键盘的隐藏输入：固定在视口外，避免落在英文/中文之间触发浏览器原生 loading 指示 */}
+      <input
+        ref={inputRef}
+        type="text"
+        value={userInput}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck={false}
+        aria-label="打字输入"
+        className="pointer-events-none fixed top-0 left-[-9999px] h-px w-px opacity-0 overflow-hidden"
+      />
 
       {/* 底部极简控制台读数条（Option A 极致克制风格）
           与上方中英文一起再往下移一点 */}
