@@ -27,6 +27,15 @@ export function clampInputToEffectiveLength(input: string, effectiveTarget: stri
   return input.slice(0, effectiveTarget.length)
 }
 
+/** 单次输入长度突变（浏览器自动补全/连字），不应写入练习状态 */
+export function isUnexpectedInputJump(
+  previousInput: string,
+  nextInput: string,
+  maxAppend = 1
+): boolean {
+  return nextInput.length > previousInput.length + maxAppend
+}
+
 /**
  * 计算当前输入和目标匹配的最长正确前缀长度（逐字符严格匹配）
  */

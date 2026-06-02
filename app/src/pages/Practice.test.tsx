@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, fireEvent, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Practice from './Practice'
@@ -45,6 +45,15 @@ describe('Practice 组件 - 核心打字交互', () => {
   // 使用当前激活词典的第一个场景（数据无关）
   const testScene = scenes[0]
   const firstSentence = testScene.sentences[0]
+  const dailyLifeScene = scenes.find((s) => s.id === 'daily-life')!
+  const howAreSentence = dailyLifeScene.sentences.find((s) => s.en === 'How are you today?')!
+  const howAreSentenceIndex = dailyLifeScene.sentences.indexOf(howAreSentence)
+
+  function typeViaKeyDown(input: HTMLInputElement, text: string) {
+    for (const char of text) {
+      fireEvent.keyDown(input, { key: char })
+    }
+  }
 
   beforeEach(() => {
     vi.useRealTimers()
@@ -160,6 +169,102 @@ describe('Practice 组件 - 核心打字交互', () => {
     await user.keyboard('{Escape}')
 
     expect(input.value).toBe('')
+  })
+
+  it('正确前缀后高频空格不应把已打对的字母全部标红', async () => {
+    const user = userEvent.setup()
+    renderPractice(testScene.id, 0)
+
+    const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
+    const sentenceArea = screen.getByTestId('practice-sentence')
+    const cleanEn = firstSentence.en.replace(/[.,!?;:"']$/, '')
+    const correctPrefix = cleanEn.slice(0, 12)
+
+    await user.type(input, correctPrefix)
+    await user.type(input, '{Space>25}')
+
+    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const targetChars = firstSentence.en.split('')
+    for (let i = 0; i < correctPrefix.length; i++) {
+      if (targetChars[i] === ' ') continue
+      expect(spans[i]).toHaveClass('text-emerald-400/90')
+    }
+    expect(input.value.length).toBeLessThanOrEqual(cleanEn.length)
+  })
+
+  it('完成一句并自动跳句后，滞后 onChange 不应把下一句全部标红', () => {
+    vi.useFakeTimers()
+    try {
+      renderPractice(testScene.id, 0)
+
+      const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
+      const cleanEn = firstSentence.en.replace(/[.,!?;:"']$/, '')
+      const secondZh = testScene.sentences[1].zh
+
+      act(() => {
+        typeViaKeyDown(input, cleanEn)
+      })
+      act(() => {
+        vi.advanceTimersByTime(80)
+      })
+
+      expect(screen.getByText(secondZh)).toBeInTheDocument()
+      expect(input.value).toBe('')
+
+      act(() => {
+        fireEvent.change(input, { target: { value: `${cleanEn}     ` } })
+      })
+
+      expect(input.value).toBe('')
+      const spans = Array.from(screen.getByTestId('practice-sentence').querySelectorAll('span'))
+      const roseOnTypable = spans.filter((s) => s.classList.contains('text-rose-400/90'))
+      expect(roseOnTypable.length).toBe(0)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('How are 后高频空格不应把已打对的字母标红，且不应自动补全出 today', async () => {
+    const user = userEvent.setup()
+    renderPractice('daily-life', howAreSentenceIndex)
+
+    const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
+    const sentenceArea = screen.getByTestId('practice-sentence')
+    const cleanEn = howAreSentence.en.replace(/[.,!?;:"']$/, '')
+    const prefix = 'How are'
+
+    await user.type(input, prefix)
+    await user.type(input, '{Space>25}')
+
+    expect(input.value).not.toContain('you today')
+    expect(input.value.length).toBeLessThanOrEqual(cleanEn.length)
+
+    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const targetChars = howAreSentence.en.split('')
+    for (let i = 0; i < prefix.length; i++) {
+      if (targetChars[i] === ' ') continue
+      expect(spans[i]).toHaveClass('text-emerald-400/90')
+    }
+
+    const tIndex = cleanEn.indexOf('t')
+    if (input.value.length < tIndex) {
+      const cursorSpan = spans.find((s) => s.classList.contains('border-b-[2.5px]'))
+      const cursorIdx = cursorSpan ? spans.indexOf(cursorSpan) : -1
+      expect(cursorIdx).toBeLessThan(tIndex)
+    }
+  })
+
+  it('浏览器自动补全整词写入时应被忽略', () => {
+    renderPractice('daily-life', howAreSentenceIndex)
+
+    const input = screen.getByRole('textbox', { hidden: true }) as HTMLInputElement
+    const cleanEn = howAreSentence.en.replace(/[.,!?;:"']$/, '')
+
+    typeViaKeyDown(input, 'How are yox')
+    expect(input.value).toBe('How are yox')
+
+    fireEvent.change(input, { target: { value: cleanEn } })
+    expect(input.value).toBe('How are yox')
   })
 
   it('全句输入错误后高频空格不应误跳转，且错误字母应保持红色', async () => {

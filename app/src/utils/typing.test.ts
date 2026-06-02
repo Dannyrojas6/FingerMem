@@ -4,6 +4,7 @@ import {
   cleanTarget,
   getEffectiveLength,
   getMatchedPrefixLength,
+  isUnexpectedInputJump,
   isSentenceCompleted,
   isInputComplete,
 } from './typing'
@@ -24,6 +25,17 @@ describe('cleanTarget', () => {
 
   it('空字符串应返回空字符串', () => {
     expect(cleanTarget('')).toBe('')
+  })
+})
+
+describe('isUnexpectedInputJump', () => {
+  it('允许单字符追加或删除', () => {
+    expect(isUnexpectedInputJump('How are', 'How are ')).toBe(false)
+    expect(isUnexpectedInputJump('How are ', 'How are')).toBe(false)
+  })
+
+  it('拒绝一次追加多个字符（自动补全）', () => {
+    expect(isUnexpectedInputJump('How are', 'How are you today')).toBe(true)
   })
 })
 
