@@ -67,13 +67,3 @@ export function isInputComplete(input: string, target: string): boolean {
   if (normalizedInput !== target) return false
   return getMatchedPrefixLength(clamped, target) === target.length
 }
-
-/**
- * @deprecated Use `isInputComplete` instead.
- * This function previously contained "strict anti-cheat" logic that has been removed.
- * It now delegates to the new simple completion rule.
- */
-export function isSentenceCompleted(value: string, effectiveTarget: string): boolean {
-  // Temporary bridge during migration. Will be removed after all callers are updated.
-  return isInputComplete(value, effectiveTarget);
-}

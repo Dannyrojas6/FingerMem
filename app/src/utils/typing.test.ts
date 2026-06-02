@@ -5,7 +5,6 @@ import {
   getEffectiveLength,
   getMatchedPrefixLength,
   isUnexpectedInputJump,
-  isSentenceCompleted,
   isInputComplete,
 } from './typing'
 
@@ -69,25 +68,7 @@ describe('getMatchedPrefixLength', () => {
   })
 })
 
-describe('isSentenceCompleted (deprecated wrapper)', () => {
-  const target = 'Hello world'
-
-  it('returns true for exact match after normalization', () => {
-    expect(isSentenceCompleted('Hello world', target)).toBe(true)
-    expect(isSentenceCompleted('Hello world.', target)).toBe(true) // punctuation is cleaned via cleanTarget (normalized match)
-  })
-
-  it('returns true even if input ends with spaces (no more anti-cheat rule)', () => {
-    expect(isSentenceCompleted('Hello world ', target)).toBe(true)
-    expect(isSentenceCompleted('Hello world  ', target)).toBe(true)
-  })
-
-  it('returns false for incomplete input', () => {
-    expect(isSentenceCompleted('Hello worl', target)).toBe(false)
-  })
-})
-
-describe('isInputComplete (new primary API)', () => {
+describe('isInputComplete', () => {
   const target = 'Hello world'
 
   it('D1/D4: does not auto-complete or synthesize characters', () => {
