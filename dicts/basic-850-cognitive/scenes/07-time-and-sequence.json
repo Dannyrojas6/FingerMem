@@ -17,7 +17,8 @@
     { "en": "He is still asleep.", "zh": "他还在睡觉。" },
     { "en": "Do not be late for school.", "zh": "上学不要迟到。" },
     { "en": "Please wait till I come back.", "zh": "请等到我回来。" },
-    { "en": "The past is gone. The future is not here yet.", "zh": "过去已经过去了。未来还没有到来。" },
+    { "en": "The past is gone.", "zh": "过去已经过去了。" },
+    { "en": "The future is not here yet.", "zh": "未来还没有到来。" },
     { "en": "I watch the clock all day.", "zh": "我整天看着钟。" },
     { "en": "She came late last night.", "zh": "她昨晚来晚了。" }
   ]

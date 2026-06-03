@@ -21,7 +21,8 @@
     { "en": "The leaf of the tree is green.", "zh": "树的叶子是绿色的。" },
     { "en": "Each seed grows into a new plant.", "zh": "每一粒种子长成一棵新植物。" },
     { "en": "A farmer uses a spade to dig the earth.", "zh": "农民用铲子挖土。" },
-    { "en": "A plough is used to make the earth ready for planting.", "zh": "犁用来松土准备种植。" },
-    { "en": "The soil here is fertile. Plants grow well.", "zh": "这里的土壤很肥沃。植物长得好。" }
+    { "en": "A plough makes the earth ready for planting.", "zh": "犁使土地准备好种植。" },
+    { "en": "The soil here is fertile.", "zh": "这里的土壤很肥沃。" },
+    { "en": "Plants grow well.", "zh": "植物长得好。" }
   ]
 }

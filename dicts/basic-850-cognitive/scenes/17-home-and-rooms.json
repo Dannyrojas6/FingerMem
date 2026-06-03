@@ -1,7 +1,8 @@
 {
   "name": "Home & Rooms",
   "sentences": [
-    { "en": "This is my house. It has a red door.", "zh": "这是我的房子。它有一扇红色的门。" },
+    { "en": "This is my house.", "zh": "这是我的房子。" },
+    { "en": "It has a red door.", "zh": "它有一扇红色的门。" },
     { "en": "The window in the kitchen is open.", "zh": "厨房的窗户是开着的。" },
     { "en": "The wall in my room is white.", "zh": "我房间的墙是白色的。" },
     { "en": "The floor is made of wood.", "zh": "地板是木头做的。" },
@@ -21,6 +22,6 @@
     { "en": "I wash my hands in the basin.", "zh": "我在洗手盆里洗手。" },
     { "en": "The condition of the old house was not good.", "zh": "老房子状况不好。" },
     { "en": "The connection between the two pipes was broken.", "zh": "两根管子之间的连接断了。" },
-    { "en": "The control of the house temperature was automatic.", "zh": "房子温度的调节是自动的。" }
+    { "en": "The house temperature control was automatic.", "zh": "房屋温度控制是自动的。" }
   ]
 }

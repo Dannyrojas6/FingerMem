@@ -16,14 +16,16 @@
     { "en": "The medical care at the hospital was very good.", "zh": "医院的医疗护理非常好。" },
     { "en": "The disease was common in winter.", "zh": "这种疾病在冬天很常见。" },
     { "en": "I had a cough and a sneeze all day.", "zh": "我整天咳嗽和打喷嚏。" },
-    { "en": "My breathing was not normal, so the doctor gave me a test.", "zh": "我的呼吸不正常，所以医生给我做了检查。" },
+    { "en": "My breathing was not normal.", "zh": "我的呼吸不正常。" },
+    { "en": "The doctor gave me a test.", "zh": "医生给我做了检查。" },
     { "en": "Rest is important for the process of getting well.", "zh": "休息对于康复的过程很重要。" },
-    { "en": "My digestion was poor, so I had to change my food.", "zh": "我的消化不好，所以我必须改变我的饮食。" },
+    { "en": "My digestion was poor.", "zh": "我的消化不好。" },
+    { "en": "I had to change my food.", "zh": "我必须改变饮食。" },
     { "en": "The operation was done by the chief doctor.", "zh": "手术由主任医生完成。" },
     { "en": "I was ill for a week with a fever.", "zh": "我发烧病了一周。" },
     { "en": "The wound on my arm was deep.", "zh": "我手臂上的伤口很深。" },
-    { "en": "The doctor gave a detailed account of the operation.", "zh": "医生详细描述了手术过程。" },
-    { "en": "The destruction of the cells was caused by the disease.", "zh": "细胞的破坏是由疾病引起的。" },
+    { "en": "The doctor gave an account of the operation.", "zh": "医生描述了手术过程。" },
+    { "en": "The disease caused destruction of the cells.", "zh": "疾病引起了细胞的破坏。" },
     { "en": "Every detail of the care was important.", "zh": "护理的每一个细节都很重要。" }
   ]
 }

@@ -14,6 +14,7 @@
     { "en": "She has a bag.", "zh": "她有一个包。" },
     { "en": "Yes, I am a teacher.", "zh": "是的，我是一名老师。" },
     { "en": "No, I am not a doctor.", "zh": "不，我不是医生。" },
-    { "en": "I am not sad. I am happy.", "zh": "我不难过。我很开心。" }
+    { "en": "I am not sad.", "zh": "我不难过。" },
+    { "en": "I am happy.", "zh": "我很开心。" }
   ]
 }
