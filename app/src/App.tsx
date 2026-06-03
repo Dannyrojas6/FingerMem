@@ -1,25 +1,39 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import SceneList from './pages/SceneList'
 import SceneDetail from './pages/SceneDetail'
 import Practice from './pages/Practice'
 import ErrorBoundary from './components/ErrorBoundary'
+import AppBrand from './components/AppBrand'
 
-function App() {
+function AppRoutes() {
+  const location = useLocation()
+  const isPractice = location.pathname.startsWith('/practice/')
+
   return (
-    <div className="min-h-screen bg-[#111111] text-[#F4F4F5]">
-      <header className="border-b border-white/8">
-        <div className="px-6 py-5">
-          <Link 
-            to="/" 
-            className="flex items-baseline gap-2 hover:opacity-80 transition-opacity"
+    <div className="min-h-screen bg-background font-sans text-foreground">
+      {!isPractice && (
+        <header className="border-b border-border/60 bg-background/80 backdrop-blur-sm">
+          <div
+            className={
+              location.pathname === '/'
+                ? 'mx-auto flex h-14 max-w-7xl items-center px-6 md:px-10'
+                : 'mx-auto flex h-14 max-w-lg items-center px-5'
+            }
           >
-            <div className="text-[13px] font-medium tracking-[1.5px]">FINGERMEM</div>
-            <div className="text-[10px] text-white/40 tracking-[1px] font-mono">INSTRUMENT</div>
-          </Link>
-        </div>
-      </header>
+            <AppBrand />
+          </div>
+        </header>
+      )}
 
-      <main className="max-w-[720px] mx-auto px-6 py-10">
+      <main
+        className={
+          isPractice
+            ? ''
+            : location.pathname === '/'
+              ? 'mx-auto w-full max-w-7xl px-6 md:px-10'
+              : 'mx-auto w-full max-w-lg px-5'
+        }
+      >
         <ErrorBoundary>
           <Routes>
             <Route path="/" element={<SceneList />} />
@@ -30,6 +44,10 @@ function App() {
       </main>
     </div>
   )
+}
+
+function App() {
+  return <AppRoutes />
 }
 
 export default App

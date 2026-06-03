@@ -1,17 +1,29 @@
-import { useParams, Link } from 'react-router-dom'
+import { useMemo, useState } from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getScene } from '../data/scenes'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
+import WheelPicker from '../components/WheelPicker'
 
 export default function SceneDetail() {
   const { sceneId } = useParams<{ sceneId: string }>()
+  const navigate = useNavigate()
+  const [index, setIndex] = useState(0)
+  const scene = sceneId ? getScene(sceneId) : undefined
+
+  const wheelItems = useMemo(
+    () =>
+      scene?.sentences.map((sentence, i) => ({
+        id: String(i),
+        label: sentence.en,
+        sublabel: sentence.zh,
+      })) ?? [],
+    [scene]
+  )
 
   if (!sceneId) {
     return <ErrorMessage message="缺少场景参数" />
   }
-
-  const scene = getScene(sceneId)
 
   if (!scene) {
     return (
@@ -23,42 +35,41 @@ export default function SceneDetail() {
   }
 
   return (
-    <div>
-      <div className="mb-6 flex items-end justify-between">
-        <div data-testid="scene-name">
-          <div className="text-[10px] tracking-[1.5px] text-muted-foreground/50 mb-0.5">SCENE</div>
-          <div className="text-[19px] font-medium tracking-[-0.25px]">{scene.name}</div>
-        </div>
+    <div className="flex min-h-[calc(100dvh-5.5rem)] flex-col">
+      <header className="shrink-0 px-1 pt-2 pb-4 text-center">
+        <Link
+          to="/"
+          className="mb-3 inline-block text-xs text-muted-foreground transition-colors hover:text-foreground"
+        >
+          所有场景
+        </Link>
+        <h1 data-testid="scene-name" className="truncate text-base font-medium text-foreground">
+          {scene.name}
+        </h1>
+        <p className="mt-1 text-xs text-muted-foreground">{scene.sentences.length} 句</p>
+      </header>
 
-        {/* 开始入口 */}
+      <div className="flex flex-1 flex-col justify-center py-2">
+        <WheelPicker
+          testId="sentence-wheel"
+          itemTestId="sentence-item"
+          aria-label="句子列表"
+          items={wheelItems}
+          index={index}
+          onIndexChange={setIndex}
+          getItemDataAttrs={i => ({ 'data-sentence-index': i })}
+        />
+      </div>
+
+      <footer className="shrink-0 space-y-2 px-1 pb-4 pt-6">
         <Button
           data-testid="start-practice-button"
-          render={<Link to={`/practice/${sceneId}/0`} />}
-          size="sm"
-          className="text-[12px] tracking-[0.4px] px-3"
+          className="h-11 w-full text-sm font-medium"
+          onClick={() => navigate(`/practice/${sceneId}/${index}`)}
         >
-          开始练习
+          从这句开始练习
         </Button>
-      </div>
-
-      <Separator className="my-5" />
-
-      <div className="space-y-2.5">
-        {scene.sentences.map((sentence, index) => (
-          <Link
-            key={index}
-            data-testid="sentence-item"
-            data-sentence-index={index}
-            to={`/practice/${sceneId}/${index}`}
-            className="group block rounded-2xl bg-[#181818] px-4 py-3 hover:bg-[#1F1F1F] active:bg-[#222] transition-colors"
-          >
-            <div>
-              <div className="font-mono text-[18px] tracking-[0.05px] leading-snug mb-1.5">{sentence.en}</div>
-              <div className="text-[15.5px] text-muted-foreground/85 tracking-[0.05px]">{sentence.zh}</div>
-            </div>
-          </Link>
-        ))}
-      </div>
+      </footer>
     </div>
   )
 }

@@ -374,16 +374,42 @@ export default function Practice() {
   // 此处保留 matchedForProgress 计算供速度统计使用（见 handleInputChange）
 
   return (
-    <div className="mx-auto max-w-[720px] px-6">
-      {/* 句子核心区域 —— 保持在中央偏下的位置（专注最佳位置）
-          再往下移一点，中英文和底部信息整体下移 */}
+    <div className="flex min-h-dvh flex-col bg-background font-sans">
+      <header className="shrink-0 border-b border-border/80 px-5 py-3">
+        <div className="mx-auto flex max-w-2xl items-center gap-3">
+          <Link
+            to={`/scene/${sceneId}`}
+            className="shrink-0 text-xs text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
+          >
+            返回
+          </Link>
+          <div className="h-1 min-w-0 flex-1 overflow-hidden rounded-full bg-secondary">
+            <div
+              className="h-full rounded-full bg-foreground/90 transition-[width] duration-200 ease-out"
+              style={{ width: `${((sentenceIndex + 1) / totalSentences) * 100}%` }}
+            />
+          </div>
+          <span
+            data-testid="practice-progress"
+            className="shrink-0 text-xs tabular-nums text-muted-foreground"
+          >
+            {sentenceIndex + 1}/{totalSentences}
+          </span>
+        </div>
+        <p className="mx-auto mt-2 max-w-2xl truncate text-center text-xs text-muted-foreground">
+          {sceneName}
+        </p>
+      </header>
+
       <div
         data-testid="practice-typing-area"
-        className="flex min-h-[55vh] flex-col items-center justify-center cursor-text pt-16 pb-2"
+        className="mx-auto flex w-full max-w-3xl flex-1 cursor-text flex-col items-center justify-center px-6 py-10"
         onClick={() => inputRef.current?.focus()}
       >
-        {/* 句子主体 */}
-        <div data-testid="practice-sentence" className="font-mono text-[42px] leading-[1.35] tracking-[0.3px] text-center select-none md:text-[48px] md:leading-[1.32]">
+        <div
+          data-testid="practice-sentence"
+          className="practice-sentence w-full text-center font-mono text-[clamp(1.75rem,6vw,2.75rem)] leading-[1.4] tracking-tight select-none"
+        >
           {chars.map((targetChar, i) => {
             const isTypableIndex = i < effectiveLength
             const typedChar = isTypableIndex ? userInput[i] : undefined
@@ -395,21 +421,21 @@ export default function Practice() {
               displayChar = '·'
             }
 
-            let className = 'text-foreground/40'
+            let className = 'text-muted-foreground/60'
 
             // 仅连续正确前缀显示绿色，避免在空格位置“碰巧相等”或换句后旧输入误显绿
             if (typedChar !== undefined) {
               if (i < matchedPrefixLen) {
-                className = 'text-emerald-400/90'
+                className = 'text-typing-correct'
               } else {
-                className = 'text-rose-400/90'
+                className = 'text-typing-error'
               }
             }
 
             return (
               <span
                 key={i}
-                className={`${className} ${isCursorPosition ? 'border-b-[2.5px] border-foreground/75' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
+                className={`${className} ${isCursorPosition ? 'border-b-2 border-foreground/70' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
               >
                 {displayChar}
               </span>
@@ -417,10 +443,9 @@ export default function Practice() {
           })}
         </div>
 
-        {/* 中文翻译 */}
-        <div className="mt-10 text-[20px] text-muted-foreground/70 tracking-[0.05px] text-center leading-snug">
+        <p className="mt-12 max-w-lg text-center text-[15px] leading-relaxed text-muted-foreground">
           {sentence.zh}
-        </div>
+        </p>
       </div>
 
       {/* 捕获键盘的隐藏输入：固定在视口外，避免落在英文/中文之间触发浏览器原生 loading 指示 */}
@@ -442,29 +467,14 @@ export default function Practice() {
         className="pointer-events-none fixed top-0 left-[-9999px] h-px w-px opacity-0 overflow-hidden"
       />
 
-      {/* 底部极简控制台读数条（Option A 极致克制风格）
-          与上方中英文一起再往下移一点 */}
-      <div className="relative mt-10 flex items-center justify-between pb-6 text-[14px] tracking-[0.4px] text-muted-foreground/70 font-mono tabular-nums">
-        <div className="flex-1 truncate">{sceneName}</div>
+      <footer className="shrink-0 border-t border-border/80 px-5 py-4 text-center font-mono text-xs tabular-nums text-muted-foreground">
+        {displayCPM} CPM
+      </footer>
 
-        {/* 进度放在正中间，不受左右内容长度影响 */}
-        <div data-testid="practice-progress" className="absolute left-1/2 -translate-x-1/2 tabular-nums">
-          {sentenceIndex + 1} / {totalSentences}
-        </div>
-
-        <div className="w-[72px] text-right tabular-nums">{displayCPM} CPM</div>
-      </div>
-
-
-      {/* 完成确认 —— 玻璃质感，低调克制 */}
       <Dialog open={showCompletionModal} onOpenChange={setShowCompletionModal}>
-        <DialogPopup 
-          className="max-w-[380px] bg-[#1a1a1a]/70 backdrop-blur-xl border-white/10 p-8 text-center"
-        >
+        <DialogPopup className="max-w-[380px] border border-border bg-popover p-8 text-center shadow-[0_24px_64px_rgba(0,0,0,0.5)]">
           <DialogHeader className="mb-2">
-            <DialogTitle className="text-[18px] font-medium tracking-[0.2px]">
-              练习完成
-            </DialogTitle>
+            <DialogTitle className="text-lg font-medium text-foreground">练习完成</DialogTitle>
           </DialogHeader>
 
           <DialogFooter className="mt-7 gap-3">
@@ -478,12 +488,12 @@ export default function Practice() {
             </Button>
             <Button
               data-testid="completion-back-button"
-              variant="ghost"
+              variant="outline"
               render={<Link to="/" />}
               onClick={() => setShowCompletionModal(false)}
-              className="flex-1 text-[13px] text-muted-foreground hover:text-foreground border border-white/10 hover:bg-white/5"
+              className="flex-1 text-[13px]"
             >
-              返回
+              返回场景列表
             </Button>
           </DialogFooter>
         </DialogPopup>

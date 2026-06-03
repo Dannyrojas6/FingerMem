@@ -11,7 +11,8 @@ describe('App 路由烟雾测试', () => {
         <App />
       </MemoryRouter>
     )
-    expect(screen.getByTestId('scene-list-title')).toBeInTheDocument()
+    expect(screen.getByTestId('scene-picker-page')).toBeInTheDocument()
+    expect(screen.getByTestId('scene-wheel')).toBeInTheDocument()
   })
 
   it('访问场景详情页能正常渲染', () => {
