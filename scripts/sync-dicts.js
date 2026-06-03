@@ -3,7 +3,7 @@
 /**
  * 将 dicts/<name>/scenes/ 复制到 app/src/data/dicts/active/
  *
- *   npm run sync-dicts                  # 列出可用词典
+ *   npm run sync-dicts                  # 仅 1 个可用词典时自动同步；≥2 个时列出供选择
  *   npm run sync-dicts basic-850-cognitive
  */
 
@@ -116,8 +116,17 @@ function listDicts() {
 }
 
 const dictName = process.argv.slice(2)[0];
+
 if (!dictName) {
-  listDicts();
+  const available = getAvailableDicts();
+  if (available.length === 1) {
+    switchToDict(available[0]);
+  } else {
+    listDicts();
+    if (available.length === 0) {
+      fail('dicts/ 下没有可用的词典（需含 scenes/*.json，且不在 archive/）');
+    }
+  }
 } else {
   switchToDict(dictName);
 }
