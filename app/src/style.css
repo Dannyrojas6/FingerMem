@@ -3,6 +3,7 @@
 @import "@fontsource-variable/geist-mono";
 @import "@fontsource/instrument-serif/400.css";
 @import "@fontsource/instrument-serif/400-italic.css";
+@import "cn-fontsource-lxgw-wen-kai-screen/font.css";
 
 body {
   font-family: "Geist Variable", system-ui, sans-serif;
@@ -39,6 +40,17 @@ body {
   --font-sans: "Geist Variable", system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
   --font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-practice-gloss:
+    "LXGW WenKai Screen", "LXGW WenKai", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  /* Practice typography (fixed rem scale — product UI) */
+  --text-practice-size: 2rem;
+  --text-practice-leading: 1.45;
+  --text-practice-tracking: 0.012em;
+  --text-practice-gloss-size: 1.25rem;
+  --text-practice-gloss-leading: 1.55;
+  --text-practice-meta-size: 0.75rem;
+  --text-practice-meta-leading: 1.4;
 
   --ease-spring: cubic-bezier(0.34, 1.28, 0.64, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -61,9 +73,76 @@ body {
   display: none;
 }
 
+/* Practice surface: sentence (mono) + gloss/meta (sans) */
+.practice-typing-area {
+  max-width: min(48rem, 100%);
+}
+
 .practice-sentence {
+  font-family: var(--font-mono);
+  font-size: var(--text-practice-size);
+  font-weight: 450;
+  line-height: var(--text-practice-leading);
+  letter-spacing: var(--text-practice-tracking);
+  max-width: 38ch;
+  margin-inline: auto;
+  text-wrap: balance;
+  font-kerning: normal;
   font-feature-settings: "tnum" 1;
   font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-practice-size: 2.5rem;
+    --text-practice-gloss-size: 1.3125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-practice-size: 2.625rem;
+    --text-practice-gloss-size: 1.375rem;
+  }
+}
+
+.practice-gloss {
+  font-family: var(--font-practice-gloss);
+  font-size: var(--text-practice-gloss-size);
+  font-weight: 400;
+  line-height: var(--text-practice-gloss-leading);
+  letter-spacing: 0.02em;
+  max-width: 28ch;
+  margin-inline: auto;
+  color: var(--color-muted-foreground);
+  text-wrap: pretty;
+}
+
+.practice-status-bar {
+  font-family: var(--font-sans);
+  font-size: var(--text-practice-meta-size);
+  line-height: var(--text-practice-meta-leading);
+  color: var(--color-muted-foreground);
+}
+
+.practice-status-scene {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: color-mix(in oklab, var(--color-foreground) 72%, var(--color-muted-foreground));
+}
+
+.practice-status-progress {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  color: var(--color-muted-foreground);
+}
+
+.practice-status-cpm {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: 0.02em;
+  color: var(--color-muted-foreground);
 }
 
 @keyframes typing-cursor {

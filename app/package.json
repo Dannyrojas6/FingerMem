@@ -48,6 +48,7 @@
     "@fontsource-variable/geist-mono": "^5.2.8",
     "@fontsource/instrument-serif": "^5.2.8",
     "clsx": "^2.1.1",
+    "cn-fontsource-lxgw-wen-kai-screen": "^1.0.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.16.0",

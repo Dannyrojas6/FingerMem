@@ -8,28 +8,28 @@ import AppBrand from './components/AppBrand'
 function AppRoutes() {
   const location = useLocation()
   const isPractice = location.pathname.startsWith('/practice/')
+  const isHome = location.pathname === '/'
+  const wideShell = isHome || isPractice
 
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground">
-      {!isPractice && (
-        <header className="border-b border-border/60 bg-background/80 backdrop-blur-sm">
-          <div
-            className={
-              location.pathname === '/'
-                ? 'mx-auto flex h-14 max-w-7xl items-center px-6 md:px-10'
-                : 'mx-auto flex h-14 max-w-lg items-center px-5'
+    <div className="flex min-h-screen flex-col bg-background font-sans text-foreground">
+      <header className="shrink-0 border-b border-border/60 bg-background/80 backdrop-blur-sm">
+        <div
+          className={
+            wideShell
+              ? 'mx-auto flex h-14 max-w-7xl items-center px-6 md:px-10'
+              : 'mx-auto flex h-14 max-w-lg items-center px-5'
             }
           >
             <AppBrand />
           </div>
         </header>
-      )}
 
       <main
         className={
           isPractice
-            ? ''
-            : location.pathname === '/'
+            ? 'flex min-h-0 flex-1 flex-col'
+            : isHome
               ? 'mx-auto w-full max-w-7xl px-6 md:px-10'
               : 'mx-auto w-full max-w-lg px-5'
         }

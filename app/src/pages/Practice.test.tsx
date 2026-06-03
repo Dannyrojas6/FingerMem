@@ -86,9 +86,11 @@ describe('Practice 组件 - 核心打字交互', () => {
     expect(text.replace(/·/g, ' ')).toContain(firstSentence.en)
     expect(screen.getByText(firstSentence.zh)).toBeInTheDocument()
 
-    // 进度使用 testid + 文本内容（不再有视觉进度条）
+    // 进度在底部状态栏
     const progress = screen.getByTestId('practice-progress')
     expect(progress.textContent).toMatch(/1\s*\/\s*\d+/)
+    expect(screen.getByTestId('practice-scene-name')).toHaveTextContent(testScene.name)
+    expect(screen.getByTestId('practice-cpm')).toHaveTextContent(/CPM/)
   })
 
   it('正确输入字符时应对应字符显示为绿色', async () => {

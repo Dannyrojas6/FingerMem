@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App'
 import { scenes } from './data/scenes'
@@ -26,6 +27,25 @@ describe('App 路由烟雾测试', () => {
     expect(
       screen.queryByText(scenes[0]?.name || '') || screen.queryByText(/开始练习|开始连续练习|练习/)
     ).toBeTruthy()
+  })
+
+  it('练习页顶栏仅展示 Logo，点击 Logo 返回场景选择首页', async () => {
+    const user = userEvent.setup()
+    const sceneId = scenes[0]?.id
+    if (!sceneId) return
+
+    render(
+      <MemoryRouter initialEntries={[`/practice/${sceneId}/0`]}>
+        <App />
+      </MemoryRouter>
+    )
+
+    expect(screen.getByTestId('app-brand')).toBeInTheDocument()
+    expect(screen.getByTestId('practice-page')).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '返回' })).not.toBeInTheDocument()
+
+    await user.click(screen.getByTestId('app-brand'))
+    expect(screen.getByTestId('scene-picker-page')).toBeInTheDocument()
   })
 
   it('应用整体不会崩溃（烟雾测试）', () => {

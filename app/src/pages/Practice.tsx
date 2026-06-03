@@ -374,41 +374,18 @@ export default function Practice() {
   // 此处保留 matchedForProgress 计算供速度统计使用（见 handleInputChange）
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background font-sans">
-      <header className="shrink-0 border-b border-border/80 px-5 py-3">
-        <div className="mx-auto flex max-w-2xl items-center gap-3">
-          <Link
-            to={`/scene/${sceneId}`}
-            className="shrink-0 text-xs text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
-          >
-            返回
-          </Link>
-          <div className="h-1 min-w-0 flex-1 overflow-hidden rounded-full bg-secondary">
-            <div
-              className="h-full rounded-full bg-foreground/90 transition-[width] duration-200 ease-out"
-              style={{ width: `${((sentenceIndex + 1) / totalSentences) * 100}%` }}
-            />
-          </div>
-          <span
-            data-testid="practice-progress"
-            className="shrink-0 text-xs tabular-nums text-muted-foreground"
-          >
-            {sentenceIndex + 1}/{totalSentences}
-          </span>
-        </div>
-        <p className="mx-auto mt-2 max-w-2xl truncate text-center text-xs text-muted-foreground">
-          {sceneName}
-        </p>
-      </header>
-
+    <div
+      data-testid="practice-page"
+      className="flex min-h-0 flex-1 flex-col bg-background font-sans"
+    >
       <div
         data-testid="practice-typing-area"
-        className="mx-auto flex w-full max-w-3xl flex-1 cursor-text flex-col items-center justify-center px-6 py-10"
+        className="practice-typing-area mx-auto flex w-full flex-1 cursor-text flex-col items-center justify-center px-6 py-10 md:px-10"
         onClick={() => inputRef.current?.focus()}
       >
         <div
           data-testid="practice-sentence"
-          className="practice-sentence w-full text-center font-mono text-[clamp(1.75rem,6vw,2.75rem)] leading-[1.4] tracking-tight select-none"
+          className="practice-sentence w-full text-center select-none"
         >
           {chars.map((targetChar, i) => {
             const isTypableIndex = i < effectiveLength
@@ -443,7 +420,7 @@ export default function Practice() {
           })}
         </div>
 
-        <p className="mt-12 max-w-lg text-center text-[15px] leading-relaxed text-muted-foreground">
+        <p className="practice-gloss mt-10 text-center md:mt-12">
           {sentence.zh}
         </p>
       </div>
@@ -467,8 +444,35 @@ export default function Practice() {
         className="pointer-events-none fixed top-0 left-[-9999px] h-px w-px opacity-0 overflow-hidden"
       />
 
-      <footer className="shrink-0 border-t border-border/80 px-5 py-4 text-center font-mono text-xs tabular-nums text-muted-foreground">
-        {displayCPM} CPM
+      <footer
+        data-testid="practice-status-bar"
+        className="shrink-0 border-t border-border/60 px-6 py-4 md:px-10"
+      >
+        <div className="practice-status-bar mx-auto flex max-w-3xl items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <span
+              data-testid="practice-scene-name"
+              className="practice-status-scene truncate"
+            >
+              {sceneName}
+            </span>
+            <span
+              aria-hidden
+              className="shrink-0 text-muted-foreground/50"
+            >
+              ·
+            </span>
+            <span
+              data-testid="practice-progress"
+              className="practice-status-progress shrink-0"
+            >
+              {sentenceIndex + 1}/{totalSentences}
+            </span>
+          </div>
+          <span data-testid="practice-cpm" className="practice-status-cpm shrink-0">
+            {displayCPM} CPM
+          </span>
+        </div>
       </footer>
 
       <Dialog open={showCompletionModal} onOpenChange={setShowCompletionModal}>
