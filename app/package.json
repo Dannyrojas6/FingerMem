@@ -9,7 +9,6 @@
     "preview": "vite preview --host",
     "sync-dicts": "node ../scripts/sync-dicts.js",
     "validate-dict": "node ../scripts/validate-dict.js",
-    "check-dict": "node ../scripts/validate-dict.js basic-850-cognitive && npm run sync-dicts -- basic-850-cognitive && npm run build",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",

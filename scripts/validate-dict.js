@@ -1,125 +1,52 @@
 #!/usr/bin/env node
 
 /**
- * 词典校验（Gate 0 + Gate 2）
- *
- * Gate 0: scenes/ 结构、场景 JSON schema、word-index 与场景交叉引用
- * Gate 2: 覆盖率与阶段递进启发式（需 word-index.json）
- * Gate 1（构建）: 请用 npm run check-dict 或手动 npm run build
+ * 词典校验：结构 · 索引 · 练习（阶段提示仅 warn）
  *
  * 用法:
  *   node scripts/validate-dict.js [dict-name]
+ *   npm run validate-dict
  *   npm run validate-dict -- basic-850-cognitive
  */
 
 const fs = require('fs');
 const path = require('path');
+const {
+  DEFAULT_DICT,
+  getDictDir,
+  isArchivedDictName,
+  assertActiveDictName,
+} = require('./lib/config');
+const { loadSceneFiles } = require('./lib/scenes');
+const { getEffectiveLength } = require('./lib/typing-rules');
+const {
+  hasMultipleSentences,
+  isPracticeLengthExceeded,
+  MAX_EFFECTIVE_LENGTH,
+} = require('./lib/practice-rules');
 
-const ROOT_DIR = path.resolve(__dirname, '..');
-const DICTS_DIR = path.join(ROOT_DIR, 'dicts');
-const SCENES_SUBDIR = 'scenes';
-const SCENE_FILE_RE = /^(\d{2})-([a-z0-9-]+)\.json$/;
-
+const SECTIONS = ['结构', '索引', '练习'];
 const errors = [];
-const warnings = [];
+const hints = [];
 
-function err(msg) {
-  errors.push(msg);
-}
-function warn(msg) {
-  warnings.push(msg);
+function err(section, msg) {
+  errors.push({ section, msg });
 }
 
-function getScenesDir(dictName) {
-  return path.join(DICTS_DIR, dictName, SCENES_SUBDIR);
-}
-
-function sceneIdFromFile(filename) {
-  const m = filename.match(SCENE_FILE_RE);
-  return m ? `${m[1]}-${m[2]}` : null;
-}
-
-function scenePhase(sceneId) {
-  const n = parseInt(sceneId.slice(0, 2), 10);
-  if (n >= 1 && n <= 10) return 1;
-  if (n >= 11 && n <= 41) return 2;
-  if (n >= 42 && n <= 53) return 3;
-  return 0;
+function hint(msg) {
+  hints.push(msg);
 }
 
 const PAST_RE =
   /\b(was|were|had|did|went|came|said|thought|knew|made|got|took|put|kept|let|sent|stayed|saw|wanted|could|would|should)\b|\b\w+ed\b/i;
 const NEG_RE = /\b(not|n't|no)\b/i;
-const QUESTION_RE = /^\s*(who|what|where|when|why|how|is|are|am|was|were|do|does|did|can|will|may)\b/i;
+const QUESTION_RE =
+  /^\s*(who|what|where|when|why|how|is|are|am|was|were|do|does|did|can|will|may)\b/i;
 
-function loadSceneFiles(dictName) {
-  const scenesDir = getScenesDir(dictName);
-  if (!fs.existsSync(scenesDir)) {
-    err(`缺少目录: ${scenesDir}`);
-    return null;
-  }
-
-  const files = fs.readdirSync(scenesDir).filter(f => f.endsWith('.json'));
-  if (files.length === 0) {
-    err(`scenes/ 下没有 .json 场景文件`);
-    return null;
-  }
-
-  const scenes = new Map();
-
-  for (const file of files.sort()) {
-    const id = sceneIdFromFile(file);
-    if (!id) {
-      err(`场景文件名不符合 NN-slug.json: ${file}`);
-      continue;
-    }
-    if (scenes.has(id)) {
-      err(`重复场景 id: ${id}`);
-      continue;
-    }
-
-    const fullPath = path.join(scenesDir, file);
-    let data;
-    try {
-      data = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
-    } catch (e) {
-      err(`${file}: JSON 解析失败 — ${e.message}`);
-      continue;
-    }
-
-    if (typeof data.name !== 'string' || !data.name.trim()) {
-      err(`${file}: 缺少非空 name`);
-    }
-    if (!Array.isArray(data.sentences)) {
-      err(`${file}: sentences 必须是数组`);
-      scenes.set(id, { file, data: null, sentences: [] });
-      continue;
-    }
-
-    data.sentences.forEach((s, i) => {
-      if (!s || typeof s.en !== 'string' || !s.en.trim()) {
-        err(`${file}: sentences[${i}] 缺少 en`);
-      }
-      if (!s || typeof s.zh !== 'string' || !s.zh.trim()) {
-        err(`${file}: sentences[${i}] 缺少 zh`);
-      }
-    });
-
-    scenes.set(id, {
-      file,
-      data,
-      sentences: data.sentences || [],
-      phase: scenePhase(id),
-    });
-  }
-
-  return scenes;
-}
-
-function validateWordIndex(dictName, sceneIds) {
-  const indexPath = path.join(DICTS_DIR, dictName, 'word-index.json');
+function validateIndex(dictName, sceneIds) {
+  const indexPath = path.join(getDictDir(dictName), 'word-index.json');
   if (!fs.existsSync(indexPath)) {
-    warn('无 word-index.json，跳过 Gate 2 覆盖率检查');
+    hint('无 word-index.json，已跳过索引硬检查');
     return null;
   }
 
@@ -127,73 +54,60 @@ function validateWordIndex(dictName, sceneIds) {
   try {
     index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
   } catch (e) {
-    err(`word-index.json 解析失败: ${e.message}`);
+    err('索引', `word-index.json 解析失败: ${e.message}`);
     return null;
   }
 
   const words = Object.keys(index);
   if (words.length === 0) {
-    err('word-index.json 为空');
+    err('索引', 'word-index.json 为空');
     return null;
   }
 
-  let zeroAppear = 0;
   let singleAppear = 0;
-  let badSceneRef = 0;
-  let badIntroduced = 0;
 
   for (const word of words) {
     const entry = index[word];
     if (!entry || typeof entry !== 'object') {
-      err(`word-index: "${word}" 条目无效`);
+      err('索引', `word-index: "${word}" 条目无效`);
       continue;
     }
 
     const appears = Array.isArray(entry.appears_in) ? entry.appears_in : [];
     if (appears.length === 0) {
-      zeroAppear++;
-      err(`word-index: "${word}" appears_in 为空`);
+      err('索引', `word-index: "${word}" appears_in 为空`);
     } else if (appears.length === 1) {
       singleAppear++;
     }
 
     for (const sid of appears) {
       if (!sceneIds.has(sid)) {
-        badSceneRef++;
-        err(`word-index: "${word}" 引用不存在的场景 "${sid}"`);
+        err('索引', `word-index: "${word}" 引用不存在的场景 "${sid}"`);
       }
     }
 
     if (entry.introduced_in) {
       if (!sceneIds.has(entry.introduced_in)) {
-        badIntroduced++;
-        err(`word-index: "${word}" introduced_in 无效场景 "${entry.introduced_in}"`);
+        err('索引', `word-index: "${word}" introduced_in 无效场景 "${entry.introduced_in}"`);
       } else if (!appears.includes(entry.introduced_in)) {
-        err(`word-index: "${word}" introduced_in 不在 appears_in 中`);
+        err('索引', `word-index: "${word}" introduced_in 不在 appears_in 中`);
       }
     }
   }
 
-  // 场景是否在 index 中有词「引入」
   const introducedScenes = new Set(
     words.map(w => index[w].introduced_in).filter(Boolean)
   );
   for (const sid of sceneIds) {
     if (!introducedScenes.has(sid)) {
-      warn(`场景 ${sid} 没有词 marked introduced_in（可能正常，仅提示）`);
+      hint(`场景 ${sid} 没有词 marked introduced_in（可能正常）`);
     }
   }
 
-  return {
-    wordCount: words.length,
-    zeroAppear,
-    singleAppear,
-    badSceneRef,
-    badIntroduced,
-  };
+  return { wordCount: words.length, singleAppear };
 }
 
-function validatePhaseHeuristics(scenes) {
+function validatePhaseHints(scenes) {
   for (const [id, scene] of scenes) {
     if (!scene.data) continue;
     const texts = scene.sentences.map(s => s.en || '');
@@ -202,14 +116,39 @@ function validatePhaseHeuristics(scenes) {
     const hasQ = texts.some(t => QUESTION_RE.test(t) || t.includes('?'));
 
     if (scene.phase === 1) {
-      if (hasPast) warn(`${id}: Phase1 句子含过去时痕迹（启发式）`);
-      if (hasNeg) warn(`${id}: Phase1 句子含否定（启发式）`);
-      if (hasQ) warn(`${id}: Phase1 句子含疑问（启发式）`);
+      if (hasPast) hint(`${id}: Phase1 句子含过去时痕迹（启发式）`);
+      if (hasNeg) hint(`${id}: Phase1 句子含否定（启发式）`);
+      if (hasQ) hint(`${id}: Phase1 句子含疑问（启发式）`);
     }
     if (scene.phase === 3 && !hasPast) {
-      warn(`${id}: Phase3 未检测到过去时痕迹（启发式，可能漏检）`);
+      hint(`${id}: Phase3 未检测到过去时痕迹（启发式，可能漏检）`);
     }
   }
+}
+
+function validatePractice(scenes) {
+  for (const [id, scene] of scenes) {
+    if (!scene.data) continue;
+    scene.sentences.forEach((s, i) => {
+      const en = (s && s.en) || '';
+      if (!en.trim()) return;
+
+      if (hasMultipleSentences(en)) {
+        err('练习', `${id} sentences[${i}]: 一条 en 只能对应一个练习句`);
+      }
+      if (isPracticeLengthExceeded(en)) {
+        err(
+          '练习',
+          `${id} sentences[${i}]: 有效长度 ${getEffectiveLength(en)}，须 < ${MAX_EFFECTIVE_LENGTH}（与练习页一致，去句末标点）`
+        );
+      }
+    });
+  }
+}
+
+function sectionStatus(name) {
+  const n = errors.filter(e => e.section === name).length;
+  return n === 0 ? '通过' : `未通过（${n}）`;
 }
 
 function printSummary(dictName, scenes, indexStats) {
@@ -226,52 +165,82 @@ function printSummary(dictName, scenes, indexStats) {
   console.log(`场景数: ${scenes.size}`);
   console.log(`句子总数: ${totalSentences}`);
   if (counts.length) {
-    console.log(`每场景句数: min ${counts[0]}, max ${counts[counts.length - 1]}, avg ${(totalSentences / counts.length).toFixed(1)}`);
+    console.log(
+      `每场景句数: min ${counts[0]}, max ${counts[counts.length - 1]}, avg ${(totalSentences / counts.length).toFixed(1)}`
+    );
   }
   if (indexStats) {
     console.log(`word-index 词条: ${indexStats.wordCount}`);
-    console.log(`仅出现 1 个场景的词: ${indexStats.singleAppear}（警告级）`);
+    console.log(`仅出现 1 个场景的词: ${indexStats.singleAppear}`);
   }
 }
 
-function main() {
-  const dictName = process.argv[2] || 'basic-850-cognitive';
-  const dictDir = path.join(DICTS_DIR, dictName);
+function reportAndExit() {
+  console.log('');
+  for (const name of SECTIONS) {
+    console.log(`${name} … ${sectionStatus(name)}`);
+  }
+  if (hints.length) {
+    console.log(`阶段提示 … ${hints.length} 条（不阻断）`);
+  }
 
+  if (hints.length) {
+    console.log('\n阶段提示:');
+    hints.forEach(h => console.log(`  ⚠ ${h}`));
+  }
+
+  if (errors.length) {
+    console.log('\n错误:');
+    for (const name of SECTIONS) {
+      const list = errors.filter(e => e.section === name);
+      if (list.length === 0) continue;
+      console.log(`  [${name}]`);
+      list.forEach(e => console.log(`    ✗ ${e.msg}`));
+    }
+    console.error('\n[validate-dict] 校验未通过');
+    process.exit(1);
+  }
+
+  console.log('\n[validate-dict] 校验通过（结构 · 索引 · 练习）');
+  process.exit(0);
+}
+
+function main() {
+  const dictName = process.argv[2] || DEFAULT_DICT;
+
+  if (isArchivedDictName(dictName)) {
+    console.error(`[validate-dict] 归档词典不参与校验: ${dictName}`);
+    process.exit(1);
+  }
+
+  try {
+    assertActiveDictName(dictName);
+  } catch (e) {
+    console.error(`[validate-dict] ${e.message}`);
+    process.exit(1);
+  }
+
+  const dictDir = getDictDir(dictName);
   if (!fs.existsSync(dictDir)) {
     console.error(`[validate-dict] 词典不存在: ${dictName}`);
     process.exit(1);
   }
 
-  console.log(`[validate-dict] Gate 0+2 → ${dictName}`);
+  console.log(`[validate-dict] ${dictName}`);
 
-  const scenes = loadSceneFiles(dictName);
+  const scenes = loadSceneFiles(dictName, { onError: err, onWarn: hint });
   if (!scenes) {
     reportAndExit();
     return;
   }
 
   const sceneIds = new Set(scenes.keys());
-  const indexStats = validateWordIndex(dictName, sceneIds);
-  validatePhaseHeuristics(scenes);
+  const indexStats = validateIndex(dictName, sceneIds);
+  validatePractice(scenes);
+  validatePhaseHints(scenes);
 
   printSummary(dictName, scenes, indexStats);
   reportAndExit();
-}
-
-function reportAndExit() {
-  if (warnings.length) {
-    console.log(`\n警告 (${warnings.length}):`);
-    warnings.forEach(w => console.log(`  ⚠ ${w}`));
-  }
-  if (errors.length) {
-    console.log(`\n错误 (${errors.length}):`);
-    errors.forEach(e => console.log(`  ✗ ${e}`));
-    console.error('\n[validate-dict] 未通过');
-    process.exit(1);
-  }
-  console.log('\n[validate-dict] Gate 0+2 通过');
-  process.exit(0);
 }
 
 main();
