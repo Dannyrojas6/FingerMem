@@ -15,7 +15,7 @@ export default function AppBrand({ className }: AppBrandProps) {
         className
       )}
     >
-      <span className="font-display text-[1.35rem] leading-none tracking-[-0.02em] text-foreground">
+      <span className="font-sans text-[1.35rem] font-semibold leading-none tracking-[-0.02em] text-foreground">
         Finger
       </span>
       <span className="font-sans text-[1.05rem] font-medium leading-none tracking-tight text-muted-foreground transition-colors group-hover:text-foreground/80">
