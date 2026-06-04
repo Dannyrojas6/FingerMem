@@ -220,7 +220,13 @@ body {
   flex: 0 0 44%;
   width: auto;
   max-width: 34rem;
-  min-width: 22rem;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .scene-picker-layout[data-split="true"] .scene-picker-scenes {
+    min-width: 22rem;
+  }
 }
 
 .scene-picker-sentences {

@@ -45,6 +45,36 @@ describe('SceneList 组件', () => {
     expect(screen.getAllByTestId('sentence-item').length).toBeGreaterThan(0)
   })
 
+  it('场景与句子滚轮不参与 Tab 顺序', () => {
+    renderSceneList()
+
+    const sceneListbox = screen
+      .getByTestId('scene-wheel')
+      .querySelector('[role="listbox"]')
+    const sentenceListbox = screen
+      .getByTestId('sentence-wheel')
+      .querySelector('[role="listbox"]')
+    expect(sceneListbox).toHaveAttribute('tabindex', '-1')
+    expect(sentenceListbox).toHaveAttribute('tabindex', '-1')
+    expect(screen.getByTestId('scene-picker-back')).toHaveAttribute('tabindex', '-1')
+  })
+
+  it('场景滚轮聚焦后按 Enter 不应展开句子滚轮', async () => {
+    const user = userEvent.setup()
+    renderSceneList()
+
+    const sceneListbox = screen
+      .getByTestId('scene-wheel')
+      .querySelector('[role="listbox"]') as HTMLElement
+    sceneListbox.focus()
+    await user.keyboard('{Enter}')
+
+    expect(document.querySelector('.scene-picker-layout')).toHaveAttribute(
+      'data-split',
+      'false'
+    )
+  })
+
   it('点击当前句子应进入练习页', async () => {
     const user = userEvent.setup()
     const router = renderSceneList()

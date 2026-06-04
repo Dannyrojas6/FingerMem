@@ -98,6 +98,8 @@ type WheelPickerProps = {
   className?: string
   getItemDataAttrs?: (index: number) => Record<string, string | number | undefined>
   onActiveItemClick?: () => void
+  /** 列表框 tab 顺序；默认 -1，不参与 Tab 聚焦（仅鼠标/滚轮操作） */
+  tabIndex?: number
 }
 
 export default function WheelPicker({
@@ -111,6 +113,7 @@ export default function WheelPicker({
   className,
   getItemDataAttrs,
   onActiveItemClick,
+  tabIndex = -1,
 }: WheelPickerProps) {
   const config = SIZE_CONFIG[size]
   const { itemHeight } = config
@@ -220,7 +223,9 @@ export default function WheelPicker({
     } else if (e.key === 'ArrowDown') {
       e.preventDefault()
       commitIndex(index + 1)
-    } else if (e.key === ' ') {
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+    } else if (e.key === 'Tab') {
       e.preventDefault()
     }
   }
@@ -253,7 +258,7 @@ export default function WheelPicker({
         role="listbox"
         aria-label={ariaLabel}
         aria-activedescendant={items[index] ? `wheel-option-${items[index].id}` : undefined}
-        tabIndex={0}
+        tabIndex={tabIndex}
         onKeyDown={onKeyDown}
         className="wheel-picker-scroll relative z-0 h-full overflow-y-auto overscroll-y-contain focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         style={{

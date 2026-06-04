@@ -57,6 +57,9 @@ export default function SceneList() {
     <div
       data-testid="scene-picker-page"
       className="flex min-h-[calc(100dvh-3.5rem)] flex-col"
+      onKeyDownCapture={e => {
+        if (e.key === 'Tab') e.preventDefault()
+      }}
     >
       <div
         data-split={splitOpen ? 'true' : 'false'}
@@ -71,7 +74,7 @@ export default function SceneList() {
               type="button"
               data-testid="scene-picker-back"
               aria-label="返回场景选择"
-              tabIndex={splitOpen ? 0 : -1}
+              tabIndex={-1}
               aria-hidden={!splitOpen}
               onClick={closeSentencePanel}
               className={cn(

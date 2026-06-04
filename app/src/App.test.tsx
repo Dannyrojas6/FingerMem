@@ -32,10 +32,10 @@ describe('App 路由烟雾测试', () => {
   it('练习页顶栏仅展示 Logo，点击 Logo 返回场景选择首页', async () => {
     const user = userEvent.setup()
     const sceneId = scenes[0]?.id
-    if (!sceneId) return
+    expect(sceneId).toBeDefined()
 
     render(
-      <MemoryRouter initialEntries={[`/practice/${sceneId}/0`]}>
+      <MemoryRouter initialEntries={[`/practice/${sceneId!}/0`]}>
         <App />
       </MemoryRouter>
     )
