@@ -6,6 +6,7 @@ import {
   getMatchedPrefixLength,
   isUnexpectedInputJump,
   isInputComplete,
+  splitSentenceDisplaySegments,
 } from './typing'
 
 describe('cleanTarget', () => {
@@ -110,5 +111,30 @@ describe('isInputComplete', () => {
       expect(isInputComplete(almost + 'x', target)).toBe(false)
       expect(isInputComplete(almost + 'p', target)).toBe(true)  // still works after error path
     })
+  })
+})
+
+describe('splitSentenceDisplaySegments', () => {
+  it('应按空格切分为词与空格段，且索引连续', () => {
+    const text = 'I got up early'
+    const segments = splitSentenceDisplaySegments(text)
+    expect(segments).toEqual([
+      { kind: 'word', start: 0, text: 'I' },
+      { kind: 'space', start: 1, text: ' ' },
+      { kind: 'word', start: 2, text: 'got' },
+      { kind: 'space', start: 5, text: ' ' },
+      { kind: 'word', start: 6, text: 'up' },
+      { kind: 'space', start: 8, text: ' ' },
+      { kind: 'word', start: 9, text: 'early' },
+    ])
+  })
+
+  it('连续空格应合并为一段', () => {
+    const segments = splitSentenceDisplaySegments('a  b')
+    expect(segments).toEqual([
+      { kind: 'word', start: 0, text: 'a' },
+      { kind: 'space', start: 1, text: '  ' },
+      { kind: 'word', start: 3, text: 'b' },
+    ])
   })
 })

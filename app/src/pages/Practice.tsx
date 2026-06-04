@@ -8,6 +8,7 @@ import {
   getMatchedPrefixLength,
   isInputComplete,
   isUnexpectedInputJump,
+  splitSentenceDisplaySegments,
 } from '../utils/typing'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
@@ -362,7 +363,7 @@ export default function Practice() {
   }
 
   const target = sentence.en
-  const chars = target.split('')
+  const displaySegments = splitSentenceDisplaySegments(target)
   const effectiveTarget = cleanTarget(target)
   const effectiveLength = effectiveTarget.length
   const matchedPrefixLen = getMatchedPrefixLength(userInput, effectiveTarget)
@@ -385,39 +386,51 @@ export default function Practice() {
       >
         <div
           data-testid="practice-sentence"
-          className="practice-sentence w-full text-center select-none"
+          className="practice-sentence select-none"
         >
-          {chars.map((targetChar, i) => {
-            const isTypableIndex = i < effectiveLength
-            const typedChar = isTypableIndex ? userInput[i] : undefined
-            const isCursorPosition =
-              isTypableIndex && i === cursorPosition && cursorPosition < effectiveLength
-
-            let displayChar = targetChar
-            if (targetChar === ' ') {
-              displayChar = '·'
-            }
-
-            let className = 'text-muted-foreground/60'
-
-            // 仅连续正确前缀显示绿色，避免在空格位置“碰巧相等”或换句后旧输入误显绿
-            if (typedChar !== undefined) {
-              if (i < matchedPrefixLen) {
-                className = 'text-typing-correct'
-              } else {
-                className = 'text-typing-error'
+          {displaySegments.map((segment, segmentIndex) => (
+            <span
+              key={`${segment.kind}-${segment.start}-${segmentIndex}`}
+              className={
+                segment.kind === 'word' ? 'practice-word' : 'practice-space'
               }
-            }
+            >
+              {segment.text.split('').map((targetChar, offset) => {
+                const i = segment.start + offset
+                const isTypableIndex = i < effectiveLength
+                const typedChar = isTypableIndex ? userInput[i] : undefined
+                const isCursorPosition =
+                  isTypableIndex &&
+                  i === cursorPosition &&
+                  cursorPosition < effectiveLength
 
-            return (
-              <span
-                key={i}
-                className={`${className} ${isCursorPosition ? 'border-b-2 border-foreground/70' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
-              >
-                {displayChar}
-              </span>
-            )
-          })}
+                let displayChar = targetChar
+                if (targetChar === ' ') {
+                  displayChar = '·'
+                }
+
+                let className = 'practice-char text-muted-foreground/60'
+
+                // 仅连续正确前缀显示绿色，避免在空格位置“碰巧相等”或换句后旧输入误显绿
+                if (typedChar !== undefined) {
+                  if (i < matchedPrefixLen) {
+                    className = 'practice-char text-typing-correct'
+                  } else {
+                    className = 'practice-char text-typing-error'
+                  }
+                }
+
+                return (
+                  <span
+                    key={i}
+                    className={`${className} ${isCursorPosition ? 'border-b-2 border-foreground/70' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
+                  >
+                    {displayChar}
+                  </span>
+                )
+              })}
+            </span>
+          ))}
         </div>
 
         <p className="practice-gloss mt-10 text-center md:mt-12">

@@ -44,9 +44,9 @@ body {
     "LXGW WenKai Screen", "LXGW WenKai", "PingFang SC", "Microsoft YaHei", sans-serif;
 
   /* Practice typography (fixed rem scale — product UI) */
-  --text-practice-size: 2rem;
-  --text-practice-leading: 1.45;
-  --text-practice-tracking: 0.012em;
+  --text-practice-size: 1.875rem;
+  --text-practice-leading: 1.5;
+  --text-practice-tracking: 0.01em;
   --text-practice-gloss-size: 1.25rem;
   --text-practice-gloss-leading: 1.55;
   --text-practice-meta-size: 0.75rem;
@@ -75,33 +75,50 @@ body {
 
 /* Practice surface: sentence (mono) + gloss/meta (sans) */
 .practice-typing-area {
-  max-width: min(48rem, 100%);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  text-align: center;
 }
 
 .practice-sentence {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: baseline;
+  gap: 0;
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: center;
   font-family: var(--font-mono);
   font-size: var(--text-practice-size);
   font-weight: 450;
   line-height: var(--text-practice-leading);
   letter-spacing: var(--text-practice-tracking);
-  max-width: 38ch;
-  margin-inline: auto;
-  text-wrap: balance;
   font-kerning: normal;
   font-feature-settings: "tnum" 1;
   font-variant-numeric: tabular-nums;
 }
 
+.practice-word,
+.practice-space {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
 @media (min-width: 768px) {
   :root {
-    --text-practice-size: 2.5rem;
+    --text-practice-size: 2.125rem;
     --text-practice-gloss-size: 1.3125rem;
   }
 }
 
 @media (min-width: 1024px) {
   :root {
-    --text-practice-size: 2.625rem;
+    --text-practice-size: 2.375rem;
     --text-practice-gloss-size: 1.375rem;
   }
 }

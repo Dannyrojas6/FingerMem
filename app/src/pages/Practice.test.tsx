@@ -103,7 +103,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     await user.type(input, prefix)
 
     const sentenceArea = screen.getByTestId('practice-sentence')
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
 
     // 正确字符使用 typing-correct 语义色
     expect(spans[0]).toHaveClass('text-typing-correct')
@@ -119,7 +119,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     await user.type(input, wrongInput)
 
     const sentenceArea = screen.getByTestId('practice-sentence')
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
 
     // 错误字符使用 typing-error 语义色
     const hasRed = spans.some(s => s.classList.contains('text-typing-error'))
@@ -135,7 +135,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     await user.type(input, 'X ')
 
     const sentenceArea = screen.getByTestId('practice-sentence')
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
 
     // 打错 + 空格后，至少应该出现红色错误标记（具体哪个位置的 · 取决于句子内容）
     const hasRoseError = spans.some(s => s.classList.contains('text-typing-error'))
@@ -203,7 +203,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     await user.type(input, correctPrefix)
     await user.type(input, '{Space>25}')
 
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     const targetChars = firstSentence.en.split('')
     const matchedLen = getMatchedPrefixLength(input.value, cleanEn)
     for (let i = 0; i < matchedLen; i++) {
@@ -237,7 +237,7 @@ describe('Practice 组件 - 核心打字交互', () => {
       })
 
       expect(input.value).toBe('')
-      const spans = Array.from(screen.getByTestId('practice-sentence').querySelectorAll('span'))
+      const spans = Array.from(screen.getByTestId('practice-sentence').querySelectorAll('.practice-char'))
       const roseOnTypable = spans.filter((s) => s.classList.contains('text-typing-error'))
       expect(roseOnTypable.length).toBe(0)
     } finally {
@@ -263,7 +263,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     }
     expect(input.value.length).toBeLessThanOrEqual(cleanEn.length)
 
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     const targetChars = sentence.en.split('')
     for (let i = 0; i < prefix.length; i++) {
       if (targetChars[i] === ' ') continue
@@ -316,7 +316,7 @@ describe('Practice 组件 - 核心打字交互', () => {
       { timeout: 300 }
     )
 
-    const spans = Array.from(screen.getByTestId('practice-sentence').querySelectorAll('span'))
+    const spans = Array.from(screen.getByTestId('practice-sentence').querySelectorAll('.practice-char'))
     const targetChars = firstSentence.en.split('')
     let hasRedLetter = false
     for (let i = 0; i < cleanEn.length; i++) {
@@ -424,7 +424,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const partial = firstSentence.en.slice(0, 4)
     await user.type(input, partial)
 
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     expect(spans[0]).toHaveClass('text-typing-correct')
     const laterSpan = spans.find(
       (s, i) => i >= partial.length && s.classList.contains('text-muted-foreground/60')
@@ -441,14 +441,14 @@ describe('Practice 组件 - 核心打字交互', () => {
     const inputEl = input as HTMLInputElement
     typeViaKeyDown(inputEl, 'I xm')
 
-    let spans = Array.from(sentenceArea.querySelectorAll('span'))
+    let spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     expect(spans[2]).toHaveClass('text-typing-error')
 
     fireEvent.keyDown(inputEl, { key: 'Backspace' })
     fireEvent.keyDown(inputEl, { key: 'Backspace' })
     typeViaKeyDown(inputEl, 'am')
 
-    spans = Array.from(sentenceArea.querySelectorAll('span'))
+    spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     expect(spans[2]).toHaveClass('text-typing-correct')
     expect(spans[3]).toHaveClass('text-typing-correct')
   })
@@ -461,7 +461,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const sentenceArea = screen.getByTestId('practice-typing-area')
 
     // 新句子出现时 → 默认静态下划线（无闪烁类），因为一眼就能看出还没开始输入
-    let spans = Array.from(sentenceArea.querySelectorAll('span'))
+    let spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     let cursorSpan = spans.find(s => s.classList.contains('border-b-2'))
     expect(cursorSpan).toBeTruthy()
     expect(cursorSpan?.classList.contains('typing-cursor')).toBe(false)
@@ -469,7 +469,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     // 输入过程中 → 继续保持静态
     await user.type(input, 'I w')
 
-    spans = Array.from(sentenceArea.querySelectorAll('span'))
+    spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     cursorSpan = spans.find(s => s.classList.contains('border-b-2'))
     expect(cursorSpan).toBeTruthy()
     expect(cursorSpan?.classList.contains('typing-cursor')).toBe(false)
@@ -538,7 +538,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     expect(input.value).toBe(wrongFull)
     expect(input.value.length).toBe(cleanSentence.length)
 
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     expect(spans[punctIndex].classList.contains('text-typing-correct')).toBe(false)
     expect(spans[punctIndex].classList.contains('text-typing-error')).toBe(false)
   })
@@ -670,7 +670,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     const prefix = firstSentence.en.slice(0, 6)
     await user.type(input, prefix)
 
-    const spans = Array.from(sentenceArea.querySelectorAll('span'))
+    const spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
     const greenCount = spans.filter(s => s.classList.contains('text-typing-correct')).length
 
     expect(greenCount).toBeGreaterThan(0)
