@@ -67,3 +67,29 @@ export function isInputComplete(input: string, target: string): boolean {
   if (normalizedInput !== target) return false
   return getMatchedPrefixLength(clamped, target) === target.length
 }
+
+export type SentenceDisplaySegment = {
+  kind: 'word' | 'space'
+  start: number
+  text: string
+}
+
+/** 按空格切分展示块，换行时整词/整段空格一起移动，不在词内断行 */
+export function splitSentenceDisplaySegments(text: string): SentenceDisplaySegment[] {
+  const segments: SentenceDisplaySegment[] = []
+  let i = 0
+  while (i < text.length) {
+    if (text[i] === ' ') {
+      let j = i
+      while (j < text.length && text[j] === ' ') j++
+      segments.push({ kind: 'space', start: i, text: text.slice(i, j) })
+      i = j
+    } else {
+      let j = i
+      while (j < text.length && text[j] !== ' ') j++
+      segments.push({ kind: 'word', start: i, text: text.slice(i, j) })
+      i = j
+    }
+  }
+  return segments
+}

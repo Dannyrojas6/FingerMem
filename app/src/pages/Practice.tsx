@@ -8,6 +8,7 @@ import {
   getMatchedPrefixLength,
   isInputComplete,
   isUnexpectedInputJump,
+  splitSentenceDisplaySegments,
 } from '../utils/typing'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
@@ -362,7 +363,7 @@ export default function Practice() {
   }
 
   const target = sentence.en
-  const chars = target.split('')
+  const displaySegments = splitSentenceDisplaySegments(target)
   const effectiveTarget = cleanTarget(target)
   const effectiveLength = effectiveTarget.length
   const matchedPrefixLen = getMatchedPrefixLength(userInput, effectiveTarget)
@@ -374,53 +375,67 @@ export default function Practice() {
   // 此处保留 matchedForProgress 计算供速度统计使用（见 handleInputChange）
 
   return (
-    <div className="mx-auto max-w-[720px] px-6">
-      {/* 句子核心区域 —— 保持在中央偏下的位置（专注最佳位置）
-          再往下移一点，中英文和底部信息整体下移 */}
+    <div
+      data-testid="practice-page"
+      className="flex min-h-0 flex-1 flex-col bg-background font-sans"
+    >
       <div
         data-testid="practice-typing-area"
-        className="flex min-h-[55vh] flex-col items-center justify-center cursor-text pt-16 pb-2"
+        className="practice-typing-area mx-auto flex w-full flex-1 cursor-text flex-col items-center justify-center px-6 py-10 md:px-10"
         onClick={() => inputRef.current?.focus()}
       >
-        {/* 句子主体 */}
-        <div data-testid="practice-sentence" className="font-mono text-[42px] leading-[1.35] tracking-[0.3px] text-center select-none md:text-[48px] md:leading-[1.32]">
-          {chars.map((targetChar, i) => {
-            const isTypableIndex = i < effectiveLength
-            const typedChar = isTypableIndex ? userInput[i] : undefined
-            const isCursorPosition =
-              isTypableIndex && i === cursorPosition && cursorPosition < effectiveLength
-
-            let displayChar = targetChar
-            if (targetChar === ' ') {
-              displayChar = '·'
-            }
-
-            let className = 'text-foreground/40'
-
-            // 仅连续正确前缀显示绿色，避免在空格位置“碰巧相等”或换句后旧输入误显绿
-            if (typedChar !== undefined) {
-              if (i < matchedPrefixLen) {
-                className = 'text-emerald-400/90'
-              } else {
-                className = 'text-rose-400/90'
+        <div
+          data-testid="practice-sentence"
+          className="practice-sentence select-none"
+        >
+          {displaySegments.map((segment, segmentIndex) => (
+            <span
+              key={`${segment.kind}-${segment.start}-${segmentIndex}`}
+              className={
+                segment.kind === 'word' ? 'practice-word' : 'practice-space'
               }
-            }
+            >
+              {segment.text.split('').map((targetChar, offset) => {
+                const i = segment.start + offset
+                const isTypableIndex = i < effectiveLength
+                const typedChar = isTypableIndex ? userInput[i] : undefined
+                const isCursorPosition =
+                  isTypableIndex &&
+                  i === cursorPosition &&
+                  cursorPosition < effectiveLength
 
-            return (
-              <span
-                key={i}
-                className={`${className} ${isCursorPosition ? 'border-b-[2.5px] border-foreground/75' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
-              >
-                {displayChar}
-              </span>
-            )
-          })}
+                let displayChar = targetChar
+                if (targetChar === ' ') {
+                  displayChar = '·'
+                }
+
+                let className = 'practice-char text-muted-foreground/60'
+
+                // 仅连续正确前缀显示绿色，避免在空格位置“碰巧相等”或换句后旧输入误显绿
+                if (typedChar !== undefined) {
+                  if (i < matchedPrefixLen) {
+                    className = 'practice-char text-typing-correct'
+                  } else {
+                    className = 'practice-char text-typing-error'
+                  }
+                }
+
+                return (
+                  <span
+                    key={i}
+                    className={`${className} ${isCursorPosition ? 'border-b-2 border-foreground/70' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
+                  >
+                    {displayChar}
+                  </span>
+                )
+              })}
+            </span>
+          ))}
         </div>
 
-        {/* 中文翻译 */}
-        <div className="mt-10 text-[20px] text-muted-foreground/70 tracking-[0.05px] text-center leading-snug">
+        <p className="practice-gloss mt-10 text-center md:mt-12">
           {sentence.zh}
-        </div>
+        </p>
       </div>
 
       {/* 捕获键盘的隐藏输入：固定在视口外，避免落在英文/中文之间触发浏览器原生 loading 指示 */}
@@ -442,29 +457,41 @@ export default function Practice() {
         className="pointer-events-none fixed top-0 left-[-9999px] h-px w-px opacity-0 overflow-hidden"
       />
 
-      {/* 底部极简控制台读数条（Option A 极致克制风格）
-          与上方中英文一起再往下移一点 */}
-      <div className="relative mt-10 flex items-center justify-between pb-6 text-[14px] tracking-[0.4px] text-muted-foreground/70 font-mono tabular-nums">
-        <div className="flex-1 truncate">{sceneName}</div>
-
-        {/* 进度放在正中间，不受左右内容长度影响 */}
-        <div data-testid="practice-progress" className="absolute left-1/2 -translate-x-1/2 tabular-nums">
-          {sentenceIndex + 1} / {totalSentences}
+      <footer
+        data-testid="practice-status-bar"
+        className="shrink-0 border-t border-border/60 px-6 py-4 md:px-10"
+      >
+        <div className="practice-status-bar mx-auto flex max-w-3xl items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <span
+              data-testid="practice-scene-name"
+              className="practice-status-scene truncate"
+            >
+              {sceneName}
+            </span>
+            <span
+              aria-hidden
+              className="shrink-0 text-muted-foreground/50"
+            >
+              ·
+            </span>
+            <span
+              data-testid="practice-progress"
+              className="practice-status-progress shrink-0"
+            >
+              {sentenceIndex + 1}/{totalSentences}
+            </span>
+          </div>
+          <span data-testid="practice-cpm" className="practice-status-cpm shrink-0">
+            {displayCPM} CPM
+          </span>
         </div>
+      </footer>
 
-        <div className="w-[72px] text-right tabular-nums">{displayCPM} CPM</div>
-      </div>
-
-
-      {/* 完成确认 —— 玻璃质感，低调克制 */}
       <Dialog open={showCompletionModal} onOpenChange={setShowCompletionModal}>
-        <DialogPopup 
-          className="max-w-[380px] bg-[#1a1a1a]/70 backdrop-blur-xl border-white/10 p-8 text-center"
-        >
+        <DialogPopup className="max-w-[380px] border border-border bg-popover p-8 text-center shadow-[0_24px_64px_rgba(0,0,0,0.5)]">
           <DialogHeader className="mb-2">
-            <DialogTitle className="text-[18px] font-medium tracking-[0.2px]">
-              练习完成
-            </DialogTitle>
+            <DialogTitle className="text-lg font-medium text-foreground">练习完成</DialogTitle>
           </DialogHeader>
 
           <DialogFooter className="mt-7 gap-3">
@@ -478,12 +505,12 @@ export default function Practice() {
             </Button>
             <Button
               data-testid="completion-back-button"
-              variant="ghost"
+              variant="outline"
               render={<Link to="/" />}
               onClick={() => setShowCompletionModal(false)}
-              className="flex-1 text-[13px] text-muted-foreground hover:text-foreground border border-white/10 hover:bg-white/5"
+              className="flex-1 text-[13px]"
             >
-              返回
+              返回场景列表
             </Button>
           </DialogFooter>
         </DialogPopup>
