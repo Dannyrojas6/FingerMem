@@ -64,3 +64,17 @@ mcps/
 
 # Superpowers agent working directory (local only, contains brainstorming state, plans, etc.)
 .superpowers/
+
+# Git worktrees (local parallel branch checkouts)
+.worktrees/
+
+# Agent session output (local only)
+agent-tools/
+
+# Impeccable / local design docs (kept in sync with app/ manually; not versioned)
+.impeccable/
+PRODUCT.md
+DESIGN.md
+
+# CLAUDE.md
+CLAUDE.md
