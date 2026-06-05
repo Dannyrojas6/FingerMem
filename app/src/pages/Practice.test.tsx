@@ -272,7 +272,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
     const nextCharIndex = cleanEn.indexOf(restAfterPrefix[0] ?? '')
     if (nextCharIndex > 0 && input.value.length < nextCharIndex) {
-      const cursorSpan = spans.find((s) => s.classList.contains('border-b-2'))
+      const cursorSpan = spans.find((s) => s.classList.contains('border-foreground/70'))
       const cursorIdx = cursorSpan ? spans.indexOf(cursorSpan) : -1
       expect(cursorIdx).toBeLessThan(nextCharIndex)
     }
@@ -462,7 +462,7 @@ describe('Practice 组件 - 核心打字交互', () => {
 
     // 新句子出现时 → 默认静态下划线（无闪烁类），因为一眼就能看出还没开始输入
     let spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
-    let cursorSpan = spans.find(s => s.classList.contains('border-b-2'))
+    let cursorSpan = spans.find(s => s.classList.contains('border-foreground/70'))
     expect(cursorSpan).toBeTruthy()
     expect(cursorSpan?.classList.contains('typing-cursor')).toBe(false)
 
@@ -470,7 +470,7 @@ describe('Practice 组件 - 核心打字交互', () => {
     await user.type(input, 'I w')
 
     spans = Array.from(sentenceArea.querySelectorAll('.practice-char'))
-    cursorSpan = spans.find(s => s.classList.contains('border-b-2'))
+    cursorSpan = spans.find(s => s.classList.contains('border-foreground/70'))
     expect(cursorSpan).toBeTruthy()
     expect(cursorSpan?.classList.contains('typing-cursor')).toBe(false)
   })

@@ -423,7 +423,7 @@ export default function Practice() {
                 return (
                   <span
                     key={i}
-                    className={`${className} ${isCursorPosition ? 'border-b-2 border-foreground/70' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
+                    className={`${className} ${isCursorPosition ? 'border-foreground/70' : ''} ${isCursorPosition && isIdle ? 'typing-cursor' : ''}`}
                   >
                     {displayChar}
                   </span>

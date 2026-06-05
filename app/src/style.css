@@ -99,6 +99,11 @@ body {
   white-space: nowrap;
 }
 
+/* Reserve underline space so cursor hide on completion does not shift flex centering */
+.practice-char {
+  border-bottom: 2px solid transparent;
+}
+
 @media (min-width: 768px) {
   :root {
     --text-practice-size: 2.125rem;
