@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Geist Mono Variable';
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   font-weight: 100 900;
   src: url('/fonts/geist-mono-latin.woff2') format('woff2-variations');
   unicode-range:
@@ -14,7 +14,7 @@
 @font-face {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   font-weight: 400;
   src: url('/fonts/plus-jakarta-sans-latin-400.woff2') format('woff2');
   unicode-range:
@@ -25,7 +25,7 @@
 @font-face {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   font-weight: 500;
   src: url('/fonts/plus-jakarta-sans-latin-500.woff2') format('woff2');
   unicode-range:
@@ -36,7 +36,7 @@
 @font-face {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
-  font-display: swap;
+  font-display: block;
   font-weight: 600;
   src: url('/fonts/plus-jakarta-sans-latin-600.woff2') format('woff2');
   unicode-range:
