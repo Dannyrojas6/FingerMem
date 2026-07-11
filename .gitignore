@@ -79,3 +79,8 @@ DESIGN.md
 # CLAUDE.md & AGENTS.md
 CLAUDE.md
 AGENTS.md
+
+# Local agent skills & Matt working files (not product code)
+.agents/
+.scratch/
+skills-lock.json
