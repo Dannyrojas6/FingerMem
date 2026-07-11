@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useLayoutEffect, useState, useRef } from 'react'
-import { getScene } from '../data/scenes'
+import { getActiveDictInfo, getScene, scenes } from '../data/scenes'
 import type { Sentence } from '../types'
 import {
   clampInputToEffectiveLength,
@@ -10,6 +10,12 @@ import {
   isUnexpectedInputJump,
   splitSentenceDisplaySegments,
 } from '../utils/typing'
+import {
+  markSentenceComplete,
+  scenesToSummary,
+  setLastPosition,
+  withDictProgress,
+} from '../utils/progress'
 import ErrorMessage from '../components/ErrorMessage'
 import { Button } from '@/components/ui/button'
 import {
@@ -19,6 +25,23 @@ import {
   DialogTitle,
   DialogFooter,
 } from '@/components/ui/dialog'
+
+function recordPracticeProgress(
+  sceneId: string,
+  sentenceIndex: number,
+  opts?: { complete?: boolean }
+) {
+  const info = getActiveDictInfo()
+  if (!info?.name) return
+  const summary = scenesToSummary(scenes)
+  withDictProgress(info.name, summary, p => {
+    let next = setLastPosition(p, sceneId, sentenceIndex)
+    if (opts?.complete) {
+      next = markSentenceComplete(next, sceneId, sentenceIndex)
+    }
+    return next
+  })
+}
 
 export default function Practice() {
   const { sceneId, index } = useParams<{ sceneId: string; index: string }>()
@@ -120,6 +143,12 @@ export default function Practice() {
   sentenceRef.current = sentence
   sentenceIndexRef.current = sentenceIndex
   isCompletedRef.current = isCompleted
+
+  // 有效练习句：记录 lastPosition（不恢复半句输入）
+  useEffect(() => {
+    if (!sceneId || !targetSentence) return
+    recordPracticeProgress(sceneId, sentenceIndex)
+  }, [sceneId, sentenceIndex, targetSentence])
 
   // 自动聚焦（当句子变化时聚焦输入框）
   useEffect(() => {
@@ -255,6 +284,12 @@ export default function Practice() {
     setIsCompleted(isNowCompleted)
 
     if (isNowCompleted && !wasCompleted) {
+      if (sceneId) {
+        recordPracticeProgress(sceneId, sentenceIndexRef.current, {
+          complete: true,
+        })
+      }
+
       const isLastSentence = sentenceIndexRef.current + 1 >= total
 
       if (isLastSentence) {

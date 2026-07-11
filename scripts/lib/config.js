@@ -4,7 +4,7 @@ const ROOT_DIR = path.resolve(__dirname, '..', '..');
 const DICTS_DIR = path.join(ROOT_DIR, 'dicts');
 const SCENES_SUBDIR = 'scenes';
 const ACTIVE_DIR = path.join(ROOT_DIR, 'app', 'src', 'data', 'dicts', 'active');
-const MARKER_FILE = path.join(ACTIVE_DIR, '.active-dict.json');
+const MARKER_FILE = path.join(ACTIVE_DIR, 'active-dict.json');
 
 /** 生产默认词典 */
 const DEFAULT_DICT = 'basic-850-cognitive';

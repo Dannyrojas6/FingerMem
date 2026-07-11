@@ -1,31 +1,65 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { scenes } from '../data/scenes'
+import { getActiveDictInfo, scenes } from '../data/scenes'
 import WheelPicker from '../components/WheelPicker'
 import { cn } from '@/lib/utils'
+import {
+  formatSceneProgressTrailing,
+  getSceneCompletedCount,
+  practicePath,
+  readDictProgress,
+  resolveContinueTarget,
+  scenesToSummary,
+  type DictProgress,
+} from '../utils/progress'
 
 function sceneOrderLabel(id: string): string | null {
   const match = id.match(/^(\d+)-/)
   return match ? match[1].padStart(2, '0') : null
 }
 
+function loadHomeProgress(): DictProgress | null {
+  const info = getActiveDictInfo()
+  if (!info?.name) return null
+  return readDictProgress(info.name, scenesToSummary(scenes))
+}
+
+function initialSceneIndex(progress: DictProgress | null): number {
+  if (!progress?.lastPosition) return 0
+  const idx = scenes.findIndex(s => s.id === progress.lastPosition!.sceneId)
+  return idx >= 0 ? idx : 0
+}
+
 export default function SceneList() {
   const navigate = useNavigate()
-  const [sceneIndex, setSceneIndex] = useState(0)
+  const progress = useMemo(() => loadHomeProgress(), [])
+  const [sceneIndex, setSceneIndex] = useState(() => initialSceneIndex(progress))
   const [sentenceIndex, setSentenceIndex] = useState(0)
   const [splitOpen, setSplitOpen] = useState(false)
+
+  const continueTarget = useMemo(() => {
+    if (!progress) return null
+    return resolveContinueTarget(progress, scenesToSummary(scenes))
+  }, [progress])
 
   const sceneWheelItems = useMemo(
     () =>
       scenes.map(scene => {
         const order = sceneOrderLabel(scene.id)
+        const trailing =
+          progress != null
+            ? formatSceneProgressTrailing(
+                getSceneCompletedCount(progress, scene.id),
+                scene.sentences.length
+              )
+            : `${scene.sentences.length} 句`
         return {
           id: scene.id,
           label: order ? `${order} ${scene.name}` : scene.name,
-          trailing: `${scene.sentences.length} 句`,
+          trailing,
         }
       }),
-    []
+    [progress]
   )
 
   const selectedScene = scenes[sceneIndex]
@@ -53,6 +87,11 @@ export default function SceneList() {
     navigate(`/practice/${selectedScene.id}/${sentenceIndex}`)
   }
 
+  const continuePractice = () => {
+    if (!continueTarget) return
+    navigate(practicePath(continueTarget))
+  }
+
   return (
     <div
       data-testid="scene-picker-page"
@@ -61,6 +100,23 @@ export default function SceneList() {
         if (e.key === 'Tab') e.preventDefault()
       }}
     >
+      {continueTarget && (
+        <div className="flex justify-center px-4 pt-3">
+          <button
+            type="button"
+            data-testid="scene-list-continue"
+            onClick={continuePractice}
+            className={cn(
+              'rounded-md px-3 py-1.5 text-sm',
+              'text-muted-foreground/70 transition-colors',
+              'hover:text-muted-foreground',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
+            )}
+          >
+            继续上次
+          </button>
+        </div>
+      )}
       <div
         data-split={splitOpen ? 'true' : 'false'}
         className="scene-picker-layout flex w-full flex-1 items-center justify-center py-4"

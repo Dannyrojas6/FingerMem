@@ -71,7 +71,11 @@ function switchToDict(dictName) {
 
   const existing = fs.readdirSync(ACTIVE_DIR);
   for (const file of existing) {
-    if (file.endsWith('.json') || file === '.active-dict.json') {
+    if (
+      file.endsWith('.json') ||
+      file === '.active-dict.json' ||
+      file === 'active-dict.json'
+    ) {
       fs.unlinkSync(path.join(ACTIVE_DIR, file));
     }
   }

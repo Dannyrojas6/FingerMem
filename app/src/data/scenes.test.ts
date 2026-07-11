@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { scenes, getScene } from './scenes'
+import { scenes, getScene, getActiveDictInfo } from './scenes'
 
 describe('scenes data layer', () => {
   it('应该能从 active/ 加载场景数据', () => {
@@ -42,5 +42,17 @@ describe('scenes data layer', () => {
     expect(getScene('non-existent')).toBeUndefined()
     expect(getScene('')).toBeUndefined()
     expect(getScene('this-id-does-not-exist-xyz')).toBeUndefined()
+  })
+
+  it('scenes 列表不包含 active-dict meta', () => {
+    expect(scenes.some(s => s.id === 'active-dict')).toBe(false)
+  })
+
+  it('getActiveDictInfo 在 meta 存在时返回 name 与 sceneCount', () => {
+    const info = getActiveDictInfo()
+    expect(info).not.toBeNull()
+    expect(info!.name.length).toBeGreaterThan(0)
+    expect(info!.sceneCount).toBe(scenes.length)
+    expect(typeof info!.switchedAt).toBe('string')
   })
 })

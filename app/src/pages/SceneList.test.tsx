@@ -1,9 +1,17 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import SceneList from './SceneList'
-import { scenes } from '../data/scenes'
+import { getActiveDictInfo, scenes } from '../data/scenes'
+import {
+  PROGRESS_STORAGE_KEY,
+  type ProgressRoot,
+} from '../utils/progress'
+
+beforeEach(() => {
+  localStorage.clear()
+})
 
 function renderSceneList() {
   const router = createMemoryRouter(
@@ -32,6 +40,59 @@ describe('SceneList 组件', () => {
     const items = screen.getAllByTestId('scene-wheel-item')
     expect(items.length).toBeGreaterThan(0)
     expect(screen.queryByTestId('scene-list-title')).not.toBeInTheDocument()
+  })
+
+  it('无进度时不显示继续上次', () => {
+    renderSceneList()
+    expect(screen.queryByTestId('scene-list-continue')).not.toBeInTheDocument()
+  })
+
+  it('有未完成进度时显示继续上次并跳转目标句', async () => {
+    const user = userEvent.setup()
+    const dictName = getActiveDictInfo()?.name
+    expect(dictName).toBeTruthy()
+    const firstScene = scenes[0]
+    const root: ProgressRoot = {
+      version: 1,
+      byDict: {
+        [dictName!]: {
+          lastPosition: { sceneId: firstScene.id, sentenceIndex: 0 },
+          completed: {},
+        },
+      },
+    }
+    localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(root))
+
+    const router = renderSceneList()
+    const btn = screen.getByTestId('scene-list-continue')
+    expect(btn).toHaveTextContent('继续上次')
+    await user.click(btn)
+
+    expect(router.state.location.pathname).toBe(
+      `/practice/${firstScene.id}/0`
+    )
+  })
+
+  it('场景全完成时不显示继续上次', () => {
+    const dictName = getActiveDictInfo()?.name
+    expect(dictName).toBeTruthy()
+    const firstScene = scenes[0]
+    const completed = firstScene.sentences.map((_, i) => i)
+    const root: ProgressRoot = {
+      version: 1,
+      byDict: {
+        [dictName!]: {
+          lastPosition: {
+            sceneId: firstScene.id,
+            sentenceIndex: firstScene.sentences.length - 1,
+          },
+          completed: { [firstScene.id]: completed },
+        },
+      },
+    }
+    localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(root))
+
+    renderSceneList()
     expect(screen.queryByTestId('scene-list-continue')).not.toBeInTheDocument()
   })
 
@@ -87,12 +148,12 @@ describe('SceneList 组件', () => {
     expect(screen.getByTestId('practice-page')).toBeInTheDocument()
   })
 
-  it('滚轮项应显示句子数量', () => {
+  it('滚轮项应显示完成进度 x/y 或句子数量', () => {
     renderSceneList()
 
     const sceneWheel = screen.getByTestId('scene-wheel')
-    const sentenceInfo = within(sceneWheel).getAllByText(/\d+\s*句/)
-    expect(sentenceInfo.length).toBeGreaterThan(0)
+    const trailing = within(sceneWheel).getAllByText(/\d+\/\d+|\d+\s*句/)
+    expect(trailing.length).toBeGreaterThan(0)
   })
 
   it('场景序号与名称之间为空格而非间隔号', () => {
